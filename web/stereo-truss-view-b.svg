@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <rect width="960" height="640" fill="#f7fbff"/>
+  <text x="54" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#153e70">空间桁架示例 · 视角 B（右后上方）</text>
+  <text x="54" y="91" font-family="Arial, sans-serif" font-size="17" fill="#58708e">与视角 A 为同一组 N1–N8 节点；仅改变相机方向，不改变杆件连接关系</text>
+  <g stroke="#94a7bc" stroke-width="4" stroke-dasharray="10 9" fill="none"><path d="M736 478 L346 510 L218 330 L604 304 Z"/><path d="M736 220 L346 244 L218 126 L604 112 Z"/><path d="M736 478 L736 220 M346 510 L346 244 M218 330 L218 126 M604 304 L604 112"/></g>
+  <g stroke="#1f75c2" stroke-width="8" stroke-linecap="round" fill="none"><path d="M736 478 L346 510 L218 330 L604 304 Z"/><path d="M736 220 L346 244 L218 126 L604 112 Z"/><path d="M736 478 L346 244 L218 330 L604 112 L736 478 M346 510 L218 126 L604 304 L736 220 L346 510"/></g>
+  <g fill="#f28b22" stroke="#153e70" stroke-width="4"><circle cx="736" cy="478" r="11"/><circle cx="346" cy="510" r="11"/><circle cx="218" cy="330" r="11"/><circle cx="604" cy="304" r="11"/><circle cx="736" cy="220" r="11"/><circle cx="346" cy="244" r="11"/><circle cx="218" cy="126" r="11"/><circle cx="604" cy="112" r="11"/></g>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#153e70"><text x="746" y="511">N1</text><text x="348" y="549">N2</text><text x="174" y="345">N3</text><text x="614" y="333">N4</text><text x="746" y="210">N5</text><text x="348" y="235">N6</text><text x="174" y="116">N7</text><text x="614" y="101">N8</text></g>
+  <g stroke="#d34949" stroke-width="5" fill="none" marker-end="url(#arrow)"><path d="M346 158 L346 225"/><path d="M218 48 L218 108"/></g><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#d34949"/></marker></defs>
+  <text x="54" y="603" font-family="Arial, sans-serif" font-size="16" fill="#58708e">使用时可在 AI 建模助手点击“载入双视角桁架示例”，再生成可编辑草案。</text>
+</svg>

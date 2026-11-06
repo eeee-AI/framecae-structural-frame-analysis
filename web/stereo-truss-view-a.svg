@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <rect width="960" height="640" fill="#f7fbff"/>
+  <text x="54" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#153e70">空间桁架示例 · 视角 A（左前上方）</text>
+  <text x="54" y="91" font-family="Arial, sans-serif" font-size="17" fill="#58708e">同一结构的双视角输入示例 · 蓝色为杆件，橙色为节点，虚线为后侧轮廓</text>
+  <g stroke="#94a7bc" stroke-width="4" stroke-dasharray="10 9" fill="none"><path d="M230 478 L620 510 L748 330 L362 304 Z"/><path d="M230 220 L620 244 L748 126 L362 112 Z"/><path d="M230 478 L230 220 M620 510 L620 244 M748 330 L748 126 M362 304 L362 112"/></g>
+  <g stroke="#1f75c2" stroke-width="8" stroke-linecap="round" fill="none"><path d="M230 478 L620 510 L748 330 L362 304 Z"/><path d="M230 220 L620 244 L748 126 L362 112 Z"/><path d="M230 478 L620 244 L748 330 L362 112 L230 478 M620 510 L748 126 L362 304 L230 220 L620 510"/></g>
+  <g fill="#f28b22" stroke="#153e70" stroke-width="4"><circle cx="230" cy="478" r="11"/><circle cx="620" cy="510" r="11"/><circle cx="748" cy="330" r="11"/><circle cx="362" cy="304" r="11"/><circle cx="230" cy="220" r="11"/><circle cx="620" cy="244" r="11"/><circle cx="748" cy="126" r="11"/><circle cx="362" cy="112" r="11"/></g>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#153e70"><text x="194" y="511">N1</text><text x="622" y="549">N2</text><text x="762" y="345">N3</text><text x="323" y="333">N4</text><text x="194" y="210">N5</text><text x="624" y="235">N6</text><text x="763" y="116">N7</text><text x="324" y="101">N8</text></g>
+  <g stroke="#d34949" stroke-width="5" fill="none" marker-end="url(#arrow)"><path d="M620 158 L620 225"/><path d="M748 48 L748 108"/></g><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#d34949"/></marker></defs>
+  <text x="54" y="603" font-family="Arial, sans-serif" font-size="16" fill="#58708e">建议：两张图的视角差 20°–60°，并提供一个已知尺度以恢复实际长度。</text>
+</svg>

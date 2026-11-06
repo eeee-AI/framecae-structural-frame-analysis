@@ -1,0 +1,358 @@
+{
+  "candidate": "B",
+  "name": "两层双跨空间刚架",
+  "job": "B_two_story",
+  "attentionNode": 8,
+  "solidNodes": 1327238,
+  "solidElements": 626276,
+  "supportRPs": {
+    "1": 1327239,
+    "2": 1327240,
+    "3": 1327241,
+    "4": 1327242,
+    "5": 1327243,
+    "6": 1327244
+  },
+  "joints": [
+    {
+      "node": 1,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 2,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 3,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 4,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 5,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 6,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 7,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 8,
+      "nodes": 109511,
+      "elements": 55771,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 9,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 10,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 11,
+      "nodes": 109511,
+      "elements": 55771,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 12,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 13,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.6407823339150712,
+        0.4458396578842602,
+        0.625
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 14,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 15,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        0.5266511282773085,
+        0.4438621284636007,
+        0.725
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 16,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.4822787685577598,
+        -0.577931147820078,
+        0.6583333333333333
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 17,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 18,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        0.5119285682787713,
+        -0.5094373005604022,
+        0.6916666666666667
+      ],
+      "capRadius": 0.057513749999999995
+    }
+  ],
+  "ties": 52,
+  "assumptions": [
+    "All original vertices use integral B hubs, bores and ring welds, including support vertices.",
+    "Support DOFs from the reviewed model are unchanged. B has RX/RY free, not full fixity.",
+    "Support RPs at graph nodes distribute to assumed unobstructed physical hub caps.",
+    "Joint and tube subdivisions use tied surfaces. No beam cut displacements/forces are imported.",
+    "Equivalent whole-member line loads conserve force, moment and 12-DOF beam virtual work; not physical pressure.",
+    "Linear elasticity, ideal supports, no welding residual stress/contact/defects.",
+    "This single 4 mm toe level is a resource probe, not a mesh convergence or stress result."
+  ],
+  "material": [
+    {
+      "id": 1,
+      "e": 210.0,
+      "nu": 0.3,
+      "density": 7850.0,
+      "alpha": 12.0
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "a": 0.00530552167338244,
+      "iy": 2.959632873469869e-05,
+      "iz": 2.959632873469869e-05,
+      "j": 5.919265746939738e-05,
+      "d": 0.2191
+    }
+  ],
+  "units": "m, N, Pa, N*m; digital_model.json E is GPa per FrameCAE schema",
+  "selfWeight": {
+    "enabled": false,
+    "gx": 0.0,
+    "gy": 0.0,
+    "gz": -9.81
+  },
+  "supports": [
+    {
+      "node": 1,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 2,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 3,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 4,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 5,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 6,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rz": 0.0
+    }
+  ],
+  "loads": [
+    {
+      "node": 17,
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": -10000.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 0.0
+    },
+    {
+      "node": 16,
+      "fx": 3000.0,
+      "fy": 0.0,
+      "fz": 0.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 0.0
+    }
+  ],
+  "memberLoads": [
+    {
+      "element": 17,
+      "type": "uniform",
+      "position": null,
+      "qx": 0.0,
+      "qy": 0.0,
+      "qz": -1500.0,
+      "coordinateSystem": "global",
+      "unit": "N/m"
+    }
+  ],
+  "stressOutput": "S: ALL_SOLID ELEMENT_NODAL (POSITION=NODES), no cross-element averaging imposed in the input. TARGET_ELEMENTS remains the selected joint set.",
+  "otherOutput": "U/RF on the frame; UR/RM on support RPs; ALLSE/ALLWK history",
+  "modificationFromOptimizedSource": "Only stress output element set changed from TARGET_ELEMENTS to ALL_SOLID; mesh, physics and all other lines byte-identical.",
+  "datacheckOfThisInputDone": false,
+  "formalAnalysisDone": false,
+  "stressImpactOfDistortionQuantified": false,
+  "previousGridMemoryEstimate": {
+    "minimumMB": 2817,
+    "memoryToMinimizeIOMB": 13636,
+    "onlyPreviousMesh": true,
+    "notGuaranteedForThisInput": true
+  }
+}

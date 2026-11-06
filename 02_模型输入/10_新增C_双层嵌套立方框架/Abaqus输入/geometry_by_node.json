@@ -1,0 +1,1714 @@
+{
+  "1": {
+    "node": 1,
+    "origin": [
+      4.0,
+      4.0,
+      0.0
+    ],
+    "arms": [
+      {
+        "element": 1,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 4,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 17,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 25,
+        "direction": [
+          -0.5773502691896257,
+          -0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          -0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        0.5322534834509505,
+        0.6506177461279019,
+        -0.5416666666666667
+      ]
+    }
+  },
+  "2": {
+    "node": 2,
+    "origin": [
+      -4.0,
+      4.0,
+      0.0
+    ],
+    "arms": [
+      {
+        "element": 1,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 2,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 18,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 26,
+        "direction": [
+          0.5773502691896257,
+          -0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          -0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        -0.6163132662715236,
+        0.6014608715784829,
+        -0.5083333333333333
+      ]
+    }
+  },
+  "3": {
+    "node": 3,
+    "origin": [
+      -4.0,
+      -4.0,
+      0.0
+    ],
+    "arms": [
+      {
+        "element": 2,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 3,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 19,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 27,
+        "direction": [
+          0.5773502691896257,
+          0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        -0.6673153115577976,
+        -0.5736421140053436,
+        -0.4750000000000001
+      ]
+    }
+  },
+  "4": {
+    "node": 4,
+    "origin": [
+      4.0,
+      -4.0,
+      0.0
+    ],
+    "arms": [
+      {
+        "element": 3,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 4,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 20,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 28,
+        "direction": [
+          -0.5773502691896257,
+          0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        0.6761150067642272,
+        -0.46069892297270354,
+        -0.575
+      ]
+    }
+  },
+  "5": {
+    "node": 5,
+    "origin": [
+      4.0,
+      4.0,
+      8.0
+    ],
+    "arms": [
+      {
+        "element": 5,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 8,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 17,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 29,
+        "direction": [
+          -0.5773502691896257,
+          -0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          -0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        0.5266511282773085,
+        0.4438621284636007,
+        0.725
+      ]
+    }
+  },
+  "6": {
+    "node": 6,
+    "origin": [
+      -4.0,
+      4.0,
+      8.0
+    ],
+    "arms": [
+      {
+        "element": 5,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 6,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 18,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 30,
+        "direction": [
+          0.5773502691896257,
+          -0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          -0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        -0.6407823339150712,
+        0.4458396578842602,
+        0.625
+      ]
+    }
+  },
+  "7": {
+    "node": 7,
+    "origin": [
+      -4.0,
+      -4.0,
+      8.0
+    ],
+    "arms": [
+      {
+        "element": 6,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 7,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 19,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 31,
+        "direction": [
+          0.5773502691896257,
+          0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        -0.4822787685577598,
+        -0.577931147820078,
+        0.6583333333333333
+      ]
+    }
+  },
+  "8": {
+    "node": 8,
+    "origin": [
+      4.0,
+      -4.0,
+      8.0
+    ],
+    "arms": [
+      {
+        "element": 7,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 8,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 20,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 32,
+        "direction": [
+          -0.5773502691896257,
+          0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.3186268191037418,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.23897011432780635,
+      "boreFull": 0.3405201143278064,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.43913181910374177,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.11151938668630962,
+      "direction": [
+        0.5119285682787713,
+        -0.5094373005604022,
+        0.6916666666666667
+      ]
+    }
+  },
+  "9": {
+    "node": 9,
+    "origin": [
+      2.8,
+      2.8,
+      1.2
+    ],
+    "arms": [
+      {
+        "element": 9,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 12,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 21,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 25,
+        "direction": [
+          0.5773502691896257,
+          0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.9346445894350109,
+        -0.2881609162639546,
+        0.20833333333333337
+      ]
+    }
+  },
+  "10": {
+    "node": 10,
+    "origin": [
+      -2.8,
+      2.8,
+      1.2
+    ],
+    "arms": [
+      {
+        "element": 9,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 10,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 22,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 26,
+        "direction": [
+          -0.5773502691896257,
+          0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.33972800874001347,
+        -0.17017602674156315,
+        -0.925
+      ]
+    }
+  },
+  "11": {
+    "node": 11,
+    "origin": [
+      -2.8,
+      -2.8,
+      1.2
+    ],
+    "arms": [
+      {
+        "element": 10,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 11,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 23,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 27,
+        "direction": [
+          -0.5773502691896257,
+          -0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          -0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.3358172583391263,
+        -0.9058093937967753,
+        0.2583333333333333
+      ]
+    }
+  },
+  "12": {
+    "node": 12,
+    "origin": [
+      2.8,
+      -2.8,
+      1.2
+    ],
+    "arms": [
+      {
+        "element": 11,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 12,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 24,
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 28,
+        "direction": [
+          0.5773502691896257,
+          -0.5773502691896257,
+          -0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          -0.4618802153517006,
+          -0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.9225034566839899,
+        0.2528199516684661,
+        0.29166666666666663
+      ]
+    }
+  },
+  "13": {
+    "node": 13,
+    "origin": [
+      2.8,
+      2.8,
+      6.8
+    ],
+    "arms": [
+      {
+        "element": 13,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 16,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 21,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 29,
+        "direction": [
+          0.5773502691896257,
+          0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        -0.3084824173156182,
+        0.9509014660873717,
+        -0.02499999999999991
+      ]
+    }
+  },
+  "14": {
+    "node": 14,
+    "origin": [
+      -2.8,
+      2.8,
+      6.8
+    ],
+    "arms": [
+      {
+        "element": 13,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 14,
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          -0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 22,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 30,
+        "direction": [
+          -0.5773502691896257,
+          0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        -0.8796066249281969,
+        -0.3309925592385959,
+        -0.34166666666666656
+      ]
+    }
+  },
+  "15": {
+    "node": 15,
+    "origin": [
+      -2.8,
+      -2.8,
+      6.8
+    ],
+    "arms": [
+      {
+        "element": 14,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 15,
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 23,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 31,
+        "direction": [
+          -0.5773502691896257,
+          -0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          -0.4618802153517006,
+          -0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.20476827848015117,
+        0.26708395874174884,
+        0.9416666666666667
+      ]
+    }
+  },
+  "16": {
+    "node": 16,
+    "origin": [
+      2.8,
+      -2.8,
+      6.8
+    ],
+    "arms": [
+      {
+        "element": 15,
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          -0.8,
+          0.0,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 16,
+        "direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.8,
+          0.0
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 24,
+        "direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.8,
+        "center": [
+          0.0,
+          0.0,
+          -0.8
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      },
+      {
+        "element": 32,
+        "direction": [
+          0.5773502691896257,
+          -0.5773502691896257,
+          0.5773502691896257
+        ],
+        "length": 0.8,
+        "center": [
+          0.4618802153517006,
+          -0.4618802153517006,
+          0.4618802153517006
+        ],
+        "outerRadius": 0.10955,
+        "innerRadius": 0.10155
+      }
+    ],
+    "geometry": {
+      "hubRadius": 0.2248283771639466,
+      "blendWidth": 0.020540625,
+      "shoulderRadius": 0.020540625,
+      "boreStart": 0.16862128287295997,
+      "boreFull": 0.27017128287296,
+      "boreShape": "hemisphericalBlindEnd",
+      "weldDistance": 0.34533337716394663,
+      "weldWidth": 0.02464875,
+      "reinforcement": 0.00273875,
+      "toeRadius": 0.0054775
+    },
+    "material": {
+      "E": 210000000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    },
+    "load": {
+      "wrench": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.07868993200738131,
+      "direction": [
+        0.9450681603410094,
+        0.17669513946246598,
+        -0.2749999999999999
+      ]
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "materials": [
+    {
+      "id": 1,
+      "e": 210.0,
+      "nu": 0.3,
+      "alpha": 0.0,
+      "density": 7850.0
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "a": 0.0014922565104551536,
+      "iy": 1.6881151774523917e-06,
+      "iz": 1.6881151774523917e-06,
+      "j": 3.3762303549047834e-06,
+      "d": 0.1
+    }
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": 2,
+      "x": 3,
+      "y": 9,
+      "z": 0
+    },
+    {
+      "id": 3,
+      "x": 0,
+      "y": 0,
+      "z": 3
+    },
+    {
+      "id": 4,
+      "x": 0,
+      "y": 6,
+      "z": 3
+    },
+    {
+      "id": 5,
+      "x": 0,
+      "y": 3,
+      "z": 3
+    }
+  ],
+  "elements": [
+    {
+      "id": 1,
+      "start": 3,
+      "end": 5,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 2,
+      "start": 1,
+      "end": 3,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 3,
+      "start": 2,
+      "end": 4,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 4,
+      "start": 5,
+      "end": 4,
+      "material": 1,
+      "section": 1
+    }
+  ],
+  "loads": [
+    {
+      "node": 3,
+      "fx": 0,
+      "fy": 2000,
+      "fz": 0,
+      "mx": 0,
+      "my": 0,
+      "mz": 0
+    },
+    {
+      "node": 4,
+      "fx": 0,
+      "fy": 0,
+      "fz": -1000,
+      "mx": -3000,
+      "my": 0,
+      "mz": 0
+    },
+    {
+      "node": 5,
+      "fx": 4000,
+      "fy": 0,
+      "fz": 0,
+      "mx": 0,
+      "my": 0,
+      "mz": 0
+    }
+  ],
+  "constraints": [
+    {
+      "node": 1,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 2,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    }
+  ],
+  "memberLoads": [
+    {
+      "element": 1,
+      "type": "uniform",
+      "qx": 0,
+      "qy": 0,
+      "qz": -800,
+      "coordinateSystem": "global",
+      "unit": "N/m"
+    }
+  ],
+  "temperatures": [],
+  "assemblyDeviations": [],
+  "selfWeight": {
+    "enabled": false,
+    "gx": 0.0,
+    "gy": 0.0,
+    "gz": -9.81
+  }
+}

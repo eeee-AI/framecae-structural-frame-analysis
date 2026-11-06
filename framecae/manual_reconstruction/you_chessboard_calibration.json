@@ -1,0 +1,342 @@
+{
+  "image_size_px": [
+    5320,
+    3032
+  ],
+  "pattern_inner_corners": [
+    11,
+    8
+  ],
+  "square_size_mm": 50.0,
+  "camera_matrix_K": [
+    [
+      3098.346446556708,
+      0.0,
+      2674.4560336967043
+    ],
+    [
+      0.0,
+      3099.6444503999915,
+      1510.257207833435
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion_coefficients_k1_k2_p1_p2_k3": [
+    -0.10942557171377133,
+    0.11067305133377488,
+    0.0014770388728756504,
+    0.00029334981445660154,
+    -0.0300518312659713
+  ],
+  "overall_rms_px": 0.47740430340480605,
+  "input_count": 20,
+  "detected_count": 20,
+  "images": [
+    {
+      "file": "Image__2026-10-15__10-19-52.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2821805193227131
+    },
+    {
+      "file": "Image__2026-10-15__10-20-32.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.29371382570873095
+    },
+    {
+      "file": "Image__2026-10-15__10-20-59.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.32965327856250126
+    },
+    {
+      "file": "Image__2026-10-15__10-21-27.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2945084202094947
+    },
+    {
+      "file": "Image__2026-10-15__10-22-14.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2630568423036483
+    },
+    {
+      "file": "Image__2026-10-15__10-23-06.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.28163288332969627
+    },
+    {
+      "file": "Image__2026-10-15__10-23-34.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2688987888586903
+    },
+    {
+      "file": "Image__2026-10-15__10-24-19.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.3991789334814609
+    },
+    {
+      "file": "Image__2026-10-15__10-26-17.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.26097265136786557
+    },
+    {
+      "file": "Image__2026-10-15__10-27-19.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.25463080524530324
+    },
+    {
+      "file": "Image__2026-10-15__10-29-02.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2716342720257107
+    },
+    {
+      "file": "Image__2026-10-15__10-29-18.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.23617360932013412
+    },
+    {
+      "file": "Image__2026-10-15__10-29-56.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.2737976310333882
+    },
+    {
+      "file": "Image__2026-10-15__10-30-15.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.21008326596504454
+    },
+    {
+      "file": "Image__2026-10-15__10-30-37.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.19132762438748588
+    },
+    {
+      "file": "Image__2026-10-15__10-30-50.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.21723340756244172
+    },
+    {
+      "file": "Image__2026-10-15__10-31-46.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.3815314279266768
+    },
+    {
+      "file": "Image__2026-10-15__10-32-16.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.4020177629099133
+    },
+    {
+      "file": "Image__2026-10-15__10-32-31.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.27443240150177556
+    },
+    {
+      "file": "Image__2026-10-15__10-33-02.bmp",
+      "detected": true,
+      "inner_corners": 88,
+      "corner_bbox_fraction": 0.34440110624516435
+    }
+  ],
+  "per_image": [
+    {
+      "file": "Image__2026-10-15__10-19-52.bmp",
+      "reprojection_rmse_px": 0.32383522391319275,
+      "translation_mm": [
+        202.82110265429736,
+        167.63483996988012,
+        487.5871932616546
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-20-32.bmp",
+      "reprojection_rmse_px": 0.3937644064426422,
+      "translation_mm": [
+        138.0346419237147,
+        163.16578096984162,
+        485.00196198356196
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-20-59.bmp",
+      "reprojection_rmse_px": 0.4022402763366699,
+      "translation_mm": [
+        36.598644517282615,
+        173.00461118102942,
+        464.0468123949161
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-21-27.bmp",
+      "reprojection_rmse_px": 0.569858968257904,
+      "translation_mm": [
+        -10.219705923095379,
+        155.39639909820207,
+        473.99624498145073
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-22-14.bmp",
+      "reprojection_rmse_px": 0.3263032138347626,
+      "translation_mm": [
+        305.01248692299964,
+        72.66501817080987,
+        598.0556687873658
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-23-06.bmp",
+      "reprojection_rmse_px": 0.3657446503639221,
+      "translation_mm": [
+        289.15333313532267,
+        27.817385077710174,
+        645.376935296996
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-23-34.bmp",
+      "reprojection_rmse_px": 1.2109651565551758,
+      "translation_mm": [
+        292.366625419298,
+        -26.69667615066122,
+        706.7945383262909
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-24-19.bmp",
+      "reprojection_rmse_px": 0.3451400101184845,
+      "translation_mm": [
+        281.79424664862995,
+        158.62443195607682,
+        480.22576131991167
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-26-17.bmp",
+      "reprojection_rmse_px": 0.39464980363845825,
+      "translation_mm": [
+        138.5541026221004,
+        260.44333104578817,
+        746.6776344350043
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-27-19.bmp",
+      "reprojection_rmse_px": 0.6562774181365967,
+      "translation_mm": [
+        154.75317343750456,
+        289.53090783650833,
+        786.5374788670937
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-29-02.bmp",
+      "reprojection_rmse_px": 0.23596082627773285,
+      "translation_mm": [
+        42.7380083926842,
+        77.97989005757088,
+        466.07196359698463
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-29-18.bmp",
+      "reprojection_rmse_px": 0.28839442133903503,
+      "translation_mm": [
+        22.775396028495386,
+        91.14415124613255,
+        470.27107390245334
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-29-56.bmp",
+      "reprojection_rmse_px": 0.4426223635673523,
+      "translation_mm": [
+        -44.559787623593245,
+        114.07251455313185,
+        414.191046391535
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-30-15.bmp",
+      "reprojection_rmse_px": 0.5405116677284241,
+      "translation_mm": [
+        -143.1002386095859,
+        81.3987521538614,
+        519.8141382126191
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-30-37.bmp",
+      "reprojection_rmse_px": 0.45867645740509033,
+      "translation_mm": [
+        -174.08775668475988,
+        90.94879235876991,
+        554.9830839119002
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-30-50.bmp",
+      "reprojection_rmse_px": 0.5253344178199768,
+      "translation_mm": [
+        -129.70223663569683,
+        84.65737217092727,
+        513.8760202877708
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-31-46.bmp",
+      "reprojection_rmse_px": 0.26403355598449707,
+      "translation_mm": [
+        -49.57996873897272,
+        123.15968771953109,
+        413.6357810417839
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-32-16.bmp",
+      "reprojection_rmse_px": 0.237321674823761,
+      "translation_mm": [
+        106.73141441887653,
+        116.2200173763726,
+        397.8207769726123
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-32-31.bmp",
+      "reprojection_rmse_px": 0.2517460882663727,
+      "translation_mm": [
+        153.316467066493,
+        68.87346891324002,
+        431.34603908354006
+      ]
+    },
+    {
+      "file": "Image__2026-10-15__10-33-02.bmp",
+      "reprojection_rmse_px": 0.31124424934387207,
+      "translation_mm": [
+        -88.55996611307164,
+        113.17380406273257,
+        427.5334934678789
+      ]
+    }
+  ]
+}

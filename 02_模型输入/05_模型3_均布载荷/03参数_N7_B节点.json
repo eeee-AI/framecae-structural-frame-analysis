@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "label": "N7 B节点",
+  "modelFingerprint": "fa86ef15431309617812ec38966fa5589806d70b8a220ea8fb9c702b3a633601",
+  "settings": {
+    "node": 7,
+    "connectionType": "integralHubRingButtWeld",
+    "solverMethod": "standalone",
+    "couplingMode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "hubRadius": 0.4686834705767287,
+    "blendWidth": 0.020540625,
+    "cutLength": 0.8,
+    "weldDistance": 0.5891884705767287,
+    "weldWidth": 0.02464875,
+    "reinforcement": 0.00273875,
+    "toeRadius": 0.0054775,
+    "meshSize": 0.02048,
+    "focusSize": 0.0045000000000000005,
+    "toeSize": 0.0015,
+    "loadRadius": 0.075315625,
+    "loadDirection": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "shoulderRadius": 0.020540625,
+    "boreStart": 0.35151260293254655,
+    "boreFull": 0.4530626029325465,
+    "boreShape": "hemisphericalBlindEnd"
+  },
+  "jobId": "7505364fb94f1110746f5251ad99a190"
+}

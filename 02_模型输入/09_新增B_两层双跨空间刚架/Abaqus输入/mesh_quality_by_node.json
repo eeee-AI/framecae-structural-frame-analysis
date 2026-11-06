@@ -1,0 +1,722 @@
+[
+  {
+    "node": 1,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 2,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 3,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 4,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 5,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 6,
+    "selection": "linear",
+    "baseline": {
+      "elements": 13030,
+      "nodes": 25258,
+      "badElements": 97,
+      "badPercent": 0.7444359171143515,
+      "minimumQuality": 0.0024004014078220504,
+      "minimumDihedralDegrees": 7.36155905326649,
+      "maximumDihedralDegrees": 161.74973669819494,
+      "qualityQuantiles": [
+        0.0024004014078220504,
+        0.005580907263249489,
+        0.024781003424197957,
+        0.05987489558636168,
+        0.3604945547846843
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 13120,
+      "nodes": 25354,
+      "badElements": 69,
+      "badPercent": 0.5259146341463415,
+      "minimumQuality": 0.0036960488778936783,
+      "minimumDihedralDegrees": 6.234149133639278,
+      "maximumDihedralDegrees": 159.51322478098152,
+      "qualityQuantiles": [
+        0.0036960488778936783,
+        0.007484234087748085,
+        0.027192265671990408,
+        0.06705956745696108,
+        0.3529708841358285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 3.3715605832177735e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 7,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393177,
+      "minimumDihedralDegrees": 4.545499233046115,
+      "maximumDihedralDegrees": 163.14672231896228,
+      "qualityQuantiles": [
+        0.0021318958868393177,
+        0.004921861257798875,
+        0.021681618125386232,
+        0.053005097086755465,
+        0.33795031120059316
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713013,
+      "minimumDihedralDegrees": 6.255282610002382,
+      "maximumDihedralDegrees": 168.21320279329413,
+      "qualityQuantiles": [
+        0.002156161926713013,
+        0.007076896006157833,
+        0.024718568526414034,
+        0.061002320504653436,
+        0.32978619422616545
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 8,
+    "selection": "linear",
+    "baseline": {
+      "elements": 55392,
+      "nodes": 109096,
+      "badElements": 532,
+      "badPercent": 0.960427498555748,
+      "minimumQuality": 0.002084170371104345,
+      "minimumDihedralDegrees": 5.647685373034307,
+      "maximumDihedralDegrees": 163.42285997384852,
+      "qualityQuantiles": [
+        0.002084170371104345,
+        0.005099214341591848,
+        0.022708864279173967,
+        0.05313556215925502,
+        0.3285376072476285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 55771,
+      "nodes": 109511,
+      "badElements": 444,
+      "badPercent": 0.7961126750461709,
+      "minimumQuality": 0.0021561619267130147,
+      "minimumDihedralDegrees": 6.354160132781203,
+      "maximumDihedralDegrees": 163.72496849362403,
+      "qualityQuantiles": [
+        0.0021561619267130147,
+        0.007470804686114419,
+        0.02442814319565482,
+        0.06014506025091632,
+        0.32046069253845383
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 5.658315890624714e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 9,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393125,
+      "minimumDihedralDegrees": 4.5454992330462005,
+      "maximumDihedralDegrees": 163.14672231896225,
+      "qualityQuantiles": [
+        0.0021318958868393125,
+        0.00492186125779887,
+        0.021681618125386246,
+        0.05300509708675555,
+        0.33795031120059316
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713007,
+      "minimumDihedralDegrees": 6.255282610002382,
+      "maximumDihedralDegrees": 168.21320279329413,
+      "qualityQuantiles": [
+        0.002156161926713007,
+        0.007076896006157814,
+        0.024718568526413985,
+        0.06100232050465342,
+        0.3297861942261653
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 10,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393125,
+      "minimumDihedralDegrees": 4.5454992330462005,
+      "maximumDihedralDegrees": 163.14672231896225,
+      "qualityQuantiles": [
+        0.0021318958868393125,
+        0.00492186125779887,
+        0.021681618125386246,
+        0.05300509708675555,
+        0.33795031120059316
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713007,
+      "minimumDihedralDegrees": 6.255282610002382,
+      "maximumDihedralDegrees": 168.21320279329413,
+      "qualityQuantiles": [
+        0.002156161926713007,
+        0.007076896006157814,
+        0.024718568526413985,
+        0.06100232050465342,
+        0.3297861942261653
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 11,
+    "selection": "linear",
+    "baseline": {
+      "elements": 55392,
+      "nodes": 109096,
+      "badElements": 532,
+      "badPercent": 0.960427498555748,
+      "minimumQuality": 0.002084170371104345,
+      "minimumDihedralDegrees": 5.647685373034307,
+      "maximumDihedralDegrees": 163.42285997384852,
+      "qualityQuantiles": [
+        0.002084170371104345,
+        0.005099214341591848,
+        0.022708864279173967,
+        0.05313556215925502,
+        0.3285376072476285
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 55771,
+      "nodes": 109511,
+      "badElements": 444,
+      "badPercent": 0.7961126750461709,
+      "minimumQuality": 0.0021561619267130147,
+      "minimumDihedralDegrees": 6.354160132781203,
+      "maximumDihedralDegrees": 163.72496849362403,
+      "qualityQuantiles": [
+        0.0021561619267130147,
+        0.007470804686114419,
+        0.02442814319565482,
+        0.06014506025091632,
+        0.32046069253845383
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 5.658315890624714e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 12,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393177,
+      "minimumDihedralDegrees": 4.545499233046115,
+      "maximumDihedralDegrees": 163.14672231896228,
+      "qualityQuantiles": [
+        0.0021318958868393177,
+        0.004921861257798875,
+        0.021681618125386232,
+        0.053005097086755465,
+        0.33795031120059316
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713013,
+      "minimumDihedralDegrees": 6.255282610002382,
+      "maximumDihedralDegrees": 168.21320279329413,
+      "qualityQuantiles": [
+        0.002156161926713013,
+        0.007076896006157833,
+        0.024718568526414034,
+        0.061002320504653436,
+        0.32978619422616545
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 13,
+    "selection": "smooth_surface",
+    "baseline": {
+      "elements": 32065,
+      "nodes": 63778,
+      "badElements": 305,
+      "badPercent": 0.9511928894433184,
+      "minimumQuality": 8.392165849544555e-05,
+      "minimumDihedralDegrees": 3.843251205905432,
+      "maximumDihedralDegrees": 172.9293017163744,
+      "qualityQuantiles": [
+        8.392165849544555e-05,
+        0.005494857470840728,
+        0.022912173478615468,
+        0.05299876415878484,
+        0.31108304359737643
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 33093,
+      "nodes": 65056,
+      "badElements": 229,
+      "badPercent": 0.6919892424379779,
+      "minimumQuality": 9.020834020275587e-05,
+      "minimumDihedralDegrees": 3.7450645649126955,
+      "maximumDihedralDegrees": 171.87592207084947,
+      "qualityQuantiles": [
+        9.020834020275587e-05,
+        0.0076200506594335604,
+        0.026390626352533048,
+        0.06939631366713091,
+        0.31875709090383847
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.420455491304476e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 14,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393138,
+      "minimumDihedralDegrees": 4.545499233046115,
+      "maximumDihedralDegrees": 163.14672231896225,
+      "qualityQuantiles": [
+        0.0021318958868393138,
+        0.0049218612577988765,
+        0.021681618125386257,
+        0.05300509708675545,
+        0.33795031120059316
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713011,
+      "minimumDihedralDegrees": 6.255282610002439,
+      "maximumDihedralDegrees": 168.21320279329413,
+      "qualityQuantiles": [
+        0.002156161926713011,
+        0.007076896006157835,
+        0.02471856852641397,
+        0.06100232050465337,
+        0.3297861942261653
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 15,
+    "selection": "smooth_surface",
+    "baseline": {
+      "elements": 32065,
+      "nodes": 63778,
+      "badElements": 305,
+      "badPercent": 0.9511928894433184,
+      "minimumQuality": 8.39216584954455e-05,
+      "minimumDihedralDegrees": 3.843251205905432,
+      "maximumDihedralDegrees": 172.9293017163744,
+      "qualityQuantiles": [
+        8.39216584954455e-05,
+        0.005494857470840731,
+        0.022912173478615478,
+        0.05299876415878484,
+        0.31108304359737643
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 33093,
+      "nodes": 65056,
+      "badElements": 229,
+      "badPercent": 0.6919892424379779,
+      "minimumQuality": 9.020834020275537e-05,
+      "minimumDihedralDegrees": 3.7450645649126955,
+      "maximumDihedralDegrees": 171.8759220708495,
+      "qualityQuantiles": [
+        9.020834020275537e-05,
+        0.007620050659433569,
+        0.026390626352533066,
+        0.0693963136671309,
+        0.3187570909038378
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.420455491304476e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 16,
+    "selection": "smooth_surface",
+    "baseline": {
+      "elements": 32065,
+      "nodes": 63778,
+      "badElements": 305,
+      "badPercent": 0.9511928894433184,
+      "minimumQuality": 8.39216584954455e-05,
+      "minimumDihedralDegrees": 3.843251205905432,
+      "maximumDihedralDegrees": 172.9293017163744,
+      "qualityQuantiles": [
+        8.39216584954455e-05,
+        0.005494857470840731,
+        0.022912173478615478,
+        0.05299876415878484,
+        0.31108304359737643
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 33093,
+      "nodes": 65056,
+      "badElements": 229,
+      "badPercent": 0.6919892424379779,
+      "minimumQuality": 9.020834020275537e-05,
+      "minimumDihedralDegrees": 3.7450645649126955,
+      "maximumDihedralDegrees": 171.8759220708495,
+      "qualityQuantiles": [
+        9.020834020275537e-05,
+        0.007620050659433569,
+        0.026390626352533066,
+        0.0693963136671309,
+        0.3187570909038378
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.420455491304476e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 17,
+    "selection": "linear",
+    "baseline": {
+      "elements": 45651,
+      "nodes": 89484,
+      "badElements": 477,
+      "badPercent": 1.0448840113031477,
+      "minimumQuality": 0.0021318958868393138,
+      "minimumDihedralDegrees": 4.5454992330462005,
+      "maximumDihedralDegrees": 163.14672231896225,
+      "qualityQuantiles": [
+        0.0021318958868393138,
+        0.004921861257798878,
+        0.021681618125386246,
+        0.053005097086755465,
+        0.33795031120059277
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 46015,
+      "nodes": 89890,
+      "badElements": 358,
+      "badPercent": 0.7780071715744865,
+      "minimumQuality": 0.002156161926713009,
+      "minimumDihedralDegrees": 6.255282610002496,
+      "maximumDihedralDegrees": 168.21320279329416,
+      "qualityQuantiles": [
+        0.002156161926713009,
+        0.007076896006157834,
+        0.024718568526413968,
+        0.061002320504653464,
+        0.32978619422616545
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.680637584681583e-09,
+    "nativeRepresentativeCheckPassed": true
+  },
+  {
+    "node": 18,
+    "selection": "smooth_surface",
+    "baseline": {
+      "elements": 32065,
+      "nodes": 63778,
+      "badElements": 305,
+      "badPercent": 0.9511928894433184,
+      "minimumQuality": 8.392165849544555e-05,
+      "minimumDihedralDegrees": 3.843251205905432,
+      "maximumDihedralDegrees": 172.9293017163744,
+      "qualityQuantiles": [
+        8.392165849544555e-05,
+        0.005494857470840728,
+        0.022912173478615468,
+        0.05299876415878484,
+        0.31108304359737643
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "optimized": {
+      "elements": 33093,
+      "nodes": 65056,
+      "badElements": 229,
+      "badPercent": 0.6919892424379779,
+      "minimumQuality": 9.020834020275587e-05,
+      "minimumDihedralDegrees": 3.7450645649126955,
+      "maximumDihedralDegrees": 171.87592207084947,
+      "qualityQuantiles": [
+        9.020834020275587e-05,
+        0.0076200506594335604,
+        0.026390626352533048,
+        0.06939631366713091,
+        0.31875709090383847
+      ],
+      "criterion": "Native Abaqus recommended corner-tet volume/circumsphere >.02, dihedral 10..160 degrees; proxy, not a stress/convergence test"
+    },
+    "minCurvedDetJac": 4.420455491304476e-09,
+    "nativeRepresentativeCheckPassed": true
+  }
+]

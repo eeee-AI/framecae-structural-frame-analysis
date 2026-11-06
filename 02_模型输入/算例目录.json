@@ -1,0 +1,2585 @@
+{
+  "schemaVersion": 1,
+  "method": "01截面内力 + Saint-Venant annular shear + self-coded curved Tet10",
+  "cases": [
+    {
+      "id": "01_默认模型_N5",
+      "name": "默认模型：原N5三管正交",
+      "node": 5,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N5 B节点",
+          "file": "03参数_N5_B节点.json",
+          "jobId": "c7fac60b23fb446ea3dc3cf9becbaae0",
+          "settings": {
+            "node": 5,
+            "cutLength": 0.8,
+            "meshSize": 0.025,
+            "focusSize": 0.01,
+            "toeSize": 0.004,
+            "solverMethod": "standalone",
+            "couplingMode": "forceSubmodel",
+            "hubRadius": 0.12,
+            "blendWidth": 0.015,
+            "shoulderRadius": 0.015,
+            "boreStart": 0.09,
+            "boreFull": 0.153345685359159,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.22,
+            "weldWidth": 0.018000000000000002,
+            "reinforcement": 0.002,
+            "toeRadius": 0.004,
+            "loadRadius": 0.055,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shearDistribution": "saintVenantAnnulus"
+          },
+          "numericalPassed": true,
+          "meshConverged": "not_run",
+          "cutLengthSensitivity": "not_run"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整架实体 L4；收敛结论另列",
+      "saved03Jobs": 1
+    },
+    {
+      "id": "02_模型1_两层规则空间刚架",
+      "name": "模型1：两层规则空间刚架",
+      "node": 5,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N5 B节点",
+          "file": "03参数_N5_B节点.json",
+          "jobId": "bf410884ecd043438d2bcb782109170a",
+          "settings": {
+            "node": 5,
+            "couplingMode": "forceSubmodel",
+            "cutLength": 0.8,
+            "meshSize": 0.025,
+            "focusSize": 0.01,
+            "toeSize": 0.004,
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shearDistribution": "saintVenantAnnulus"
+          },
+          "numericalPassed": true,
+          "meshConverged": "not_run",
+          "cutLengthSensitivity": "not_run"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整架实体 L4；收敛结论另列",
+      "saved03Jobs": 1
+    },
+    {
+      "id": "03_模型2_含斜柱两层空间刚架",
+      "name": "模型2：含斜柱两层空间刚架",
+      "node": 5,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N5 B节点",
+          "file": "03参数_N5_B节点.json",
+          "jobId": "589cdd230eb54c28915a44f3a3fad9a9",
+          "settings": {
+            "node": 5,
+            "couplingMode": "forceSubmodel",
+            "cutLength": 0.8,
+            "meshSize": 0.025,
+            "focusSize": 0.01,
+            "toeSize": 0.004,
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shearDistribution": "saintVenantAnnulus"
+          },
+          "numericalPassed": true,
+          "meshConverged": "not_run",
+          "cutLengthSensitivity": "not_run"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整架实体 L4；收敛结论另列",
+      "saved03Jobs": 1
+    },
+    {
+      "id": "04_模型3_三角平面多层刚架",
+      "name": "模型3：三角平面多层刚架",
+      "node": 7,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N7 B节点",
+          "file": "03参数_N7_B节点.json",
+          "jobId": "32c2f571d80d4c8391da7d88ee935897",
+          "settings": {
+            "node": 7,
+            "couplingMode": "forceSubmodel",
+            "cutLength": 0.8,
+            "meshSize": 0.04,
+            "focusSize": 0.012,
+            "toeSize": 0.004,
+            "solverMethod": "standalone",
+            "hubRadius": 0.4686834705767287,
+            "blendWidth": 0.020540625,
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.35151260293254655,
+            "boreFull": 0.4530626029325465,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.5891884705767287,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shearDistribution": "saintVenantAnnulus"
+          },
+          "numericalPassed": true,
+          "meshConverged": "not_run",
+          "cutLengthSensitivity": "not_run"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整架实体 L3；收敛结论另列",
+      "saved03Jobs": 1
+    },
+    {
+      "id": "05_模型3_均布载荷",
+      "name": "模型3：增加均布载荷",
+      "node": 7,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N7 B节点",
+          "file": "03参数_N7_B节点.json",
+          "jobId": "7505364fb94f1110746f5251ad99a190",
+          "settings": {
+            "node": 7,
+            "connectionType": "integralHubRingButtWeld",
+            "solverMethod": "standalone",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "hubRadius": 0.4686834705767287,
+            "blendWidth": 0.020540625,
+            "cutLength": 0.8,
+            "weldDistance": 0.5891884705767287,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "meshSize": 0.02048,
+            "focusSize": 0.0045000000000000005,
+            "toeSize": 0.0015,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.35151260293254655,
+            "boreFull": 0.4530626029325465,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "numericalPassed": true,
+          "meshConverged": "not_run",
+          "cutLengthSensitivity": "not_run"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整架实体 L1；收敛结论另列",
+      "saved03Jobs": 1
+    },
+    {
+      "id": "06_课本IV1_连续横梁与斜柱",
+      "name": "课本IV-1：连续横梁与斜柱",
+      "node": 3,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "B接头 N3",
+          "file": "03参数_N3_B节点.json",
+          "jobId": "4dd5dbcc7b224c4ba6982b7986d80a56",
+          "settings": {
+            "hubRadius": 0.1026145034979218,
+            "blendWidth": 0.009375000000000001,
+            "shoulderRadius": 0.009375000000000001,
+            "boreStart": 0.07696087762344135,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.12196087762344135,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.1576145034979218,
+            "weldWidth": 0.011250000000000001,
+            "reinforcement": 0.0012500000000000002,
+            "toeRadius": 0.0025000000000000005,
+            "node": 3,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "cutLength": 0.4,
+            "loadRadius": 0.034375,
+            "loadDirection": [
+              -0.08620093939080332,
+              -0.6652066999089069,
+              0.7416666666666667
+            ],
+            "toeSize": 0.0006,
+            "focusSize": 0.00175,
+            "meshSize": 0.005,
+            "solverMethod": "standalone"
+          },
+          "numericalPassed": true,
+          "meshConverged": {
+            "jobId": "4dd5dbcc7b224c4ba6982b7986d80a56",
+            "fingerprint": "0c0f41fd0221afa08d2d9700a03f7b4bbf2c7b194ff0b675766f4ebab1ee7983",
+            "converged": false,
+            "levels": [
+              {
+                "jobId": "d585edd2db954febac2f4447babc83ea",
+                "toeSizeM": 0.0025,
+                "focusSizeM": 0.005,
+                "cutLengthM": 0.4,
+                "nodes": 52509,
+                "toeMPa": 42.599556,
+                "shoulderMPa": 31.079692
+              },
+              {
+                "jobId": "824eccecd02f469fa92b177101aa42cd",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.004,
+                "cutLengthM": 0.4,
+                "nodes": 112028,
+                "toeMPa": 41.718032,
+                "shoulderMPa": 30.573542
+              },
+              {
+                "jobId": "a0800234b56f4a548937ec5dde25ec79",
+                "toeSizeM": 0.00125,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 208125,
+                "toeMPa": 42.076016,
+                "shoulderMPa": 30.270624
+              },
+              {
+                "jobId": "44f03c81df6a4e6db037bc9f35c8b4e9",
+                "toeSizeM": 0.00085,
+                "focusSizeM": 0.00225,
+                "cutLengthM": 0.4,
+                "nodes": 450318,
+                "toeMPa": 44.185992,
+                "shoulderMPa": 31.296092
+              },
+              {
+                "jobId": "4dd5dbcc7b224c4ba6982b7986d80a56",
+                "toeSizeM": 0.0006,
+                "focusSizeM": 0.00175,
+                "cutLengthM": 0.4,
+                "nodes": 808946,
+                "toeMPa": 45.116364,
+                "shoulderMPa": 31.092226
+              }
+            ],
+            "lastPair": {
+              "toe": {
+                "peakRelativeChange": 0.020621608603033702,
+                "profileRmsRelativeChange": 0.03429267727802551,
+                "profileMaxRelativeChange": 0.15263486352271613
+              },
+              "shoulder": {
+                "peakRelativeChange": 0.021042289337534638,
+                "profileRmsRelativeChange": 0.011661097317204633,
+                "profileMaxRelativeChange": 0.058281336213228035
+              },
+              "toeDetails": {
+                "changes": {
+                  "E1_near": {
+                    "peakRelativeChange": 0.0029712066605138113,
+                    "profileRmsRelativeChange": 0.029748386007499985,
+                    "profileMaxRelativeChange": 0.11299832340662377
+                  },
+                  "E1_far": {
+                    "peakRelativeChange": 0.0037690231933900087,
+                    "profileRmsRelativeChange": 0.03429267727802551,
+                    "profileMaxRelativeChange": 0.15263486352271613
+                  },
+                  "E2_near": {
+                    "peakRelativeChange": 0.020621608603033702,
+                    "profileRmsRelativeChange": 0.025255460364072644,
+                    "profileMaxRelativeChange": 0.09023758846373892
+                  },
+                  "E2_far": {
+                    "peakRelativeChange": 0.01000285705617023,
+                    "profileRmsRelativeChange": 0.028181090145117518,
+                    "profileMaxRelativeChange": 0.11349782403544191
+                  }
+                },
+                "peakPassed": true,
+                "profileRmsPassed": true,
+                "profileMaxPassed": false
+              },
+              "shoulderDetails": {
+                "E1": {
+                  "profileRmsRelativeChange": 0.011661097317204633,
+                  "profileMaxRelativeChange": 0.058281336213228035,
+                  "peakRelativeChange": 0.006556815842005008
+                },
+                "E2": {
+                  "profileRmsRelativeChange": 0.007578282062758439,
+                  "profileMaxRelativeChange": 0.04031167669895527,
+                  "peakRelativeChange": 0.021042289337534638
+                }
+              },
+              "passed": false
+            },
+            "allPairs": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.023711717468769978,
+                  "profileRmsRelativeChange": 0.03676091106373129,
+                  "profileMaxRelativeChange": 0.12301025766340003
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.01655516393880696,
+                  "profileRmsRelativeChange": 0.02860118578652674,
+                  "profileMaxRelativeChange": 0.15075509873967693
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.0016470959446867352,
+                      "profileRmsRelativeChange": 0.025365798068833673,
+                      "profileMaxRelativeChange": 0.09225022586963404
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.007691352413255998,
+                      "profileRmsRelativeChange": 0.03057596523032686,
+                      "profileMaxRelativeChange": 0.12301025766340003
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.023711717468769978,
+                      "profileRmsRelativeChange": 0.03142266787821639,
+                      "profileMaxRelativeChange": 0.09908490532993766
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.017594981469883336,
+                      "profileRmsRelativeChange": 0.03676091106373129,
+                      "profileMaxRelativeChange": 0.09507022339808671
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.02860118578652674,
+                    "profileMaxRelativeChange": 0.15075509873967693,
+                    "peakRelativeChange": 0.01655516393880696
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.019031261491729574,
+                    "profileMaxRelativeChange": 0.08102680166298844,
+                    "peakRelativeChange": 0.0041091495933917215
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.056288925079344854,
+                  "profileRmsRelativeChange": 0.02624563589114686,
+                  "profileMaxRelativeChange": 0.11015826616612988
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.010006995561109015,
+                  "profileRmsRelativeChange": 0.023188750457813278,
+                  "profileMaxRelativeChange": 0.1307406371657548
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.056288925079344854,
+                      "profileRmsRelativeChange": 0.023047321926740996,
+                      "profileMaxRelativeChange": 0.10273711508295554
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.0017372687812273195,
+                      "profileRmsRelativeChange": 0.02532560082884551,
+                      "profileMaxRelativeChange": 0.11015826616612988
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.009342917140733873,
+                      "profileRmsRelativeChange": 0.02624563589114686,
+                      "profileMaxRelativeChange": 0.10898302472932943
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.008508029847692805,
+                      "profileRmsRelativeChange": 0.025418885007107365,
+                      "profileMaxRelativeChange": 0.09313648376251757
+                    }
+                  },
+                  "peakPassed": false,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.023188750457813278,
+                    "profileMaxRelativeChange": 0.1307406371657548,
+                    "peakRelativeChange": 0.010006995561109015
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.015352122625268694,
+                    "profileMaxRelativeChange": 0.07564932122575997,
+                    "peakRelativeChange": 0.0014097193767841601
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.0945499906425237,
+                  "profileRmsRelativeChange": 0.05913232095927913,
+                  "profileMaxRelativeChange": 0.17848735521738604
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.03276664703056215,
+                  "profileRmsRelativeChange": 0.016014192063522916,
+                  "profileMaxRelativeChange": 0.08138336610016596
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.06453497537771184,
+                      "profileRmsRelativeChange": 0.05389304535970415,
+                      "profileMaxRelativeChange": 0.16115418652106084
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.0945499906425237,
+                      "profileRmsRelativeChange": 0.05913232095927913,
+                      "profileMaxRelativeChange": 0.17848735521738604
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.049352654569801216,
+                      "profileRmsRelativeChange": 0.04383169311042509,
+                      "profileMaxRelativeChange": 0.1301594795901154
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.04054859547915134,
+                      "profileRmsRelativeChange": 0.04409846142093632,
+                      "profileMaxRelativeChange": 0.14693521321659486
+                    }
+                  },
+                  "peakPassed": false,
+                  "profileRmsPassed": false,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.016014192063522916,
+                    "profileMaxRelativeChange": 0.08138336610016596,
+                    "peakRelativeChange": 0.03276664703056215
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.010355142014447013,
+                    "profileMaxRelativeChange": 0.04492352623416215,
+                    "peakRelativeChange": 0.005771723629608076
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.020621608603033702,
+                  "profileRmsRelativeChange": 0.03429267727802551,
+                  "profileMaxRelativeChange": 0.15263486352271613
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.021042289337534638,
+                  "profileRmsRelativeChange": 0.011661097317204633,
+                  "profileMaxRelativeChange": 0.058281336213228035
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.0029712066605138113,
+                      "profileRmsRelativeChange": 0.029748386007499985,
+                      "profileMaxRelativeChange": 0.11299832340662377
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.0037690231933900087,
+                      "profileRmsRelativeChange": 0.03429267727802551,
+                      "profileMaxRelativeChange": 0.15263486352271613
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.020621608603033702,
+                      "profileRmsRelativeChange": 0.025255460364072644,
+                      "profileMaxRelativeChange": 0.09023758846373892
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.01000285705617023,
+                      "profileRmsRelativeChange": 0.028181090145117518,
+                      "profileMaxRelativeChange": 0.11349782403544191
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.011661097317204633,
+                    "profileMaxRelativeChange": 0.058281336213228035,
+                    "peakRelativeChange": 0.006556815842005008
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.007578282062758439,
+                    "profileMaxRelativeChange": 0.04031167669895527,
+                    "peakRelativeChange": 0.021042289337534638
+                  }
+                },
+                "passed": false
+              }
+            ],
+            "failures": [],
+            "criterion": "末两档：每条固定物理路径的未平均峰值、应力分布RMS及逐点最大变化均≤5%；同时细化外围/肩部。各分项实测值保留。"
+          },
+          "cutLengthSensitivity": {
+            "jobId": "4dd5dbcc7b224c4ba6982b7986d80a56",
+            "fingerprint": "0c0f41fd0221afa08d2d9700a03f7b4bbf2c7b194ff0b675766f4ebab1ee7983",
+            "converged": false,
+            "levels": [
+              {
+                "jobId": "7e6d8bb762b9486997ba6a79f2bf3ba1",
+                "toeSizeM": 0.0006,
+                "focusSizeM": 0.00175,
+                "cutLengthM": 0.3,
+                "nodes": 775302,
+                "toeMPa": 45.39418,
+                "shoulderMPa": 31.557894
+              },
+              {
+                "jobId": "4dd5dbcc7b224c4ba6982b7986d80a56",
+                "toeSizeM": 0.0006,
+                "focusSizeM": 0.00175,
+                "cutLengthM": 0.4,
+                "nodes": 808946,
+                "toeMPa": 45.116364,
+                "shoulderMPa": 31.092226
+              },
+              {
+                "jobId": "b428ca671e6941d6a97a4770b1707b8e",
+                "toeSizeM": 0.0006,
+                "focusSizeM": 0.00175,
+                "cutLengthM": 0.5,
+                "nodes": 843018,
+                "toeMPa": 45.188624,
+                "shoulderMPa": 31.113158
+              }
+            ],
+            "comparisons": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.0140929748851382,
+                  "profileRmsRelativeChange": 0.0187044979902412,
+                  "profileMaxRelativeChange": 0.10269696421063963
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.014294145261628536,
+                  "profileRmsRelativeChange": 0.008021670396081605,
+                  "profileMaxRelativeChange": 0.05525292232085057
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.005543349121581366,
+                      "profileRmsRelativeChange": 0.01813103230104672,
+                      "profileMaxRelativeChange": 0.10269696421063963
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.0032493413609492494,
+                      "profileRmsRelativeChange": 0.0187044979902412,
+                      "profileMaxRelativeChange": 0.08123775859760933
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.0045488439745366,
+                      "profileRmsRelativeChange": 0.014473881475046944,
+                      "profileMaxRelativeChange": 0.08609860397510291
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.0140929748851382,
+                      "profileRmsRelativeChange": 0.015099060153424186,
+                      "profileMaxRelativeChange": 0.07991796560738774
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.008021670396081605,
+                    "profileMaxRelativeChange": 0.05525292232085057,
+                    "peakRelativeChange": 0.014294145261628536
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.005093989198702558,
+                    "profileMaxRelativeChange": 0.025842909629705254,
+                    "peakRelativeChange": 0.004724768822664933
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.033468900089642734,
+                  "profileRmsRelativeChange": 0.01884526648483609,
+                  "profileMaxRelativeChange": 0.1154206760857593
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0012563887205968255,
+                  "profileRmsRelativeChange": 0.007617499210578769,
+                  "profileMaxRelativeChange": 0.048123030144722766
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E1_near": {
+                      "peakRelativeChange": 0.012284251870174748,
+                      "profileRmsRelativeChange": 0.01884526648483609,
+                      "profileMaxRelativeChange": 0.08491640517401015
+                    },
+                    "E1_far": {
+                      "peakRelativeChange": 0.033468900089642734,
+                      "profileRmsRelativeChange": 0.01862967511373301,
+                      "profileMaxRelativeChange": 0.1154206760857593
+                    },
+                    "E2_near": {
+                      "peakRelativeChange": 0.001599075023837858,
+                      "profileRmsRelativeChange": 0.014506759562546788,
+                      "profileMaxRelativeChange": 0.059058350612491685
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.0012146388436168084,
+                      "profileRmsRelativeChange": 0.014620779162164869,
+                      "profileMaxRelativeChange": 0.08426483110156135
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E1": {
+                    "profileRmsRelativeChange": 0.007617499210578769,
+                    "profileMaxRelativeChange": 0.048123030144722766,
+                    "peakRelativeChange": 0.0006727700222523217
+                  },
+                  "E2": {
+                    "profileRmsRelativeChange": 0.005103783640766044,
+                    "profileMaxRelativeChange": 0.025369218595326887,
+                    "peakRelativeChange": 0.0012563887205968255
+                  }
+                },
+                "passed": false
+              }
+            ],
+            "maximumProfileChange": 0.1154206760857593,
+            "maximumPeakChange": 0.033468900089642734,
+            "criterion": "固定节点件/焊缝/加载面片，截取0.3、0.4、0.5m；各固定路径峰值与分布相对最长域变化≤5%。切口内力和域内均布载荷逐次从01重新取得。"
+          }
+        },
+        {
+          "label": "连续圆管跨中4kN（计算N5，无焊缝）",
+          "file": "03参数_N5_continuousPipe.json",
+          "jobId": "22414766a7db42beafb1948440ee359a",
+          "settings": {
+            "node": 5,
+            "analysisType": "continuousPipe",
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "cutLength": 0.4,
+            "meshSize": 0.008,
+            "focusSize": 0.003,
+            "toeSize": 0.00175,
+            "patchWidth": 0.02,
+            "patchAngleDegrees": 60.0,
+            "solverMethod": "standalone",
+            "kind": "continuousPipe",
+            "hubRadius": 0.0,
+            "blendWidth": 0.0,
+            "weldDistance": 0.0,
+            "weldWidth": 0.0,
+            "reinforcement": 0.0,
+            "toeRadius": 0.0,
+            "axis": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "patchNormal": [
+              -1.0,
+              -0.0,
+              0.0
+            ],
+            "loadRadius": 0.02,
+            "loadDirection": [
+              -1.0,
+              -0.0,
+              0.0
+            ]
+          },
+          "numericalPassed": true,
+          "meshConverged": {
+            "jobId": "22414766a7db42beafb1948440ee359a",
+            "fingerprint": "d5f1024f723e8000772804ad6dc0d17ad6ad20d734b0044e5a05849ec0c5403a",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "6a3fa9c734fe4064a61fe0a78141e687",
+                "toeSizeM": 0.0035,
+                "focusSizeM": 0.005,
+                "cutLengthM": 0.4,
+                "nodes": 69554,
+                "toeMPa": 195.174848,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "7ab9311a1cda44aaa224b174bbaa54da",
+                "toeSizeM": 0.0025,
+                "focusSizeM": 0.004,
+                "cutLengthM": 0.4,
+                "nodes": 170062,
+                "toeMPa": 195.988224,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "22414766a7db42beafb1948440ee359a",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 378502,
+                "toeMPa": 195.658912,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "lastPair": {
+              "toe": {
+                "peakRelativeChange": 0.001683092258020938,
+                "profileRmsRelativeChange": 0.0007231605247850832,
+                "profileMaxRelativeChange": 0.014429701808207622
+              },
+              "shoulder": {
+                "peakRelativeChange": 0.0,
+                "profileRmsRelativeChange": 0.0,
+                "profileMaxRelativeChange": 0.0
+              },
+              "toeDetails": {
+                "changes": {
+                  "PIPE_ROI": {
+                    "peakRelativeChange": 0.001683092258020938,
+                    "profileRmsRelativeChange": 0.0007231605247850832,
+                    "profileMaxRelativeChange": 0.014429701808207622
+                  }
+                },
+                "peakPassed": true,
+                "profileRmsPassed": true,
+                "profileMaxPassed": true
+              },
+              "shoulderDetails": {},
+              "passed": true
+            },
+            "allPairs": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.004150126897420122,
+                  "profileRmsRelativeChange": 0.001478611486992072,
+                  "profileMaxRelativeChange": 0.02317694861717013
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.004150126897420122,
+                      "profileRmsRelativeChange": 0.001478611486992072,
+                      "profileMaxRelativeChange": 0.02317694861717013
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.001683092258020938,
+                  "profileRmsRelativeChange": 0.0007231605247850832,
+                  "profileMaxRelativeChange": 0.014429701808207622
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.001683092258020938,
+                      "profileRmsRelativeChange": 0.0007231605247850832,
+                      "profileMaxRelativeChange": 0.014429701808207622
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "failures": [],
+            "criterion": "末两档：每条固定物理路径的未平均峰值、应力分布RMS及逐点最大变化均≤5%；同时细化外围/肩部。各分项实测值保留。"
+          },
+          "cutLengthSensitivity": {
+            "jobId": "22414766a7db42beafb1948440ee359a",
+            "fingerprint": "d5f1024f723e8000772804ad6dc0d17ad6ad20d734b0044e5a05849ec0c5403a",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "3b416ae51a334fd28c385c3c615827a5",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.3,
+                "nodes": 365218,
+                "toeMPa": 196.087968,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "22414766a7db42beafb1948440ee359a",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 378502,
+                "toeMPa": 195.658912,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "fecdcb03b2d64dcf8df1a6086083be38",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.5,
+                "nodes": 391279,
+                "toeMPa": 196.084432,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "comparisons": [
+              {
+                "toe": {
+                  "peakRelativeChange": 1.8033048131021438e-05,
+                  "profileRmsRelativeChange": 0.000568943933928609,
+                  "profileMaxRelativeChange": 0.0075949328489223955
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 1.8033048131021438e-05,
+                      "profileRmsRelativeChange": 0.000568943933928609,
+                      "profileMaxRelativeChange": 0.0075949328489223955
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.00217008558843672,
+                  "profileRmsRelativeChange": 0.00046828928596816873,
+                  "profileMaxRelativeChange": 0.008514301087770291
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.00217008558843672,
+                      "profileRmsRelativeChange": 0.00046828928596816873,
+                      "profileMaxRelativeChange": 0.008514301087770291
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "maximumProfileChange": 0.008514301087770291,
+            "maximumPeakChange": 0.00217008558843672,
+            "criterion": "固定节点件/焊缝/加载面片，截取0.3、0.4、0.5m；各固定路径峰值与分布相对最长域变化≤5%。切口内力和域内均布载荷逐次从01重新取得。"
+          }
+        },
+        {
+          "label": "圆管理想固支 N1",
+          "file": "03参数_N1_idealClamp.json",
+          "jobId": "b909f004541e4dfdacc53c3099d55a20",
+          "settings": {
+            "node": 1,
+            "analysisType": "idealClamp",
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "cutLength": 0.4,
+            "meshSize": 0.008,
+            "focusSize": 0.003,
+            "toeSize": 0.00175,
+            "patchWidth": 0.02,
+            "patchAngleDegrees": 60.0,
+            "solverMethod": "standalone",
+            "kind": "idealClamp",
+            "hubRadius": 0.0,
+            "blendWidth": 0.0,
+            "weldDistance": 0.0,
+            "weldWidth": 0.0,
+            "reinforcement": 0.0,
+            "toeRadius": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "patchNormal": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "loadRadius": 0.02,
+            "loadDirection": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "numericalPassed": true,
+          "meshConverged": {
+            "jobId": "b909f004541e4dfdacc53c3099d55a20",
+            "fingerprint": "0df16f3f47caa8568648b8f530bf64ce537410b0ebb07d25b40d21998fc379bc",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "83c8e0dec4224942a9c0f842e237010e",
+                "toeSizeM": 0.0035,
+                "focusSizeM": 0.005,
+                "cutLengthM": 0.4,
+                "nodes": 35688,
+                "toeMPa": 158.971728,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "c767aa05e5d8433786bc3751359a8c5d",
+                "toeSizeM": 0.0025,
+                "focusSizeM": 0.004,
+                "cutLengthM": 0.4,
+                "nodes": 86306,
+                "toeMPa": 158.979936,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "b909f004541e4dfdacc53c3099d55a20",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 191385,
+                "toeMPa": 158.886048,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "lastPair": {
+              "toe": {
+                "peakRelativeChange": 0.0005909140618816323,
+                "profileRmsRelativeChange": 0.0002148280523354882,
+                "profileMaxRelativeChange": 0.0016324162050127618
+              },
+              "shoulder": {
+                "peakRelativeChange": 0.0,
+                "profileRmsRelativeChange": 0.0,
+                "profileMaxRelativeChange": 0.0
+              },
+              "toeDetails": {
+                "changes": {
+                  "PIPE_ROI": {
+                    "peakRelativeChange": 0.0005909140618816323,
+                    "profileRmsRelativeChange": 0.0002148280523354882,
+                    "profileMaxRelativeChange": 0.0016324162050127618
+                  }
+                },
+                "peakPassed": true,
+                "profileRmsPassed": true,
+                "profileMaxPassed": true
+              },
+              "shoulderDetails": {},
+              "passed": true
+            },
+            "allPairs": [
+              {
+                "toe": {
+                  "peakRelativeChange": 5.162915652450634e-05,
+                  "profileRmsRelativeChange": 0.0005198244513491826,
+                  "profileMaxRelativeChange": 0.003932748124989315
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 5.162915652450634e-05,
+                      "profileRmsRelativeChange": 0.0005198244513491826,
+                      "profileMaxRelativeChange": 0.003932748124989315
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.0005909140618816323,
+                  "profileRmsRelativeChange": 0.0002148280523354882,
+                  "profileMaxRelativeChange": 0.0016324162050127618
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.0005909140618816323,
+                      "profileRmsRelativeChange": 0.0002148280523354882,
+                      "profileMaxRelativeChange": 0.0016324162050127618
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "failures": [],
+            "criterion": "末两档：每条固定物理路径的未平均峰值、应力分布RMS及逐点最大变化均≤5%；同时细化外围/肩部。各分项实测值保留。"
+          },
+          "cutLengthSensitivity": {
+            "jobId": "b909f004541e4dfdacc53c3099d55a20",
+            "fingerprint": "0df16f3f47caa8568648b8f530bf64ce537410b0ebb07d25b40d21998fc379bc",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "e39858ba1363444c839b77bc76b9887c",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.3,
+                "nodes": 184161,
+                "toeMPa": 158.891456,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "b909f004541e4dfdacc53c3099d55a20",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 191385,
+                "toeMPa": 158.886048,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "3d0e1eac11c54dcb9b5508b6b1d99162",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.5,
+                "nodes": 197504,
+                "toeMPa": 158.884,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "comparisons": [
+              {
+                "toe": {
+                  "peakRelativeChange": 4.692731804335238e-05,
+                  "profileRmsRelativeChange": 0.00014249757598967338,
+                  "profileMaxRelativeChange": 0.001017797779746826
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 4.692731804335238e-05,
+                      "profileRmsRelativeChange": 0.00014249757598967338,
+                      "profileMaxRelativeChange": 0.001017797779746826
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 1.2889907102036707e-05,
+                  "profileRmsRelativeChange": 0.00014320296534647966,
+                  "profileMaxRelativeChange": 0.001251501454550278
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 1.2889907102036707e-05,
+                      "profileRmsRelativeChange": 0.00014320296534647966,
+                      "profileMaxRelativeChange": 0.001251501454550278
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "maximumProfileChange": 0.001251501454550278,
+            "maximumPeakChange": 4.692731804335238e-05,
+            "criterion": "固定节点件/焊缝/加载面片，截取0.3、0.4、0.5m；各固定路径峰值与分布相对最长域变化≤5%。切口内力和域内均布载荷逐次从01重新取得。"
+          }
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整体梁B33；无03局部实体Abaqus结果",
+      "saved03Jobs": 3
+    },
+    {
+      "id": "07_课本IV2_两跨空间刚架",
+      "name": "课本IV-2：两跨空间刚架",
+      "node": 5,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "B接头 N5",
+          "file": "03参数_N5_B节点.json",
+          "jobId": "65402fe57e234287ae7addade5aac0a1",
+          "settings": {
+            "hubRadius": 0.1026145034979218,
+            "blendWidth": 0.009375000000000001,
+            "shoulderRadius": 0.009375000000000001,
+            "boreStart": 0.07696087762344135,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.12196087762344135,
+            "boreShape": "hemisphericalBlindEnd",
+            "weldDistance": 0.1576145034979218,
+            "weldWidth": 0.011250000000000001,
+            "reinforcement": 0.0012500000000000002,
+            "toeRadius": 0.0025000000000000005,
+            "node": 5,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "cutLength": 0.4,
+            "loadRadius": 0.034375,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "toeSize": 0.00085,
+            "focusSize": 0.00225,
+            "meshSize": 0.006,
+            "solverMethod": "standalone"
+          },
+          "numericalPassed": true,
+          "meshConverged": {
+            "jobId": "65402fe57e234287ae7addade5aac0a1",
+            "fingerprint": "c01ee81d06828dd2a80f192c96ca1258c9b0da5a5b309053af57c855c8227e60",
+            "converged": false,
+            "levels": [
+              {
+                "jobId": "d276eac257654f8783943dd7ed1328ed",
+                "toeSizeM": 0.0025,
+                "focusSizeM": 0.005,
+                "cutLengthM": 0.4,
+                "nodes": 70402,
+                "toeMPa": 199.06208,
+                "shoulderMPa": 164.186512
+              },
+              {
+                "jobId": "d06d91b187cd4e739e158435092d8c58",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.004,
+                "cutLengthM": 0.4,
+                "nodes": 146506,
+                "toeMPa": 200.047936,
+                "shoulderMPa": 166.728464
+              },
+              {
+                "jobId": "f742216e55a847ada98c97fb478c98d9",
+                "toeSizeM": 0.00125,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 270053,
+                "toeMPa": 205.12712,
+                "shoulderMPa": 168.6244
+              },
+              {
+                "jobId": "65402fe57e234287ae7addade5aac0a1",
+                "toeSizeM": 0.00085,
+                "focusSizeM": 0.00225,
+                "cutLengthM": 0.4,
+                "nodes": 579336,
+                "toeMPa": 226.330032,
+                "shoulderMPa": 173.938176
+              }
+            ],
+            "lastPair": {
+              "toe": {
+                "peakRelativeChange": 0.12106191765009126,
+                "profileRmsRelativeChange": 0.060402100814446254,
+                "profileMaxRelativeChange": 0.20351807306100883
+              },
+              "shoulder": {
+                "peakRelativeChange": 0.04359012905437021,
+                "profileRmsRelativeChange": 0.016959615152712163,
+                "profileMaxRelativeChange": 0.08285575140867543
+              },
+              "toeDetails": {
+                "changes": {
+                  "E2_near": {
+                    "peakRelativeChange": 0.10840989939859152,
+                    "profileRmsRelativeChange": 0.05895227759645642,
+                    "profileMaxRelativeChange": 0.1953593304070501
+                  },
+                  "E2_far": {
+                    "peakRelativeChange": 0.12106191765009126,
+                    "profileRmsRelativeChange": 0.060402100814446254,
+                    "profileMaxRelativeChange": 0.16646150531030005
+                  },
+                  "E3_near": {
+                    "peakRelativeChange": 0.0730040742538868,
+                    "profileRmsRelativeChange": 0.05546163761476993,
+                    "profileMaxRelativeChange": 0.20211553421138764
+                  },
+                  "E3_far": {
+                    "peakRelativeChange": 0.0848558017299623,
+                    "profileRmsRelativeChange": 0.055307061132406764,
+                    "profileMaxRelativeChange": 0.18462745159936203
+                  },
+                  "E4_near": {
+                    "peakRelativeChange": 0.07313003245089025,
+                    "profileRmsRelativeChange": 0.056771351080782725,
+                    "profileMaxRelativeChange": 0.20351807306100883
+                  },
+                  "E4_far": {
+                    "peakRelativeChange": 0.11729691908281187,
+                    "profileRmsRelativeChange": 0.057913128462070224,
+                    "profileMaxRelativeChange": 0.18350584051863847
+                  }
+                },
+                "peakPassed": false,
+                "profileRmsPassed": false,
+                "profileMaxPassed": false
+              },
+              "shoulderDetails": {
+                "E2": {
+                  "profileRmsRelativeChange": 0.016959615152712163,
+                  "profileMaxRelativeChange": 0.08285575140867543,
+                  "peakRelativeChange": 0.03054979718770881
+                },
+                "E3": {
+                  "profileRmsRelativeChange": 0.016336829362991623,
+                  "profileMaxRelativeChange": 0.07367899783860214,
+                  "peakRelativeChange": 0.04359012905437021
+                },
+                "E4": {
+                  "profileRmsRelativeChange": 0.01624629969735202,
+                  "profileMaxRelativeChange": 0.07320545563663174,
+                  "peakRelativeChange": 0.011389642928533051
+                }
+              },
+              "passed": false
+            },
+            "allPairs": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.030938715567130473,
+                  "profileRmsRelativeChange": 0.02857149189862623,
+                  "profileMaxRelativeChange": 0.12201643363057998
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.041085571630025824,
+                  "profileRmsRelativeChange": 0.03228486990373696,
+                  "profileMaxRelativeChange": 0.13563931744784552
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E2_near": {
+                      "peakRelativeChange": 0.008876561345095227,
+                      "profileRmsRelativeChange": 0.026148060134071893,
+                      "profileMaxRelativeChange": 0.11050392423151265
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.0064608130220464325,
+                      "profileRmsRelativeChange": 0.026014152453807653,
+                      "profileMaxRelativeChange": 0.09354568729639776
+                    },
+                    "E3_near": {
+                      "peakRelativeChange": 0.0029593155246627426,
+                      "profileRmsRelativeChange": 0.025931748086454615,
+                      "profileMaxRelativeChange": 0.09394693651246232
+                    },
+                    "E3_far": {
+                      "peakRelativeChange": 0.028546366963371535,
+                      "profileRmsRelativeChange": 0.026014098961888586,
+                      "profileMaxRelativeChange": 0.11393751172334218
+                    },
+                    "E4_near": {
+                      "peakRelativeChange": 0.030656332290276665,
+                      "profileRmsRelativeChange": 0.02577133066472642,
+                      "profileMaxRelativeChange": 0.10603678116502252
+                    },
+                    "E4_far": {
+                      "peakRelativeChange": 0.030938715567130473,
+                      "profileRmsRelativeChange": 0.02857149189862623,
+                      "profileMaxRelativeChange": 0.12201643363057998
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E2": {
+                    "profileRmsRelativeChange": 0.03228486990373696,
+                    "profileMaxRelativeChange": 0.1259414678748258,
+                    "peakRelativeChange": 0.015246059005257795
+                  },
+                  "E3": {
+                    "profileRmsRelativeChange": 0.02984852185237219,
+                    "profileMaxRelativeChange": 0.13563931744784552,
+                    "peakRelativeChange": 0.041085571630025824
+                  },
+                  "E4": {
+                    "profileRmsRelativeChange": 0.030718878247597663,
+                    "profileMaxRelativeChange": 0.13111679999839143,
+                    "peakRelativeChange": 0.03871478306114802
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.028306930688562586,
+                  "profileRmsRelativeChange": 0.023644546936122016,
+                  "profileMaxRelativeChange": 0.10262428331226489
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.01633463361037451,
+                  "profileRmsRelativeChange": 0.024604205525414983,
+                  "profileMaxRelativeChange": 0.12137523127458912
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E2_near": {
+                      "peakRelativeChange": 0.02221564828889334,
+                      "profileRmsRelativeChange": 0.023644546936122016,
+                      "profileMaxRelativeChange": 0.09693676538214799
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.010059159028914617,
+                      "profileRmsRelativeChange": 0.021208057612214202,
+                      "profileMaxRelativeChange": 0.0801949844247909
+                    },
+                    "E3_near": {
+                      "peakRelativeChange": 0.028306930688562586,
+                      "profileRmsRelativeChange": 0.02097860340462015,
+                      "profileMaxRelativeChange": 0.09030187505670743
+                    },
+                    "E3_far": {
+                      "peakRelativeChange": 0.009530171184064667,
+                      "profileRmsRelativeChange": 0.02229468442639815,
+                      "profileMaxRelativeChange": 0.08586250857211411
+                    },
+                    "E4_near": {
+                      "peakRelativeChange": 0.024761152986499297,
+                      "profileRmsRelativeChange": 0.021261718708519416,
+                      "profileMaxRelativeChange": 0.10262428331226489
+                    },
+                    "E4_far": {
+                      "peakRelativeChange": 0.00849583854047115,
+                      "profileRmsRelativeChange": 0.021475924236051564,
+                      "profileMaxRelativeChange": 0.08820730380809441
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E2": {
+                    "profileRmsRelativeChange": 0.024151410620232124,
+                    "profileMaxRelativeChange": 0.11783650261176098,
+                    "peakRelativeChange": 0.011243544825066835
+                  },
+                  "E3": {
+                    "profileRmsRelativeChange": 0.024604205525414983,
+                    "profileMaxRelativeChange": 0.12083812971819559,
+                    "peakRelativeChange": 0.01633463361037451
+                  },
+                  "E4": {
+                    "profileRmsRelativeChange": 0.023804403493630215,
+                    "profileMaxRelativeChange": 0.12137523127458912,
+                    "peakRelativeChange": 0.003918271611943969
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.12106191765009126,
+                  "profileRmsRelativeChange": 0.060402100814446254,
+                  "profileMaxRelativeChange": 0.20351807306100883
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.04359012905437021,
+                  "profileRmsRelativeChange": 0.016959615152712163,
+                  "profileMaxRelativeChange": 0.08285575140867543
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E2_near": {
+                      "peakRelativeChange": 0.10840989939859152,
+                      "profileRmsRelativeChange": 0.05895227759645642,
+                      "profileMaxRelativeChange": 0.1953593304070501
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.12106191765009126,
+                      "profileRmsRelativeChange": 0.060402100814446254,
+                      "profileMaxRelativeChange": 0.16646150531030005
+                    },
+                    "E3_near": {
+                      "peakRelativeChange": 0.0730040742538868,
+                      "profileRmsRelativeChange": 0.05546163761476993,
+                      "profileMaxRelativeChange": 0.20211553421138764
+                    },
+                    "E3_far": {
+                      "peakRelativeChange": 0.0848558017299623,
+                      "profileRmsRelativeChange": 0.055307061132406764,
+                      "profileMaxRelativeChange": 0.18462745159936203
+                    },
+                    "E4_near": {
+                      "peakRelativeChange": 0.07313003245089025,
+                      "profileRmsRelativeChange": 0.056771351080782725,
+                      "profileMaxRelativeChange": 0.20351807306100883
+                    },
+                    "E4_far": {
+                      "peakRelativeChange": 0.11729691908281187,
+                      "profileRmsRelativeChange": 0.057913128462070224,
+                      "profileMaxRelativeChange": 0.18350584051863847
+                    }
+                  },
+                  "peakPassed": false,
+                  "profileRmsPassed": false,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E2": {
+                    "profileRmsRelativeChange": 0.016959615152712163,
+                    "profileMaxRelativeChange": 0.08285575140867543,
+                    "peakRelativeChange": 0.03054979718770881
+                  },
+                  "E3": {
+                    "profileRmsRelativeChange": 0.016336829362991623,
+                    "profileMaxRelativeChange": 0.07367899783860214,
+                    "peakRelativeChange": 0.04359012905437021
+                  },
+                  "E4": {
+                    "profileRmsRelativeChange": 0.01624629969735202,
+                    "profileMaxRelativeChange": 0.07320545563663174,
+                    "peakRelativeChange": 0.011389642928533051
+                  }
+                },
+                "passed": false
+              }
+            ],
+            "failures": [
+              {
+                "settings": {
+                  "hubRadius": 0.1026145034979218,
+                  "blendWidth": 0.009375000000000001,
+                  "shoulderRadius": 0.009375000000000001,
+                  "boreStart": 0.07696087762344135,
+                  "shoulderConstruction": "analytic tangent circle revolution",
+                  "boreFull": 0.12196087762344135,
+                  "boreShape": "hemisphericalBlindEnd",
+                  "weldDistance": 0.1576145034979218,
+                  "weldWidth": 0.011250000000000001,
+                  "reinforcement": 0.0012500000000000002,
+                  "toeRadius": 0.0025000000000000005,
+                  "node": 5,
+                  "connectionType": "integralHubRingButtWeld",
+                  "couplingMode": "forceSubmodel",
+                  "shearDistribution": "saintVenantAnnulus",
+                  "cutLength": 0.4,
+                  "loadRadius": 0.034375,
+                  "loadDirection": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "toeSize": 0.0006,
+                  "focusSize": 0.00175,
+                  "meshSize": 0.005,
+                  "solverMethod": "standalone"
+                },
+                "error": "96802cc585b841ad8bb116785182114a: 网格包含 1043121 个节点，超出本机当前上限 1000000；请增大网格尺寸后重试。"
+              }
+            ],
+            "criterion": "末两档：每条固定物理路径的未平均峰值、应力分布RMS及逐点最大变化均≤5%；同时细化外围/肩部。各分项实测值保留。"
+          },
+          "cutLengthSensitivity": {
+            "jobId": "65402fe57e234287ae7addade5aac0a1",
+            "fingerprint": "c01ee81d06828dd2a80f192c96ca1258c9b0da5a5b309053af57c855c8227e60",
+            "converged": false,
+            "levels": [
+              {
+                "jobId": "616c2db89bb74ec28c5aedb7a80f1fe1",
+                "toeSizeM": 0.00085,
+                "focusSizeM": 0.00225,
+                "cutLengthM": 0.3,
+                "nodes": 544444,
+                "toeMPa": 230.86248,
+                "shoulderMPa": 172.094912
+              },
+              {
+                "jobId": "65402fe57e234287ae7addade5aac0a1",
+                "toeSizeM": 0.00085,
+                "focusSizeM": 0.00225,
+                "cutLengthM": 0.4,
+                "nodes": 579336,
+                "toeMPa": 226.330032,
+                "shoulderMPa": 173.938176
+              },
+              {
+                "jobId": "6f78f6166c0342539965855bf6f7028d",
+                "toeSizeM": 0.00085,
+                "focusSizeM": 0.00225,
+                "cutLengthM": 0.5,
+                "nodes": 613634,
+                "toeMPa": 228.730736,
+                "shoulderMPa": 171.337632
+              }
+            ],
+            "comparisons": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.017566775183577736,
+                  "profileRmsRelativeChange": 0.029415334070446664,
+                  "profileMaxRelativeChange": 0.18741152991290305
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.014547469319139071,
+                  "profileRmsRelativeChange": 0.012446294907820794,
+                  "profileMaxRelativeChange": 0.06340626183528972
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E2_near": {
+                      "peakRelativeChange": 0.009319884320225333,
+                      "profileRmsRelativeChange": 0.026237040183418388,
+                      "profileMaxRelativeChange": 0.16540200249272344
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.016105447131644027,
+                      "profileRmsRelativeChange": 0.02796017647793261,
+                      "profileMaxRelativeChange": 0.14482996076489452
+                    },
+                    "E3_near": {
+                      "peakRelativeChange": 0.013057757901671692,
+                      "profileRmsRelativeChange": 0.024258219026204356,
+                      "profileMaxRelativeChange": 0.1510332136148079
+                    },
+                    "E3_far": {
+                      "peakRelativeChange": 0.017566775183577736,
+                      "profileRmsRelativeChange": 0.025258996147969854,
+                      "profileMaxRelativeChange": 0.1628685306926332
+                    },
+                    "E4_near": {
+                      "peakRelativeChange": 0.006104940718600359,
+                      "profileRmsRelativeChange": 0.028731116277572202,
+                      "profileMaxRelativeChange": 0.1573785867266367
+                    },
+                    "E4_far": {
+                      "peakRelativeChange": 0.01619957738598511,
+                      "profileRmsRelativeChange": 0.029415334070446664,
+                      "profileMaxRelativeChange": 0.18741152991290305
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E2": {
+                    "profileRmsRelativeChange": 0.012446294907820794,
+                    "profileMaxRelativeChange": 0.06340626183528972,
+                    "peakRelativeChange": 0.004419811288158809
+                  },
+                  "E3": {
+                    "profileRmsRelativeChange": 0.011247240084469827,
+                    "profileMaxRelativeChange": 0.05646377545332079,
+                    "peakRelativeChange": 0.014547469319139071
+                  },
+                  "E4": {
+                    "profileRmsRelativeChange": 0.011138945641839662,
+                    "profileMaxRelativeChange": 0.0534330386466297,
+                    "peakRelativeChange": 0.006743430335767842
+                  }
+                },
+                "passed": false
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.052978424849638266,
+                  "profileRmsRelativeChange": 0.030344415430588634,
+                  "profileMaxRelativeChange": 0.2054711403653051
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.021825470985756407,
+                  "profileRmsRelativeChange": 0.011941319499466363,
+                  "profileMaxRelativeChange": 0.07562875422276266
+                },
+                "toeDetails": {
+                  "changes": {
+                    "E2_near": {
+                      "peakRelativeChange": 0.010495764766830461,
+                      "profileRmsRelativeChange": 0.027442416872978725,
+                      "profileMaxRelativeChange": 0.1698716498816462
+                    },
+                    "E2_far": {
+                      "peakRelativeChange": 0.01362098310018745,
+                      "profileRmsRelativeChange": 0.030344415430588634,
+                      "profileMaxRelativeChange": 0.14194719984083976
+                    },
+                    "E3_near": {
+                      "peakRelativeChange": 0.012024875270924584,
+                      "profileRmsRelativeChange": 0.026550524056075175,
+                      "profileMaxRelativeChange": 0.18566653748997125
+                    },
+                    "E3_far": {
+                      "peakRelativeChange": 0.052978424849638266,
+                      "profileRmsRelativeChange": 0.02901347072824686,
+                      "profileMaxRelativeChange": 0.18049654347829971
+                    },
+                    "E4_near": {
+                      "peakRelativeChange": 0.01747624150210686,
+                      "profileRmsRelativeChange": 0.02804578502443075,
+                      "profileMaxRelativeChange": 0.13959263407380812
+                    },
+                    "E4_far": {
+                      "peakRelativeChange": 0.0018604579827150177,
+                      "profileRmsRelativeChange": 0.02930564966901405,
+                      "profileMaxRelativeChange": 0.2054711403653051
+                    }
+                  },
+                  "peakPassed": false,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": false
+                },
+                "shoulderDetails": {
+                  "E2": {
+                    "profileRmsRelativeChange": 0.011498554440305075,
+                    "profileMaxRelativeChange": 0.06113543940313439,
+                    "peakRelativeChange": 0.01517789156791895
+                  },
+                  "E3": {
+                    "profileRmsRelativeChange": 0.011941319499466363,
+                    "profileMaxRelativeChange": 0.06975608555691831,
+                    "peakRelativeChange": 0.021825470985756407
+                  },
+                  "E4": {
+                    "profileRmsRelativeChange": 0.011398338978243336,
+                    "profileMaxRelativeChange": 0.07562875422276266,
+                    "peakRelativeChange": 0.0026587367221445404
+                  }
+                },
+                "passed": false
+              }
+            ],
+            "maximumProfileChange": 0.2054711403653051,
+            "maximumPeakChange": 0.052978424849638266,
+            "criterion": "固定节点件/焊缝/加载面片，截取0.3、0.4、0.5m；各固定路径峰值与分布相对最长域变化≤5%。切口内力和域内均布载荷逐次从01重新取得。"
+          }
+        },
+        {
+          "label": "圆管理想固支 N2",
+          "file": "03参数_N2_idealClamp.json",
+          "jobId": "fca905d30b404650b0e7919163f3b231",
+          "settings": {
+            "node": 2,
+            "analysisType": "idealClamp",
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "cutLength": 0.4,
+            "meshSize": 0.008,
+            "focusSize": 0.003,
+            "toeSize": 0.00175,
+            "patchWidth": 0.02,
+            "patchAngleDegrees": 60.0,
+            "solverMethod": "standalone",
+            "kind": "idealClamp",
+            "hubRadius": 0.0,
+            "blendWidth": 0.0,
+            "weldDistance": 0.0,
+            "weldWidth": 0.0,
+            "reinforcement": 0.0,
+            "toeRadius": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "patchNormal": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "loadRadius": 0.02,
+            "loadDirection": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "numericalPassed": true,
+          "meshConverged": {
+            "jobId": "fca905d30b404650b0e7919163f3b231",
+            "fingerprint": "ba4aa339613e1d11598b485748b178027ecab563a7eedb3ff2af7406ce86806b",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "5caf356e8ffb49b9bafce3c37fa30733",
+                "toeSizeM": 0.0035,
+                "focusSizeM": 0.005,
+                "cutLengthM": 0.4,
+                "nodes": 35688,
+                "toeMPa": 44.870316,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "0952f8e1a30b4d05820b81f605e9b6a9",
+                "toeSizeM": 0.0025,
+                "focusSizeM": 0.004,
+                "cutLengthM": 0.4,
+                "nodes": 86306,
+                "toeMPa": 44.943308,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "fca905d30b404650b0e7919163f3b231",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 191385,
+                "toeMPa": 44.930712,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "lastPair": {
+              "toe": {
+                "peakRelativeChange": 0.00028034276420992396,
+                "profileRmsRelativeChange": 0.00015209055910689253,
+                "profileMaxRelativeChange": 0.001720830002500568
+              },
+              "shoulder": {
+                "peakRelativeChange": 0.0,
+                "profileRmsRelativeChange": 0.0,
+                "profileMaxRelativeChange": 0.0
+              },
+              "toeDetails": {
+                "changes": {
+                  "PIPE_ROI": {
+                    "peakRelativeChange": 0.00028034276420992396,
+                    "profileRmsRelativeChange": 0.00015209055910689253,
+                    "profileMaxRelativeChange": 0.001720830002500568
+                  }
+                },
+                "peakPassed": true,
+                "profileRmsPassed": true,
+                "profileMaxPassed": true
+              },
+              "shoulderDetails": {},
+              "passed": true
+            },
+            "allPairs": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.0016240905097595398,
+                  "profileRmsRelativeChange": 0.0003075038381234327,
+                  "profileMaxRelativeChange": 0.003027807101781369
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.0016240905097595398,
+                      "profileRmsRelativeChange": 0.0003075038381234327,
+                      "profileMaxRelativeChange": 0.003027807101781369
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.00028034276420992396,
+                  "profileRmsRelativeChange": 0.00015209055910689253,
+                  "profileMaxRelativeChange": 0.001720830002500568
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.00028034276420992396,
+                      "profileRmsRelativeChange": 0.00015209055910689253,
+                      "profileMaxRelativeChange": 0.001720830002500568
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "failures": [],
+            "criterion": "末两档：每条固定物理路径的未平均峰值、应力分布RMS及逐点最大变化均≤5%；同时细化外围/肩部。各分项实测值保留。"
+          },
+          "cutLengthSensitivity": {
+            "jobId": "fca905d30b404650b0e7919163f3b231",
+            "fingerprint": "ba4aa339613e1d11598b485748b178027ecab563a7eedb3ff2af7406ce86806b",
+            "converged": true,
+            "levels": [
+              {
+                "jobId": "fc60bb9137304af8b4ee7957a29873cc",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.3,
+                "nodes": 184161,
+                "toeMPa": 44.933356,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "fca905d30b404650b0e7919163f3b231",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.4,
+                "nodes": 191385,
+                "toeMPa": 44.930712,
+                "shoulderMPa": 0.0
+              },
+              {
+                "jobId": "b2116456e74649488ee9b2c098d6de44",
+                "toeSizeM": 0.00175,
+                "focusSizeM": 0.003,
+                "cutLengthM": 0.5,
+                "nodes": 197504,
+                "toeMPa": 44.945524,
+                "shoulderMPa": 0.0
+              }
+            ],
+            "comparisons": [
+              {
+                "toe": {
+                  "peakRelativeChange": 0.00027072773698221875,
+                  "profileRmsRelativeChange": 0.00010041184167757885,
+                  "profileMaxRelativeChange": 0.0007233454312652346
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.00027072773698221875,
+                      "profileRmsRelativeChange": 0.00010041184167757885,
+                      "profileMaxRelativeChange": 0.0007233454312652346
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              },
+              {
+                "toe": {
+                  "peakRelativeChange": 0.0003295545069181972,
+                  "profileRmsRelativeChange": 9.963446923594791e-05,
+                  "profileMaxRelativeChange": 0.0006562239611767487
+                },
+                "shoulder": {
+                  "peakRelativeChange": 0.0,
+                  "profileRmsRelativeChange": 0.0,
+                  "profileMaxRelativeChange": 0.0
+                },
+                "toeDetails": {
+                  "changes": {
+                    "PIPE_ROI": {
+                      "peakRelativeChange": 0.0003295545069181972,
+                      "profileRmsRelativeChange": 9.963446923594791e-05,
+                      "profileMaxRelativeChange": 0.0006562239611767487
+                    }
+                  },
+                  "peakPassed": true,
+                  "profileRmsPassed": true,
+                  "profileMaxPassed": true
+                },
+                "shoulderDetails": {},
+                "passed": true
+              }
+            ],
+            "maximumProfileChange": 0.0007233454312652346,
+            "maximumPeakChange": 0.0003295545069181972,
+            "criterion": "固定节点件/焊缝/加载面片，截取0.3、0.4、0.5m；各固定路径峰值与分布相对最长域变化≤5%。切口内力和域内均布载荷逐次从01重新取得。"
+          }
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "已完成整体梁B33；无03局部实体Abaqus结果",
+      "saved03Jobs": 2
+    },
+    {
+      "id": "08_新增A_三柱空间平台",
+      "name": "新增A：三柱空间平台",
+      "node": 6,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N6 / B节点 / h=2.25mm",
+          "jobId": "3afe34c6dd8a47ba9a9511f0e01735dc",
+          "settings": {
+            "node": 6,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.82296,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N6_3afe34c6.json"
+        },
+        {
+          "label": "N6 / B节点 / h=2.25mm",
+          "jobId": "a41488eebf074058a28f1ea9028cc9fe",
+          "settings": {
+            "node": 6,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.6583680000000001,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N6_a41488ee.json"
+        },
+        {
+          "label": "N6 / B节点 / h=4mm",
+          "jobId": "ac0843f8f33d4474aa7f87dbef497fcd",
+          "settings": {
+            "node": 6,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.82296,
+            "meshSize": 0.034,
+            "focusSize": 0.0135,
+            "toeSize": 0.004,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N6_ac0843f8.json"
+        },
+        {
+          "label": "N6 / B节点 / h=3mm",
+          "jobId": "2bd0a95e24974443908f843c864ddb33",
+          "settings": {
+            "node": 6,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.82296,
+            "meshSize": 0.028,
+            "focusSize": 0.01,
+            "toeSize": 0.003,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N6_2bd0a95e.json"
+        },
+        {
+          "label": "N6 / B节点 / h=2.25mm",
+          "jobId": "876f3f5da30c4c0a9b358e0dc2b8e4e2",
+          "settings": {
+            "node": 6,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.8641080000000001,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N6_876f3f5d.json"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "未计算",
+      "abaqusInput": "02_模型输入/08_新增A_三柱空间平台/Abaqus输入/A_platform.inp",
+      "remainingDistortedElements": 2363,
+      "saved03Jobs": 5
+    },
+    {
+      "id": "09_新增B_两层双跨空间刚架",
+      "name": "新增B：两层双跨空间刚架",
+      "node": 8,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N8 / B节点 / h=2.25mm",
+          "jobId": "97f370ce38094405ad9652547cdbd3a7",
+          "settings": {
+            "node": 8,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 1.0955,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N8_97f370ce.json"
+        },
+        {
+          "label": "N8 / B节点 / h=2.25mm",
+          "jobId": "7de2cfb15f5349d5bb52ca6a5b343f2d",
+          "settings": {
+            "node": 8,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 1.150275,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N8_7de2cfb1.json"
+        },
+        {
+          "label": "N8 / B节点 / h=4mm",
+          "jobId": "ce09bfc5d4cd45498bb128331d27fc96",
+          "settings": {
+            "node": 8,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 1.0955,
+            "meshSize": 0.034,
+            "focusSize": 0.0135,
+            "toeSize": 0.004,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N8_ce09bfc5.json"
+        },
+        {
+          "label": "N8 / B节点 / h=3mm",
+          "jobId": "d93dbf303af146c4a9a29dc5fdf10bf8",
+          "settings": {
+            "node": 8,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 1.0955,
+            "meshSize": 0.028,
+            "focusSize": 0.01,
+            "toeSize": 0.003,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N8_d93dbf30.json"
+        },
+        {
+          "label": "N8 / B节点 / h=2.25mm",
+          "jobId": "5379192f9b15497fafbd3e0085f94433",
+          "settings": {
+            "node": 8,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.8764,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N8_5379192f.json"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "未计算",
+      "abaqusInput": "02_模型输入/09_新增B_两层双跨空间刚架/Abaqus输入/B_two_story.inp",
+      "remainingDistortedElements": 4366,
+      "saved03Jobs": 5
+    },
+    {
+      "id": "10_新增C_双层嵌套立方框架",
+      "name": "新增C：双层嵌套立方框架",
+      "node": 13,
+      "modelFile": "模型.json",
+      "tasks": [
+        {
+          "label": "N13 / B节点 / h=2.25mm",
+          "jobId": "9ec5a8389f07470b92d1a7f19150d03d",
+          "settings": {
+            "node": 13,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.9820728078915536,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N13_9ec5a838.json"
+        },
+        {
+          "label": "N13 / B节点 / h=4mm",
+          "jobId": "00b668870f7041e49d91ea19a48873f7",
+          "settings": {
+            "node": 13,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.9353074360871939,
+            "meshSize": 0.034,
+            "focusSize": 0.0135,
+            "toeSize": 0.004,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N13_00b66887.json"
+        },
+        {
+          "label": "N13 / B节点 / h=3mm",
+          "jobId": "551f905f18644f38aaff90263f506dfe",
+          "settings": {
+            "node": 13,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.9353074360871939,
+            "meshSize": 0.028,
+            "focusSize": 0.01,
+            "toeSize": 0.003,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N13_551f905f.json"
+        },
+        {
+          "label": "N13 / B节点 / h=2.25mm",
+          "jobId": "16ba503768da4d86b004027f9d7509b4",
+          "settings": {
+            "node": 13,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.9353074360871939,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N13_16ba5037.json"
+        },
+        {
+          "label": "N13 / B节点 / h=2.25mm",
+          "jobId": "ae7df911b08c4876a903375094538cf2",
+          "settings": {
+            "node": 13,
+            "connectionType": "integralHubRingButtWeld",
+            "couplingMode": "forceSubmodel",
+            "shearDistribution": "saintVenantAnnulus",
+            "solverMethod": "standalone",
+            "hubRadius": 0.2248283771639466,
+            "blendWidth": 0.020540625,
+            "weldDistance": 0.34533337716394663,
+            "weldWidth": 0.02464875,
+            "reinforcement": 0.00273875,
+            "toeRadius": 0.0054775,
+            "cutLength": 0.7482459488697552,
+            "meshSize": 0.023,
+            "focusSize": 0.0075,
+            "toeSize": 0.00225,
+            "loadRadius": 0.075315625,
+            "loadDirection": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "shoulderRadius": 0.020540625,
+            "boreStart": 0.16862128287295997,
+            "shoulderConstruction": "analytic tangent circle revolution",
+            "boreFull": 0.27017128287296,
+            "boreShape": "hemisphericalBlindEnd"
+          },
+          "file": "03参数_N13_ae7df911.json"
+        }
+      ],
+      "webStatus": "已完成求解；验证状态见各结果",
+      "abaqusStatus": "未计算",
+      "abaqusInput": "02_模型输入/10_新增C_双层嵌套立方框架/Abaqus输入/C_nested_cubes.inp",
+      "remainingDistortedElements": 5568,
+      "saved03Jobs": 5
+    }
+  ]
+}

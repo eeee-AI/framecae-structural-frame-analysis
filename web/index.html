@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FrameCAE | 空间刚架三维有限元</title>
+  <style>
+    :root{--ink:#172033;--muted:#64748b;--line:#d8e0ec;--blue:#1667c9;--bg:#f2f5f9}*{box-sizing:border-box}body{margin:0;font:14px "Microsoft YaHei UI","Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}header{height:58px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:#10233f;color:#fff}h1{margin:0;font-size:18px}header small{color:#bed1ec}main{display:grid;grid-template-columns:minmax(470px,44%) 1fr;gap:14px;padding:14px;min-height:calc(100vh - 58px)}.panel{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 8px #162f5010}#editor{padding:12px;overflow:auto;max-height:calc(100vh - 86px)}.top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}button{background:var(--blue);border:0;color:#fff;border-radius:6px;padding:8px 11px;font:inherit;cursor:pointer}button:hover{background:#0c55af}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#eef3fa;color:#1d4f88;border:1px solid #c9d8eb}details{border-top:1px solid var(--line);padding:8px 0}details:first-of-type{border-top:0}summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}summary::after{content:"⌄";color:var(--muted)}details[open] summary::after{transform:rotate(180deg)}.table-wrap{overflow:auto;margin-top:8px;max-height:210px}table{width:100%;border-collapse:collapse;white-space:nowrap}th{position:sticky;top:0;background:#f4f7fb;color:#4a5b73;font-size:12px}th,td{border:1px solid var(--line);padding:3px;text-align:center}input{width:100%;min-width:58px;border:1px solid transparent;background:transparent;padding:4px;text-align:center;font:inherit;color:var(--ink)}input:focus{outline:2px solid #80b4eb;border-radius:3px;background:#fff}.remove{padding:3px 7px;color:#a02e2e;background:#fff0f0;border:1px solid #f4c6c6}.actions{padding-top:7px}.actions button{font-size:12px;padding:5px 8px}.local-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:8px}.local-grid label{display:flex;align-items:center;gap:5px;font-size:12px}.local-grid input,.local-grid select{min-width:0;width:100%;border:1px solid var(--line);background:#fff;padding:4px;font:inherit}.help{color:var(--muted);font-size:12px;line-height:1.5}#viewer{display:grid;grid-template-rows:auto minmax(430px,1fr) auto minmax(170px,.42fr) auto 230px 150px;padding:12px;min-width:0}.toolbar,.member-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:9px}.toolbar input[type=number]{width:70px;padding:5px;border:1px solid var(--line);border-radius:5px}.member-toolbar select{padding:4px;border:1px solid var(--line);border-radius:4px;background:#fff}label{color:#40516a}#scene{width:100%;height:100%;min-height:430px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,#f8fbff,#e9f0f8);touch-action:none}.legend{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;padding:7px 0}.swatch{width:110px;height:11px;border-radius:4px;background:linear-gradient(90deg,hsl(260 90% 52%),hsl(190 90% 48%),hsl(60 90% 50%),hsl(0 85% 53%))}pre{margin:0;overflow:auto;white-space:pre;background:#0f1e33;color:#d6e5f7;border-radius:7px;padding:10px;font:12px Consolas,monospace}#memberDiagram,#convergence{width:100%;border:1px solid var(--line);border-radius:7px;background:#fbfdff}#memberDiagram{height:230px}#convergence{height:145px;margin-top:10px}#status{color:var(--muted);margin-left:auto}#error{display:none;margin:0 0 9px;padding:8px;color:#8b1d1d;background:#fff0f0;border:1px solid #f1c1c1;border-radius:6px}@media(max-width:1050px){main{grid-template-columns:1fr}#editor{max-height:none}#viewer{min-height:1130px}}
+  </style>
+</head>
+<body>
+  <header><h1>FrameCAE <small>空间刚架三维有限元分析</small></h1><span>自编梁单元 · 稀疏求解 · 温度应力</span></header>
+  <main>
+    <section id="editor" class="panel"><div class="top"><button id="solve">从表格计算</button><button id="default" class="secondary">加载默认算例</button><button id="verification" class="secondary">运行课程验证</button><button id="loadT" class="secondary">加载 T 节点演示</button><button id="returnGlobal" class="secondary">返回整体结果</button><button id="import" class="secondary">导入模型 JSON</button><button id="exportModel" class="secondary">导出模型</button><button id="exportResult" class="secondary">导出结果 JSON</button><button id="exportCsv" class="secondary">导出结果 CSV</button><input id="fileInput" type="file" accept=".json,application/json" hidden><span id="status">正在加载默认模型…</span></div><div id="error"></div><div id="tables"></div><details id="localSettings"><summary>节点局部实体分析：标准圆管 T 形节点</summary><div class="local-grid"><label>局部分析节点 <select id="localNode"></select></label><label>负向母管 E <input id="parentNegative" value="1"></label><label>正向母管 E <input id="parentPositive" value="2"></label><label>支管 E <input id="branchElement" value="3"></label><label>外半径 R (m) <input id="outerRadius" value="0.20"></label><label>壁厚 t (m) <input id="wallThickness" value="0.08"></label><label>母管局部总长 Lp (m) <input id="parentLength" value="0.80"></label><label>支管截取 Lb (m) <input id="branchLength" value="0.60"></label><label>网格尺寸 h (m) <input id="meshSize" value="0.10"></label><label>实体求解 <select id="solverMethod"><option value="auto">自动：大网格用 SciPy</option><option value="ldlt">自编 LDLᵀ</option><option value="scipy">SciPy 稀疏</option></select></label></div><div class="actions"><button id="autoT" class="secondary">自动识别危险 T 节点</button><button id="selectedT" class="secondary" disabled>按所选节点填充</button><button id="runLocal" disabled>运行局部实体分析</button></div><p id="localHint" class="help">默认算例不包含标准圆管 T 节点。请加载 T 节点演示，或导入含两根共线母管和一根垂直支管的模型后再自动识别。</p><div class="local-grid"><label>收敛粗网格 h (m) <input id="coarseSize" value="0.06"></label><label>收敛细网格 h (m) <input id="fineSize" value="0.04"></label><label>网格档数 <input id="sampleCount" value="3"></label></div><div class="actions"><button id="runConvergence" class="secondary" disabled>自动网格收敛分析</button></div><p class="help">Lp 是母管局部模型的总长度，节点两侧各截取 Lp/2；Lb 是支管从节点向外的截取长度。程序由粗到细重复求解，并绘制 h–Kt 曲线。</p></details><p class="help">全部采用 SI 单位。约束表留空表示自由，填 0 表示固定，也可填非零值指定支座位移或转角。每根杆件在“杆件”表中引用自己的材料号和截面号。局部实体分析第一版适用于两根共线母管与一根垂直支管的标准 T 形节点。</p></section>
+    <section id="viewer" class="panel"><div class="toolbar"><strong>三维结果</strong><label>变形放大 <input id="scale" type="number" min="0" value="30"></label><label>着色 <select id="metric"><option value="displacement">位移模值</option><option value="axial">最大轴力</option><option value="bending">最大弯矩</option><option value="stress">最大名义应力</option></select></label><label><input id="nodeLabels" type="checkbox" checked> 节点号</label><label><input id="elementLabels" type="checkbox"> 杆件号</label><span>拖动旋转 · 滚轮缩放</span></div><canvas id="scene"></canvas><div class="legend"><span>灰虚线：原始构形</span><span>彩色实线：变形构形</span><span class="swatch"></span><span id="legendText">低位移 → 高位移</span></div><pre id="results">尚未计算。</pre><div class="member-toolbar"><strong>杆件沿程内力图</strong><label>杆件 <select id="memberElement"></select></label><label>结果 <select id="memberComponent"><option value="0">轴力 N</option><option value="1">剪力 Vy</option><option value="2">剪力 Vz</option><option value="4">弯矩 My</option><option value="5">弯矩 Mz</option><option value="stress">名义应力 σnom</option></select></label><span id="memberDiagramLabel">完成整体计算后可选择杆件。</span></div><canvas id="memberDiagram" aria-label="杆件沿程内力图"></canvas><canvas id="convergence" aria-label="网格收敛曲线"></canvas></section>
+  </main>
+  <script>
+    const schemas={materials:{title:'材料',fields:[['id','材料号'],['e','E (GPa)'],['nu','泊松比 ν'],['alpha','α (10⁻⁶/K)']],blank:{id:2,e:210,nu:.3,alpha:12}},sections:{title:'截面',fields:[['id','截面号'],['a','A (m²)'],['iy','Iy (m⁴)'],['iz','Iz (m⁴)'],['j','J (m⁴)'],['d','D (m)']],blank:{id:2,a:'7.5e-3',iy:'7.0e-5',iz:'7.0e-5',j:'1.2e-4',d:.16}},nodes:{title:'节点',fields:[['id','节点号'],['x','x (m)'],['y','y (m)'],['z','z (m)']],blank:{id:9,x:0,y:0,z:0}},elements:{title:'杆件',fields:[['id','杆件号'],['start','起点节点'],['end','终点节点'],['material','材料号'],['section','截面号']],blank:{id:13,start:1,end:2,material:1,section:1}},loads:{title:'节点荷载',fields:[['node','节点'],['fx','Fx (N)'],['fy','Fy (N)'],['fz','Fz (N)'],['mx','Mx (N·m)'],['my','My (N·m)'],['mz','Mz (N·m)']],blank:{node:1,fx:0,fy:0,fz:0,mx:0,my:0,mz:0}},constraints:{title:'约束',fields:[['node','节点'],['ux','ux (m)'],['uy','uy (m)'],['uz','uz (m)'],['rx','rx (rad)'],['ry','ry (rad)'],['rz','rz (rad)']],blank:{node:1,ux:0,uy:0,uz:0,rx:0,ry:0,rz:0}},memberLoads:{title:'杆件荷载（局部坐标）',fields:[['element','杆件'],['type','类型 uniform / point'],['position','位置 x (m；均布留空)'],['qx','qx (N/m 或 N)'],['qy','qy (N/m 或 N)'],['qz','qz (N/m 或 N)']],blank:{element:1,type:'uniform',position:'',qx:0,qy:0,qz:0}},temperatures:{title:'温差',fields:[['element','杆件'],['deltaT','ΔT (K/℃)']],blank:{element:1,deltaT:0}}};
+    let data={},result=null,localResult=null,convergenceResult=null,verificationResult=null,displayMode='global';const view={yaw:-.72,pitch:.5,zoom:1,dragging:false,x:0,y:0};const host=document.querySelector('#tables'),errorBox=document.querySelector('#error');
+    function installGenericPanel(){const panel=document.createElement('details');panel.id='genericLocalSettings';panel.open=true;panel.innerHTML='<summary>节点局部实体分析：通用圆管节点（推荐）</summary><div class="local-grid"><label>局部分析节点 <select id="genericNode"></select></label><label>圆管截断比例 <input id="genericCutRatio" value="0.35"></label><label>网格尺寸 h (m) <input id="genericMeshSize" value="0.10"></label><label>实体求解 <select id="genericSolverMethod"><option value="auto">自动：大网格用 SciPy</option><option value="ldlt">自编 LDLᵀ</option><option value="scipy">SciPy 稀疏</option></select></label></div><div class="actions"><button id="autoGeneric" class="secondary">自动识别危险圆管节点</button><button id="selectedGeneric" class="secondary">按所选节点填充</button><button id="runGeneric">运行通用局部实体分析</button></div><p id="genericLocalHint" class="help">先完成整体计算；程序会按杆端名义应力选择危险圆管节点，也可指定任意节点。</p><p class="help">支持任意空间方向、2 根及以上相连的空心圆管。每根圆管的外径 D 与面积 A 自动生成局部几何；建议截断比例为 0.25～0.40。</p>';document.querySelector('#localSettings').insertAdjacentElement('beforebegin',panel)}installGenericPanel();
+    function installBoundaryMarkerToggle(){const label=document.createElement('label');label.innerHTML='<input id="boundaryMarkers" type="checkbox" checked> 载荷/约束';document.querySelector('.toolbar').append(label);label.querySelector('input').addEventListener('input',()=>draw())}installBoundaryMarkerToggle();
+    function renderTables(){host.innerHTML='';Object.entries(schemas).forEach(([name,schema],i)=>{const details=document.createElement('details');details.open=i<4;details.innerHTML=`<summary>${schema.title}<span>${(data[name]||[]).length} 行</span></summary><div class="table-wrap"><table><thead><tr>${schema.fields.map(([,label])=>`<th>${label}</th>`).join('')}<th></th></tr></thead><tbody></tbody></table></div><div class="actions"><button class="secondary" data-add="${name}">新增行</button></div>`;const body=details.querySelector('tbody');(data[name]||[]).forEach((row,index)=>body.appendChild(makeRow(name,schema,row,index)));host.appendChild(details)});document.querySelectorAll('[data-add]').forEach(button=>button.onclick=()=>{const name=button.dataset.add;data[name].push({...schemas[name].blank});renderTables()});refreshLocalNodeOptions()}
+    function refreshLocalNodeOptions(){['localNode','genericNode'].forEach(id=>{const select=document.querySelector('#'+id),selected=select.value;select.innerHTML=(data.nodes||[]).map(node=>`<option value="${node.id}">N${node.id}</option>`).join('');if([...select.options].some(option=>option.value===selected))select.value=selected;else if(select.options.length)select.selectedIndex=0})}
+    function setLocalAnalysisEnabled(enabled,message){['selectedT','runLocal','runConvergence'].forEach(id=>document.querySelector('#'+id).disabled=!enabled);if(message)document.querySelector('#localHint').textContent=message}
+    function makeRow(name,schema,row,index){const tr=document.createElement('tr');schema.fields.forEach(([key])=>{const td=document.createElement('td'),input=document.createElement('input');input.value=row[key]??'';input.oninput=()=>data[name][index][key]=input.value;td.appendChild(input);tr.appendChild(td)});const td=document.createElement('td'),remove=document.createElement('button');remove.className='remove';remove.textContent='×';remove.onclick=()=>{data[name].splice(index,1);renderTables()};td.appendChild(remove);tr.appendChild(td);return tr}
+    function payload(){const out={};Object.keys(schemas).forEach(name=>out[name]=(data[name]||[]).map(row=>{const copy={};Object.entries(row).forEach(([key,value])=>copy[key]=value===''?null:value);return copy}));return out}
+    async function loadDefault(){const response=await fetch('/api/default');if(!response.ok)throw Error('无法加载默认模型。');data=await response.json();renderTables();setLocalAnalysisEnabled(false,'默认算例用于整体空间刚架位移、内力、温度和杆件沿程图；它不包含标准圆管 T 节点，不能进行当前局部实体分析。')}
+    async function solve(){errorBox.style.display='none';document.querySelector('#status').textContent='正在组装与求解…';try{const response=await fetch('/api/solve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});const answer=await response.json();if(!response.ok)throw Error(answer.error||'计算失败。');result=answer;localResult=null;convergenceResult=null;displayMode='global';refreshMemberElementOptions();draw();drawMemberDiagram();drawConvergence();writeResults();document.querySelector('#status').textContent='整体刚架求解完成'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='输入需要修正'}}
+    function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),0)}
+    function exportModel(){download('framecae_model.json',JSON.stringify(payload(),null,2),'application/json;charset=utf-8')}
+    function exportResult(){if(!result){alert('请先完成一次计算。');return}download('framecae_result.json',JSON.stringify({model:payload(),globalResult:result,localResult,convergenceResult,verificationResult},null,2),'application/json;charset=utf-8')}
+    function csvValue(value){const text=String(value??'');return /[",\n]/.test(text)?`"${text.replaceAll('"','""')}"`:text}
+    function exportCsv(){if(!result){alert('请先完成一次计算。');return}const lines=[['节点位移'],['节点号','x (m)','y (m)','z (m)','ux (m)','uy (m)','uz (m)','rx (rad)','ry (rad)','rz (rad)']];result.nodes.forEach(n=>lines.push([n.id,...n.coordinate,...n.displacement]));lines.push([],['节点反力'],['节点号','Fx (N)','Fy (N)','Fz (N)','Mx (N·m)','My (N·m)','Mz (N·m)']);result.nodes.forEach(n=>lines.push([n.id,...n.reaction]));lines.push([],['杆端内力'],['杆件号','起端 N','起端 Vy','起端 Vz','起端 T','起端 My','起端 Mz','终端 N','终端 Vy','终端 Vz','终端 T','终端 My','终端 Mz']);result.elements.forEach(e=>lines.push([e.id,...e.startForce,...e.endForce]));lines.push([],['杆件最大结果'],['杆件号','|N|max (N)','|M|max (N·m)','|σnom|max (Pa)']);result.elements.forEach(e=>lines.push([e.id,e.maxAxialForce,e.maxBendingMoment,e.maxNominalStress]));lines.push([],['杆件沿程截面内力'],['杆件号','x (m)','N (N)','Vy (N)','Vz (N)','T (N·m)','My (N·m)','Mz (N·m)','σnom (Pa)']);result.elements.forEach(e=>e.stations.forEach(s=>lines.push([e.id,s.position,...s.forces,s.nominalStress])));download('framecae_result.csv','\ufeff'+lines.map(row=>row.map(csvValue).join(',')).join('\r\n'),'text/csv;charset=utf-8')}
+    function importModel(file){const reader=new FileReader();reader.onload=()=>{try{const parsed=JSON.parse(reader.result);data=Object.fromEntries(Object.keys(schemas).map(name=>[name,Array.isArray(parsed[name])?parsed[name]:[]]));result=null;localResult=null;convergenceResult=null;displayMode='global';renderTables();setLocalAnalysisEnabled(false,'模型已导入。若它包含标准 T 节点，请点击“自动识别危险 T 节点”或选择节点后填充参数。');refreshMemberElementOptions();drawMemberDiagram();drawConvergence();document.querySelector('#results').textContent='模型已导入，请点击“从表格计算”。';document.querySelector('#status').textContent='模型已导入，等待计算。'}catch(error){errorBox.textContent='JSON 文件无法读取：'+error.message;errorBox.style.display='block'}};reader.readAsText(file,'utf-8')}
+    function localSettings(){return {node:document.querySelector('#localNode').value,parentNegative:document.querySelector('#parentNegative').value,parentPositive:document.querySelector('#parentPositive').value,branch:document.querySelector('#branchElement').value,outerRadius:document.querySelector('#outerRadius').value,wallThickness:document.querySelector('#wallThickness').value,parentLength:document.querySelector('#parentLength').value,branchLength:document.querySelector('#branchLength').value,meshSize:document.querySelector('#meshSize').value,solverMethod:document.querySelector('#solverMethod').value}}
+    function setLocalSettings(settings){const ids={node:'localNode',parentNegative:'parentNegative',parentPositive:'parentPositive',branch:'branchElement',outerRadius:'outerRadius',wallThickness:'wallThickness',parentLength:'parentLength',branchLength:'branchLength',meshSize:'meshSize',solverMethod:'solverMethod'};Object.entries(ids).forEach(([key,id])=>{if(settings[key]!==undefined)document.querySelector('#'+id).value=settings[key]})}
+    async function loadTJointDemo(){try{const response=await fetch('/api/local-t-demo');if(!response.ok)throw Error('无法加载 T 节点演示模型。');const answer=await response.json();data=answer.model;renderTables();setLocalSettings(answer.settings);await solve();await autoFillTJoint();document.querySelector('#status').textContent='标准 T 节点演示模型已载入，危险节点和局部参数已自动识别。'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block'}}
+    function genericLocalSettings(){return {node:document.querySelector('#genericNode').value,cutRatio:document.querySelector('#genericCutRatio').value,meshSize:document.querySelector('#genericMeshSize').value,solverMethod:document.querySelector('#genericSolverMethod').value}}
+    function setGenericLocalSettings(settings){const ids={node:'genericNode',cutRatio:'genericCutRatio',meshSize:'genericMeshSize',solverMethod:'genericSolverMethod'};Object.entries(ids).forEach(([key,id])=>{if(settings[key]!==undefined)document.querySelector('#'+id).value=settings[key]})}
+    function writeGenericResults(){writeLocalResults();const r=localResult.result,members=(r.connectedElements||[]).map(id=>'E'+id).join('、');document.querySelector('#results').textContent=document.querySelector('#results').textContent.replace('局部圆管 T 形节点实体分析','通用圆管节点整体—局部实体分析').replace('位移边界由整体三根梁在截断面的位移和转角插值得到。',`相连圆管杆件：${members}\n位移边界由整体各圆管在截断面的位移和转角插值得到。`)}
+    async function runGeneric(){errorBox.style.display='none';document.querySelector('#status').textContent='正在映射整体梁边界、生成通用圆管节点网格并求解实体应力…';try{const response=await fetch('/api/local-generic-node',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload(),settings:genericLocalSettings()})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'通用局部实体分析失败。');localResult=answer;convergenceResult=null;displayMode='local';draw();drawConvergence();writeGenericResults();document.querySelector('#status').textContent='通用局部实体分析完成：可拖动查看三维应力云图。'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='通用局部分析参数需要修正。'}}
+    async function fillGenericNode(){errorBox.style.display='none';const node=document.querySelector('#genericNode').value;document.querySelector('#status').textContent=`正在检查圆管节点 N${node}…`;try{const response=await fetch('/api/local-generic-suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload(),node})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'节点参数识别失败。');setGenericLocalSettings(answer.settings);document.querySelector('#genericLocalHint').textContent=answer.message;document.querySelector('#status').textContent=`节点 N${node} 的通用局部参数已自动填充。`}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='所选节点不能建立通用圆管实体子模型。'}}
+    async function autoFillGeneric(){errorBox.style.display='none';document.querySelector('#status').textContent='正在依据整体杆端应力识别危险圆管节点…';try{const response=await fetch('/api/local-generic-suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload()})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'自动识别失败。');setGenericLocalSettings(answer.settings);document.querySelector('#genericLocalHint').textContent=answer.message;document.querySelector('#status').textContent='危险圆管节点与局部参数已自动填充。'}catch(error){document.querySelector('#genericLocalHint').textContent='未发现可分析圆管节点：需至少两根同材料、由 A 和 D 定义的空心圆管相连。';errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='模型中未发现可用的圆管节点。'}}
+    async function runLocal(){errorBox.style.display='none';document.querySelector('#status').textContent='正在生成 T 节点网格并求解实体应力…';try{const response=await fetch('/api/local-t-joint',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload(),settings:localSettings()})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'局部实体分析失败。');localResult=answer;convergenceResult=null;displayMode='local';draw();drawConvergence();writeLocalResults();document.querySelector('#status').textContent='局部实体分析完成：可拖动查看网格应力云图。'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='局部分析参数需要修正'}}
+    async function runConvergence(){errorBox.style.display='none';document.querySelector('#status').textContent='正在执行多档网格的收敛分析…';try{const response=await fetch('/api/local-t-convergence',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload(),settings:localSettings(),coarseSize:document.querySelector('#coarseSize').value,fineSize:document.querySelector('#fineSize').value,sampleCount:document.querySelector('#sampleCount').value})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'网格收敛分析失败。');convergenceResult=answer;drawConvergence();writeConvergenceResults();document.querySelector('#status').textContent='网格收敛分析完成：请查看 h–Kt 曲线。'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='网格收敛参数需要修正。'}}
+    async function runVerification(){errorBox.style.display='none';document.querySelector('#status').textContent='正在运行悬臂梁、温度杆和 T 节点课程验证…';try{const response=await fetch('/api/verification',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});const answer=await response.json();if(!response.ok)throw Error(answer.error||'课程验证失败。');verificationResult=answer;convergenceResult=answer.localConvergence;drawConvergence();writeVerificationResults();document.querySelector('#status').textContent='课程验证完成：解析解对比与网格收敛结果已汇总。'}catch(error){errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='课程验证未完成。'}}
+    async function autoFillTJoint(){errorBox.style.display='none';document.querySelector('#status').textContent='正在从整体结果识别危险 T 节点…';try{const response=await fetch('/api/local-t-suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload()})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'自动识别失败。');setLocalSettings(answer.settings);setLocalAnalysisEnabled(true,answer.message);document.querySelector('#status').textContent='危险 T 节点和局部参数已自动填充。'}catch(error){setLocalAnalysisEnabled(false,'未发现可用于当前局部实体模块的标准圆管 T 节点。');errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='模型中未发现可用的标准 T 节点。'}}
+    async function fillSelectedTJoint(){errorBox.style.display='none';const node=document.querySelector('#localNode').value;document.querySelector('#status').textContent=`正在检查所选节点 N${node}…`;try{const response=await fetch('/api/local-t-suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:payload(),node})});const answer=await response.json();if(!response.ok)throw Error(answer.error||'节点参数识别失败。');setLocalSettings(answer.settings);setLocalAnalysisEnabled(true,`已选定 N${node}。`+answer.message);document.querySelector('#status').textContent=`节点 N${node} 的局部参数已自动填充。`}catch(error){setLocalAnalysisEnabled(false,'所选节点不能建立当前标准 T 形实体子模型。');errorBox.textContent=error.message;errorBox.style.display='block';document.querySelector('#status').textContent='所选节点不能建立当前标准 T 形实体子模型。'}}
+    function returnGlobal(){if(!result)return;displayMode='global';draw();writeResults();document.querySelector('#status').textContent='已返回整体刚架结果。'}
+    document.querySelector('#solve').onclick=solve;document.querySelector('#default').onclick=async()=>{await loadDefault();await solve()};document.querySelector('#verification').onclick=runVerification;document.querySelector('#loadT').onclick=loadTJointDemo;document.querySelector('#returnGlobal').onclick=returnGlobal;document.querySelector('#autoT').onclick=autoFillTJoint;document.querySelector('#selectedT').onclick=fillSelectedTJoint;document.querySelector('#runLocal').onclick=runLocal;document.querySelector('#runConvergence').onclick=runConvergence;document.querySelector('#import').onclick=()=>document.querySelector('#fileInput').click();document.querySelector('#fileInput').onchange=event=>{if(event.target.files[0])importModel(event.target.files[0]);event.target.value=''};document.querySelector('#exportModel').onclick=exportModel;document.querySelector('#exportResult').onclick=exportResult;document.querySelector('#exportCsv').onclick=exportCsv;['scale','metric','nodeLabels','elementLabels'].forEach(id=>document.querySelector('#'+id).addEventListener('input',draw));['memberElement','memberComponent'].forEach(id=>document.querySelector('#'+id).addEventListener('change',drawMemberDiagram));
+    document.querySelector('#autoGeneric').onclick=autoFillGeneric;document.querySelector('#selectedGeneric').onclick=fillGenericNode;document.querySelector('#runGeneric').onclick=runGeneric;
+    const canvas=document.querySelector('#scene'),ctx=canvas.getContext('2d'),convergenceCanvas=document.querySelector('#convergence'),convergenceCtx=convergenceCanvas.getContext('2d');function setup(){const ratio=devicePixelRatio||1,box=canvas.getBoundingClientRect();canvas.width=Math.floor(box.width*ratio);canvas.height=Math.floor(box.height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0)}function setupConvergence(){const ratio=devicePixelRatio||1,box=convergenceCanvas.getBoundingClientRect();convergenceCanvas.width=Math.floor(box.width*ratio);convergenceCanvas.height=Math.floor(box.height*ratio);convergenceCtx.setTransform(ratio,0,0,ratio,0,0)}new ResizeObserver(()=>{setup();draw()}).observe(canvas);new ResizeObserver(()=>drawConvergence()).observe(convergenceCanvas);
+    function drawConvergence(){setupConvergence();const width=convergenceCanvas.clientWidth,height=convergenceCanvas.clientHeight,chart=convergenceCtx;chart.clearRect(0,0,width,height);if(!convergenceResult?.samples?.length){chart.fillStyle='#64748b';chart.font='12px sans-serif';chart.fillText('运行“自动网格收敛分析”后显示 h–Kt 曲线。',12,23);return}const points=[...convergenceResult.samples].sort((a,b)=>a.meshSize-b.meshSize),left=48,right=18,top=24,bottom=30,xMin=points[0].meshSize,xMax=points.at(-1).meshSize,yMin=Math.min(...points.map(p=>p.smoothedStressConcentrationFactor)),yMax=Math.max(...points.map(p=>p.smoothedStressConcentrationFactor)),xSpan=Math.max(xMax-xMin,1e-12),ySpan=Math.max(yMax-yMin,Math.max(Math.abs(yMax)*.05,1e-6)),x=v=>left+(v-xMin)/xSpan*(width-left-right),y=v=>height-bottom-(v-yMin+.08*ySpan)/(1.16*ySpan)*(height-top-bottom);chart.strokeStyle='#cbd5e1';chart.lineWidth=1;chart.beginPath();chart.moveTo(left,top);chart.lineTo(left,height-bottom);chart.lineTo(width-right,height-bottom);chart.stroke();chart.fillStyle='#40516a';chart.font='11px sans-serif';chart.fillText('平滑 Kt',3,17);chart.fillText(`h (m): 左细 ${xMin.toFixed(3)} → 右粗 ${xMax.toFixed(3)}`,left,height-7);chart.fillText(yMax.toFixed(4),4,top+5);chart.fillText(yMin.toFixed(4),4,height-bottom+4);chart.strokeStyle='#1667c9';chart.lineWidth=2;chart.beginPath();points.forEach((point,index)=>{const px=x(point.meshSize),py=y(point.smoothedStressConcentrationFactor);if(index)chart.lineTo(px,py);else chart.moveTo(px,py)});chart.stroke();points.forEach(point=>{const px=x(point.meshSize),py=y(point.smoothedStressConcentrationFactor);chart.fillStyle='#e54b4b';chart.beginPath();chart.arc(px,py,3.5,0,Math.PI*2);chart.fill();chart.fillStyle='#40516a';chart.fillText(point.meshSize.toFixed(3),px-12,height-bottom+15)})}
+    const memberCanvas=document.querySelector('#memberDiagram'),memberCtx=memberCanvas.getContext('2d');function setupMemberDiagram(){const ratio=devicePixelRatio||1,box=memberCanvas.getBoundingClientRect();memberCanvas.width=Math.floor(box.width*ratio);memberCanvas.height=Math.floor(box.height*ratio);memberCtx.setTransform(ratio,0,0,ratio,0,0)}function refreshMemberElementOptions(){const select=document.querySelector('#memberElement'),selected=select.value;select.innerHTML=(result?.elements||[]).map(element=>`<option value="${element.id}">E${element.id}</option>`).join('');if([...select.options].some(option=>option.value===selected))select.value=selected;else if(select.options.length)select.selectedIndex=0}function drawMemberDiagram(){setupMemberDiagram();const width=memberCanvas.clientWidth,height=memberCanvas.clientHeight,chart=memberCtx,label=document.querySelector('#memberDiagramLabel');chart.clearRect(0,0,width,height);const selected=Number(document.querySelector('#memberElement').value),component=document.querySelector('#memberComponent').value,element=result?.elements?.find(item=>item.id===selected);if(!element){chart.fillStyle='#64748b';chart.font='12px sans-serif';chart.fillText('完成整体计算后，选择杆件和结果分量查看沿程内力图。',12,23);label.textContent='完成整体计算后可选择杆件。';return}const descriptions={0:['轴力 N','N',1],1:['剪力 Vy','N',1],2:['剪力 Vz','N',1],4:['弯矩 My','N·m',1],5:['弯矩 Mz','N·m',1],stress:['名义应力 σnom','MPa',1e-6]},[name,unit,scale]=descriptions[component],stations=element.stations.map(station=>({x:station.position,value:(component==='stress'?station.nominalStress:station.forces[Number(component)])*scale})),length=Math.max(...stations.map(station=>station.x),1e-12),rawMin=Math.min(...stations.map(station=>station.value),0),rawMax=Math.max(...stations.map(station=>station.value),0),span=Math.max(rawMax-rawMin,Math.max(Math.abs(rawMax),Math.abs(rawMin),1)*.1),left=62,right=20,top=24,bottom=37,x=value=>left+value/length*(width-left-right),y=value=>height-bottom-(value-(rawMin-.1*span))/(1.2*span)*(height-top-bottom);chart.strokeStyle='#cbd5e1';chart.lineWidth=1;chart.beginPath();chart.moveTo(left,top);chart.lineTo(left,height-bottom);chart.lineTo(width-right,height-bottom);chart.stroke();if(rawMin<0&&rawMax>0){chart.setLineDash([4,4]);chart.strokeStyle='#94a3b8';chart.beginPath();chart.moveTo(left,y(0));chart.lineTo(width-right,y(0));chart.stroke();chart.setLineDash([])}chart.strokeStyle='#1667c9';chart.lineWidth=2;chart.beginPath();stations.forEach((station,index)=>{const px=x(station.x),py=y(station.value);if(index)chart.lineTo(px,py);else chart.moveTo(px,py)});chart.stroke();chart.fillStyle='#40516a';chart.font='11px sans-serif';chart.fillText(`${name} (${unit})`,left,15);chart.fillText(`x (m): 0 → ${length.toFixed(3)}`,left,height-8);chart.fillText(rawMax.toExponential(3),5,top+5);chart.fillText(rawMin.toExponential(3),5,height-bottom+4);chart.fillStyle='#e54b4b';stations.forEach(station=>{if(station.x>0&&station.x<length){chart.beginPath();chart.arc(x(station.x),y(station.value),1.5,0,Math.PI*2);chart.fill()}});label.textContent=`E${element.id}：${stations.length} 个截面站点，横坐标为局部 x。`;}new ResizeObserver(()=>drawMemberDiagram()).observe(memberCanvas);
+    function draw(){if(displayMode==='local'&&localResult){drawLocal();return}if(!result)return;setup();const width=canvas.clientWidth,height=canvas.clientHeight;ctx.clearRect(0,0,width,height);const factor=Math.max(0,Number(document.querySelector('#scale').value)||0),metric=document.querySelector('#metric').value,nodes=result.nodes,byId=Object.fromEntries(nodes.map(n=>[n.id,n])),points=[];nodes.forEach(n=>{points.push(n.coordinate);points.push(n.coordinate.map((v,i)=>v+factor*n.displacement[i]))});const low=[Infinity,Infinity,Infinity],high=[-Infinity,-Infinity,-Infinity];points.forEach(p=>p.forEach((v,i)=>{low[i]=Math.min(low[i],v);high[i]=Math.max(high[i],v)}));const center=low.map((v,i)=>(v+high[i])/2),span=Math.max(...high.map((v,i)=>v-low[i]),1),pixels=Math.min(width,height)*.38/span*view.zoom;function project(p){let x=p[0]-center[0],y=p[1]-center[1],z=p[2]-center[2];const cy=Math.cos(view.yaw),sy=Math.sin(view.yaw),cp=Math.cos(view.pitch),sp=Math.sin(view.pitch),xr=cy*x-sy*y,yr=sy*x+cy*y,zr=cp*z-sp*yr;return{x:width/2+xr*pixels,y:height/2-zr*pixels,depth:sp*z+cp*yr}}const value=e=>metric==='displacement'?(byId[e.start].magnitude+byId[e.end].magnitude)/2:metric==='axial'?e.maxAxialForce:metric==='bending'?e.maxBendingMoment:e.maxNominalStress,maximum=Math.max(...(metric==='displacement'?nodes.map(n=>n.magnitude):result.elements.map(value)),1e-18),color=v=>`hsl(${260-260*Math.min(1,v/maximum)},88%,48%)`,elements=[...result.elements].sort((a,b)=>{const aa=project(byId[a.start].coordinate),ab=project(byId[a.end].coordinate),ba=project(byId[b.start].coordinate),bb=project(byId[b.end].coordinate);return aa.depth+ab.depth-ba.depth-bb.depth});document.querySelector('#legendText').textContent={displacement:'低位移 → 高位移',axial:'低轴力 → 高轴力',bending:'低弯矩 → 高弯矩',stress:'低名义应力 → 高名义应力'}[metric];ctx.setLineDash([6,5]);ctx.lineWidth=1.2;ctx.strokeStyle='#8996a7';elements.forEach(e=>{const a=project(byId[e.start].coordinate),b=project(byId[e.end].coordinate);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()});ctx.setLineDash([]);elements.forEach(e=>{const first=byId[e.start],second=byId[e.end],a=project(first.coordinate.map((v,i)=>v+factor*first.displacement[i])),b=project(second.coordinate.map((v,i)=>v+factor*second.displacement[i]));ctx.strokeStyle=color(value(e));ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();if(document.querySelector('#elementLabels').checked){ctx.fillStyle='#253347';ctx.font='12px sans-serif';ctx.fillText('E'+e.id,(a.x+b.x)/2+4,(a.y+b.y)/2-4)}});nodes.forEach(n=>{const p=project(n.coordinate.map((v,i)=>v+factor*n.displacement[i]));ctx.fillStyle=metric==='displacement'?color(n.magnitude):'#dbe5f0';ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#172033';ctx.lineWidth=1;ctx.stroke();if(document.querySelector('#nodeLabels').checked){ctx.fillStyle='#172033';ctx.font='12px sans-serif';ctx.fillText('N'+n.id,p.x+6,p.y-6)}});ctx.fillStyle='#53657d';ctx.font='12px sans-serif';ctx.fillText(`变形放大 ${factor} 倍`,12,20)}
+    function drawLocal(){setup();const width=canvas.clientWidth,height=canvas.clientHeight,mesh=localResult.mesh,nodes=mesh.nodes,displacements=mesh.displacements,factor=Math.max(0,Number(document.querySelector('#scale').value)||0),points=[...nodes,...nodes.map((p,i)=>p.map((v,j)=>v+factor*displacements[i][j]))],low=[Infinity,Infinity,Infinity],high=[-Infinity,-Infinity,-Infinity];ctx.clearRect(0,0,width,height);points.forEach(p=>p.forEach((v,i)=>{low[i]=Math.min(low[i],v);high[i]=Math.max(high[i],v)}));const center=low.map((v,i)=>(v+high[i])/2),span=Math.max(...high.map((v,i)=>v-low[i]),1),pixels=Math.min(width,height)*.38/span*view.zoom;function project(p){let x=p[0]-center[0],y=p[1]-center[1],z=p[2]-center[2];const cy=Math.cos(view.yaw),sy=Math.sin(view.yaw),cp=Math.cos(view.pitch),sp=Math.sin(view.pitch),xr=cy*x-sy*y,yr=sy*x+cy*y,zr=cp*z-sp*yr;return{x:width/2+xr*pixels,y:height/2-zr*pixels,depth:sp*z+cp*yr}}const maximum=Math.max(...mesh.faceVonMises,1e-18),color=v=>`hsl(${260-260*Math.min(1,v/maximum)},88%,48%)`,faces=mesh.faces.map((face,i)=>({face,value:mesh.faceVonMises[i]})).sort((a,b)=>{const da=a.face.map(i=>project(nodes[i]).depth).reduce((x,y)=>x+y,0),db=b.face.map(i=>project(nodes[i]).depth).reduce((x,y)=>x+y,0);return da-db});faces.forEach(item=>{const p=item.face.map(i=>project(nodes[i].map((v,j)=>v+factor*displacements[i][j])));ctx.globalAlpha=.88;ctx.fillStyle=color(item.value);ctx.beginPath();ctx.moveTo(p[0].x,p[0].y);ctx.lineTo(p[1].x,p[1].y);ctx.lineTo(p[2].x,p[2].y);ctx.closePath();ctx.fill();ctx.globalAlpha=.32;ctx.strokeStyle='#1d2939';ctx.lineWidth=.45;ctx.stroke()});ctx.globalAlpha=1;document.querySelector('#legendText').textContent='低 von Mises 应力 → 高 von Mises 应力';ctx.fillStyle='#26364d';ctx.font='12px sans-serif';ctx.fillText(`局部圆管 T 节点实体网格：${mesh.faces.length} 个表面三角面`,12,20)}
+    function roundedTubeDisplayNodes(nodes,arms){return nodes.map(point=>{let selected=null;arms.forEach(arm=>{const direction=arm.direction,axial=point[0]*direction[0]+point[1]*direction[1]+point[2]*direction[2];if(axial<arm.outerRadius*.9||axial>arm.length+arm.outerRadius*.8)return;const radial=[point[0]-axial*direction[0],point[1]-axial*direction[1],point[2]-axial*direction[2]],radius=Math.hypot(...radial);if(radius<1e-9)return;const outerGap=Math.abs(radius-arm.outerRadius),innerGap=Math.abs(radius-arm.innerRadius),target=innerGap<outerGap?arm.innerRadius:arm.outerRadius,score=Math.min(outerGap,innerGap);if(!selected||score<selected.score)selected={arm,axial,radial,radius,target,score}});if(!selected)return point;const {arm,axial,radial,radius,target}=selected,atEnd=arm.length-axial<arm.outerRadius*.8,along=Math.max(0,Math.min(arm.length,atEnd?arm.length:axial));return [arm.direction[0]*along+radial[0]/radius*target,arm.direction[1]*along+radial[1]/radius*target,arm.direction[2]*along+radial[2]/radius*target]})}
+    function closedTubeSkin(arms,baseline){const nodes=[],faces=[],values=[];arms.forEach(arm=>{const start=0,rings=Math.max(8,Math.ceil((arm.length-start)/Math.max(arm.outerRadius*.65,1e-6))),sectors=18,reference=Math.abs(arm.direction[2])<.9?[0,0,1]:[0,1,0],u=[arm.direction[1]*reference[2]-arm.direction[2]*reference[1],arm.direction[2]*reference[0]-arm.direction[0]*reference[2],arm.direction[0]*reference[1]-arm.direction[1]*reference[0]],un=Math.hypot(...u);for(let i=0;i<3;i++)u[i]/=un;const v=[arm.direction[1]*u[2]-arm.direction[2]*u[1],arm.direction[2]*u[0]-arm.direction[0]*u[2],arm.direction[0]*u[1]-arm.direction[1]*u[0]],offset=nodes.length;for(let ring=0;ring<=rings;ring++){const x=start+(arm.length-start)*ring/rings;for(let sector=0;sector<sectors;sector++){const angle=2*Math.PI*sector/sectors,c=Math.cos(angle),s=Math.sin(angle);nodes.push([arm.direction[0]*x+arm.outerRadius*(c*u[0]+s*v[0]),arm.direction[1]*x+arm.outerRadius*(c*u[1]+s*v[1]),arm.direction[2]*x+arm.outerRadius*(c*u[2]+s*v[2])])}}for(let ring=0;ring<rings;ring++)for(let sector=0;sector<sectors;sector++){const next=(sector+1)%sectors,a=offset+ring*sectors+sector,b=offset+ring*sectors+next,c=offset+(ring+1)*sectors+sector,d=offset+(ring+1)*sectors+next;faces.push([a,c,b],[b,c,d]);values.push(baseline,baseline)}});return{nodes,faces,values}}
+    const baseDrawLocal = drawLocal;
+    function mappedTubeSkin(mesh, arms) {
+      const baseline = Math.min(...mesh.faceVonMises, 1e-18), skin = closedTubeSkin(arms, baseline);
+      const allBoundary = [...new Set(mesh.faces.flat())], stride = Math.max(1, Math.ceil(allBoundary.length / 512));
+      const boundary = allBoundary.filter((_, index) => index % stride === 0), values = mesh.nodalVonMises || [];
+      const coordinates = boundary.map(id => mesh.nodes[id]), scale = Math.max(Math.max(...arms.map(arm => arm.outerRadius)) * .15, 1e-6);
+      skin.values = skin.faces.map(face => {
+        const point = face.reduce((sum, id) => sum.map((value, index) => value + skin.nodes[id][index] / 3), [0, 0, 0]);
+        const nearest = coordinates.map((node, index) => ({ index, distance: Math.hypot(point[0] - node[0], point[1] - node[1], point[2] - node[2]) })).sort((a, b) => a.distance - b.distance).slice(0, 12);
+        if (!values.length) return baseline;
+        const weights = nearest.map(item => 1 / (item.distance + scale) ** 2), total = weights.reduce((sum, value) => sum + value, 0);
+        return nearest.reduce((sum, item, index) => sum + weights[index] * values[boundary[item.index]], 0) / total;
+      });
+      return skin;
+    }
+    drawLocal = function () {
+      if (!localResult?.tubeArms?.length) return baseDrawLocal();
+      const mesh = localResult.mesh, original = { nodes: mesh.nodes, faces: mesh.faces, faceVonMises: mesh.faceVonMises, displacements: mesh.displacements };
+      if (!localResult.smoothTubeSkin) localResult.smoothTubeSkin = mappedTubeSkin(mesh, localResult.tubeArms);
+      const skin = localResult.smoothTubeSkin;
+      mesh.nodes = skin.nodes; mesh.faces = skin.faces; mesh.faceVonMises = skin.values; mesh.displacements = skin.nodes.map(() => [0, 0, 0]);
+      try { baseDrawLocal(); } finally { mesh.nodes = original.nodes; mesh.faces = original.faces; mesh.faceVonMises = original.faceVonMises; mesh.displacements = original.displacements; }
+    }
+    function writeLocalResults(){const r=localResult.result,point=r.maximumLocationLocal.map(v=>v.toExponential(5)).join(', '),method=r.solutionMethod==='scipy'?'SciPy 稀疏':'自编 LDLᵀ',lines=['局部圆管 T 形节点实体分析','',`外围网格尺寸 h = ${r.actualMeshSize.toExponential(5)} m    相贯区最小 Hex8 尺寸 hmin = ${(r.localMeshSize??r.actualMeshSize).toExponential(5)} m`,`实体节点数：${r.nodeCount}    Hex8 单元数：${r.elementCount}    表面三角面：${r.faceCount}`,`实体自由度：${r.freeDofCount}    求解方法：${method}`,`梁模型名义应力 σnom = ${(r.nominalStress/1e6).toExponential(6)} MPa`,`单元体积平均峰值 σVM,max = ${(r.maximumVonMises/1e6).toExponential(6)} MPa`,`节点平滑峰值 σVM,node = ${(r.maximumNodalVonMises/1e6).toExponential(6)} MPa`,`最大主应力 σ1,max = ${(r.maximumPrincipalStress/1e6).toExponential(6)} MPa`,`最大应力位置（局部坐标） = [${point}] m`,`单元平均峰值 Kt = ${r.stressConcentrationFactor.toExponential(6)}`,`平滑热点 Kt = ${r.smoothedStressConcentrationFactor.toExponential(6)}`,'','云图显示 Hex8 单元体积平均 von Mises 应力；相贯区采用自动局部加密的共节点 Hex8 网格。','位移边界由整体三根梁在截断面的位移和转角插值得到。'];document.querySelector('#results').textContent=lines.join('\n')}
+    function writeConvergenceResults(){const samples=convergenceResult.samples,changes=samples.slice(1).map((sample,index)=>Math.abs(sample.smoothedStressConcentrationFactor-samples[index].smoothedStressConcentrationFactor)/Math.max(Math.abs(sample.smoothedStressConcentrationFactor),1e-18)),finalChanges=changes.slice(-2),converged=samples.length>=3&&finalChanges.length===2&&finalChanges.every(change=>change<=.05),lines=['','网格收敛性分析（由粗到细）：','实际 h (m)  节点数    Hex8 单元    自由度     单元平均 Kt   平滑热点 Kt',...samples.map(s=>`${s.meshSize.toFixed(4)}   ${String(s.nodeCount).padStart(5)}   ${String(s.elementCount).padStart(7)}   ${String(s.freeDofCount).padStart(5)}   ${s.stressConcentrationFactor.toExponential(5)}   ${s.smoothedStressConcentrationFactor.toExponential(5)}`),...finalChanges.map((change,index)=>`最后第 ${finalChanges.length-index} 次细化的平滑热点 Kt 相对变化：${(change*100).toFixed(2)}%`),converged?'判定：最后连续两次细化均小于 5%，当前最细网格的平滑热点 Kt 已基本收敛。':'判定：尚未满足连续两次细化均小于 5% 的收敛条件，建议继续减小细网格 h。'];document.querySelector('#results').textContent+=lines.join('\n')}
+    function writeVerificationResults(){const global=verificationResult.global,local=verificationResult.localConvergence,lines=['课程核心功能验证','', '整体刚架解析解对比：','项目                                  数值结果                理论结果                相对误差',...global.map(item=>`${item.name.padEnd(30)} ${item.numerical.toExponential(6)} ${item.analytical.toExponential(6)} ${(item.relativeError*100).toExponential(3)}%`),'','局部圆管 T 节点网格收敛：','实际 h (m)     原始 Kt      平滑热点 Kt',...local.samples.map(sample=>`${sample.meshSize.toFixed(5)}       ${sample.stressConcentrationFactor.toExponential(6)}   ${sample.smoothedStressConcentrationFactor.toExponential(6)}`),`最后两次平滑热点 Kt 变化：${local.relativeChanges.slice(-2).map(value=>(value*100).toFixed(2)+'%').join('，')}`,local.passed?'结论：整体解析解对比通过，局部平滑热点 Kt 满足连续两次细化均小于 5% 的收敛要求。':'结论：整体解析解对比通过；局部网格尚未满足收敛要求。'];document.querySelector('#results').textContent=lines.join('\n')}
+    function writeResults(){const s=result.summary,critical=(result.criticalNodes||[]).slice(0,3),lines=[`节点数：${s.nodeCount}    杆件数：${s.elementCount}`,`最大节点平动位移：N${s.maxNode}，|u|max = ${s.maxDisplacement.toExponential(6)} m`,'','危险节点（按相邻杆端名义应力排序）：',...critical.map((n,i)=>`${i+1}. N${n.id}  |σnom|max=${(n.nominalStress/1e6).toExponential(4)} MPa  相连杆件=${n.elements.join('/')}`),'','节点平动位移：'];result.nodes.forEach(n=>lines.push(`N${String(n.id).padEnd(3)} ux=${n.displacement[0].toExponential(4)}  uy=${n.displacement[1].toExponential(4)}  uz=${n.displacement[2].toExponential(4)} m`));lines.push('','全部支座反力合力 [Fx, Fy, Fz, Mx, My, Mz]：',`[${s.totalReaction.map(v=>v.toExponential(4)).join(', ')}]`,'','单元沿杆最大结果：');result.elements.forEach(e=>lines.push(`E${String(e.id).padEnd(3)} |N|max=${e.maxAxialForce.toExponential(4)} N  |M|max=${e.maxBendingMoment.toExponential(4)} N·m  |σnom|max=${(e.maxNominalStress/1e6).toExponential(4)} MPa`));lines.push('','单元局部起端内力 [N, Vy, Vz, T, My, Mz]：');result.elements.forEach(e=>lines.push(`E${String(e.id).padEnd(3)}[${e.startForce.map(v=>v.toExponential(4)).join(', ')}]`));document.querySelector('#results').textContent=lines.join('\n')}
+    const baseWriteResults=writeResults;writeResults=function(){baseWriteResults();const locations=(result.criticalSections||[]).slice(0,5),lines=['','危险位置（含杆件中段；按 |σnom| 排序）：',...locations.map((item,index)=>`${index+1}. E${item.element}，x=${item.position.toExponential(5)} m，σnom=${(item.nominalStress/1e6).toExponential(4)} MPa`),'','杆中危险位置用于梁截面内力/名义应力校核；只有节点、孔洞、加劲板等几何不连续位置才需要建立局部实体应力集中模型。'];document.querySelector('#results').textContent+=lines.join('\n')}
+    canvas.addEventListener('pointerdown',e=>{view.dragging=true;view.x=e.clientX;view.y=e.clientY;canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(!view.dragging)return;view.yaw+=(e.clientX-view.x)*.008;view.pitch=Math.max(-1.45,Math.min(1.45,view.pitch+(e.clientY-view.y)*.008));view.x=e.clientX;view.y=e.clientY;draw()});canvas.addEventListener('pointerup',()=>view.dragging=false);canvas.addEventListener('wheel',e=>{e.preventDefault();view.zoom=Math.max(.25,Math.min(5,view.zoom*(e.deltaY<0?1.12:.89)));draw()},{passive:false});
+    (async()=>{try{await loadDefault();await solve()}catch(error){errorBox.textContent=error.message;errorBox.style.display='block'}})();
+  </script>
+  <script>
+    (() => {
+      const baseDrawWithMarkers = draw;
+      const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
+      draw = function () {
+        baseDrawWithMarkers();
+        if (displayMode !== 'global' || !result || !document.querySelector('#boundaryMarkers')?.checked) return;
+        const factor = Math.max(0, Number(document.querySelector('#scale').value) || 0);
+        const nodes = result.nodes;
+        const points = nodes.flatMap(node => [node.coordinate, node.coordinate.map((value, index) => value + factor * node.displacement[index])]);
+        const low = [Infinity, Infinity, Infinity], high = [-Infinity, -Infinity, -Infinity];
+        points.forEach(point => point.forEach((value, index) => { low[index] = Math.min(low[index], value); high[index] = Math.max(high[index], value); }));
+        const center = low.map((value, index) => (value + high[index]) / 2);
+        const span = Math.max(...high.map((value, index) => value - low[index]), 1);
+        const pixels = Math.min(canvas.clientWidth, canvas.clientHeight) * .38 / span * view.zoom;
+        const project = point => { let [x, y, z] = point.map((value, index) => value - center[index]); const cy = Math.cos(view.yaw), sy = Math.sin(view.yaw), cp = Math.cos(view.pitch), sp = Math.sin(view.pitch), xr = cy * x - sy * y, yr = sy * x + cy * y, zr = cp * z - sp * yr; return { x: canvas.clientWidth / 2 + xr * pixels, y: canvas.clientHeight / 2 - zr * pixels, depth:sp*z+cp*yr }; };
+        const byId = Object.fromEntries(nodes.map(node => [node.id, node]));
+        const position = id => { const node = byId[Number(id)]; return node && node.coordinate.map((value, index) => value + factor * node.displacement[index]); };
+        const arrow = (from, to) => { const dx = to.x - from.x, dy = to.y - from.y, length = Math.hypot(dx, dy); if (length < 2) return; const ux = dx / length, uy = dy / length; ctx.strokeStyle = ctx.fillStyle = '#d63d4c'; ctx.lineWidth = 2.4; ctx.beginPath(); ctx.moveTo(from.x, from.y); ctx.lineTo(to.x, to.y); ctx.stroke(); ctx.beginPath(); ctx.moveTo(to.x, to.y); ctx.lineTo(to.x - 9 * ux + 5 * uy, to.y - 9 * uy - 5 * ux); ctx.lineTo(to.x - 9 * ux - 5 * uy, to.y - 9 * uy + 5 * ux); ctx.closePath(); ctx.fill(); };
+        const solved=result.solvedModel||{};
+        window.FrameCAEModelView.drawModelLoads(ctx,solved,p=>project([p.x,p.y,p.z]),canvas.clientWidth,canvas.clientHeight,{legend:false,nodePoint:(f,p)=>{const a=position(f.id);return a?{x:a[0],y:a[1],z:a[2]}:p;},memberPoint:(q,t,p)=>{const a=position(q.start.id),b=position(q.end.id);return a&&b?{x:a[0]+t*(b[0]-a[0]),y:a[1]+t*(b[1]-a[1]),z:a[2]+t*(b[2]-a[2])}:p;}});
+        (solved.loads||[]).forEach(load=>{const point=position(load.node);if(point&&Math.hypot(number(load.mx),number(load.my),number(load.mz))>1e-12){const p=project(point);ctx.fillStyle='#b62336';ctx.fillText('↻ M',p.x+8,p.y+16);}});
+        (solved.constraints || []).forEach(constraint => { const point = position(constraint.node); if (!point) return; const fixed = ['ux', 'uy', 'uz', 'rx', 'ry', 'rz'].filter(key => constraint[key] !== null && constraint[key] !== undefined && constraint[key] !== ''); if (!fixed.length) return; const screen = project(point), size = 10; ctx.fillStyle = ctx.strokeStyle = '#1768b3'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(screen.x - size, screen.y + size); ctx.lineTo(screen.x + size, screen.y + size); ctx.lineTo(screen.x, screen.y); ctx.closePath(); ctx.fill(); ctx.beginPath(); ctx.moveTo(screen.x - size - 3, screen.y + size + 3); ctx.lineTo(screen.x + size + 3, screen.y + size + 3); ctx.stroke(); ctx.fillStyle = '#11548f'; ctx.font = '11px sans-serif'; ctx.fillText(fixed.length === 6 ? '固定' : '约束', screen.x + 8, screen.y + 21); });
+        ctx.fillStyle = '#40516a'; ctx.font = '12px sans-serif'; ctx.fillText('红色：载荷   蓝色：约束', 12, 38);
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const panel = document.querySelector('#genericLocalSettings');
+      const controls = document.createElement('div');
+      controls.innerHTML = '<div class="local-grid"><label>相贯区粗 hmin (m) <input id="genericCoarseSize" value="0.08"></label><label>相贯区细 hmin (m) <input id="genericFineSize" value="0.064"></label><label>网格档数 <input id="genericSampleCount" value="6"></label><label>自由度上限 <input id="genericMaxDofs" value="300000" min="30000" max="300000" step="10000"></label></div><div class="actions"><button id="runGenericConvergence" class="secondary">验证通用节点局部 Hex8 收敛</button></div><p id="genericConvergenceHint" class="help">外围网格与截断边界固定，仅细化相贯区 Hex8。上限只影响可细化程度，不替代 5% 收敛判据。</p>';
+      panel.append(controls);
+      const syncSizes = () => { const h = Number(document.querySelector('#genericMeshSize').value); if (Number.isFinite(h) && h > 0) { document.querySelector('#genericCoarseSize').value = (h * .8).toPrecision(5); document.querySelector('#genericFineSize').value = (h * .64).toPrecision(5); } };
+      for (const id of ['autoGeneric', 'selectedGeneric']) { const button = document.querySelector('#' + id), previous = button.onclick; button.onclick = async event => { await previous.call(button, event); syncSizes(); }; }
+      document.querySelector('#runGenericConvergence').onclick = async () => {
+        errorBox.style.display = 'none';
+        document.querySelector('#status').textContent = '正在对通用圆管节点执行多档网格收敛分析…';
+        try {
+          const response = await fetch('/api/local-generic-convergence', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: payload(), settings: genericLocalSettings(), coarseSize: document.querySelector('#genericCoarseSize').value, fineSize: document.querySelector('#genericFineSize').value, sampleCount: document.querySelector('#genericSampleCount').value, maxDofs: document.querySelector('#genericMaxDofs').value }) });
+          const answer = await response.json();
+          if (!response.ok) throw Error(answer.error || '通用节点网格收敛分析失败。');
+          convergenceResult = answer;
+          drawConvergence();
+          writeConvergenceResults();
+          const samples = answer.samples, changes = samples.slice(1).map((sample, index) => Math.abs(sample.smoothedStressConcentrationFactor - samples[index].smoothedStressConcentrationFactor) / Math.max(Math.abs(sample.smoothedStressConcentrationFactor), 1e-18));
+          const passed = changes.slice(-2).length === 2 && changes.slice(-2).every(change => change <= .05);
+          document.querySelector('#genericConvergenceHint').textContent = passed ? `已通过：最后两次平滑热点 Kt 变化为 ${(changes.at(-2) * 100).toFixed(2)}%、${(changes.at(-1) * 100).toFixed(2)}%，均不超过 5%。` : '尚未通过：请继续减小相贯区 hmin；外围网格与截断边界保持不变。';
+          document.querySelector('#status').textContent = passed ? '通用节点网格收敛验证通过。' : '通用节点网格尚未收敛。';
+        } catch (error) { errorBox.textContent = error.message; errorBox.style.display = 'block'; document.querySelector('#status').textContent = '通用节点收敛参数需要修正。'; }
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const setFineSize = () => { const h = Number(document.querySelector('#genericMeshSize').value); if (Number.isFinite(h) && h > 0) { document.querySelector('#genericCoarseSize').value = (h * .8).toPrecision(5); document.querySelector('#genericFineSize').value = (h * .64).toPrecision(5); } };
+      setFineSize();
+      for (const id of ['autoGeneric', 'selectedGeneric']) { const button = document.querySelector('#' + id), previous = button.onclick; button.onclick = async event => { await previous.call(button, event); setFineSize(); }; }
+    })();
+  </script>
+  <script>
+    (() => {
+      document.querySelector('#genericSampleCount').value = '6';
+      const button = document.querySelector('#runGenericConvergence'), previous = button.onclick;
+      button.onclick = async event => {
+        await previous.call(button, event);
+        if (!convergenceResult?.stoppedReason) return;
+        const hint = document.querySelector('#genericConvergenceHint');
+        const adjusted = Number.isFinite(convergenceResult.effectiveCoarseSize)
+          ? ` 自动校正后的实际请求范围：h=${convergenceResult.effectiveCoarseSize.toPrecision(5)} → ${convergenceResult.effectiveFineSize.toPrecision(5)} m。`
+          : '';
+        hint.textContent = (convergenceResult.converged ? `已通过：${convergenceResult.stoppedReason}` : `尚未通过：${convergenceResult.stoppedReason}`) + adjusted;
+        const samples = convergenceResult.samples || [], changes = convergenceResult.relativeChanges || [];
+        const detail = [
+          '', '通用节点收敛判据明细（固定物理热点的表面插值 Kt）：',
+          ...samples.map((sample, index) => `第 ${index + 1} 档：外围 h=${(sample.outerMeshSize ?? sample.meshSize).toExponential(5)} m（固定），相贯区 hmin=${sample.meshSize.toExponential(5)} m，峰值 Kt=${sample.smoothedStressConcentrationFactor.toExponential(6)}，${sample.trackedHotspotKind ?? '固定'}插值 Kt=${(sample.trackedHotspotStressConcentrationFactor ?? sample.smoothedStressConcentrationFactor).toExponential(6)}，热点参照 σnom=${((sample.trackedNominalStress ?? sample.nominalStress) / 1e6).toExponential(5)} MPa，相连杆件=${(sample.trackedHotspotElements || []).join('/') || '—'}，采样偏差=${(sample.trackedHotspotProjectionDistance ?? 0).toExponential(3)} m（${(sample.trackedHotspotResolution ?? 0).toFixed(2)}hmin），自由度=${sample.freeDofCount}`),
+          ...changes.map((change, index) => {
+            const difference = (change - .05) * 100;
+            return `第 ${index + 1} → ${index + 2} 档：变化 ${(change * 100).toFixed(2)}%，${difference > 0 ? `比 5% 高 ${difference.toFixed(2)} 个百分点` : `低于 5% ${(-difference).toFixed(2)} 个百分点`}`;
+          }),
+          `本次自由度上限：${convergenceResult.maxDofs ?? '—'}。`,
+        ];
+        document.querySelector('#results').textContent += detail.join('\n');
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const previous = writeLocalResults;
+      writeLocalResults = function () {
+        previous();
+        document.querySelector('#results').textContent += localResult?.result?.surfaceFitted
+          ? '\n网格几何：圆管内、外表面已贴合解析圆柱面（Hex8）。'
+          : '\n网格几何：规则 Hex8 背景网格。';
+        const residual = localResult?.result?.relativeResidual;
+        if (Number.isFinite(residual)) {
+          document.querySelector('#results').textContent += `\n平衡相对残差：${residual.toExponential(3)}`;
+        }
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const previousDrawConvergence = drawConvergence;
+      drawConvergence = function () {
+        const samples = convergenceResult?.samples || [];
+        if (!samples.some(sample => Number.isFinite(sample.trackedHotspotStressConcentrationFactor))) {
+          previousDrawConvergence();
+          return;
+        }
+        setupConvergence();
+        const width = convergenceCanvas.clientWidth, height = convergenceCanvas.clientHeight, chart = convergenceCtx;
+        chart.clearRect(0, 0, width, height);
+        const left = 54, right = 18, top = 26, bottom = 34;
+        const peak = samples.map(sample => sample.smoothedStressConcentrationFactor);
+        const tracked = samples.map(sample => sample.trackedHotspotStressConcentrationFactor);
+        const values = [...peak, ...tracked], low = Math.min(...values), high = Math.max(...values), span = Math.max(high - low, Math.abs(high) * .05, 1e-6);
+        const x = index => left + index / Math.max(samples.length - 1, 1) * (width - left - right);
+        const y = value => height - bottom - (value - low + .08 * span) / (1.16 * span) * (height - top - bottom);
+        chart.strokeStyle = '#cbd5e1'; chart.lineWidth = 1; chart.beginPath(); chart.moveTo(left, top); chart.lineTo(left, height - bottom); chart.lineTo(width - right, height - bottom); chart.stroke();
+        chart.font = '11px sans-serif'; chart.fillStyle = '#40516a'; chart.fillText('Kt', 16, 17); chart.fillText('网格由粗 → 细；蓝色固定热点表面插值用于 5% 判定', left, height - 8); chart.fillText(high.toFixed(4), 7, top + 5); chart.fillText(low.toFixed(4), 7, height - bottom + 4);
+        const line = (series, color, dash) => { chart.strokeStyle = color; chart.setLineDash(dash); chart.lineWidth = 2; chart.beginPath(); series.forEach((value, index) => index ? chart.lineTo(x(index), y(value)) : chart.moveTo(x(index), y(value))); chart.stroke(); chart.setLineDash([]); };
+        line(peak, '#94a3b8', [5, 4]); line(tracked, '#1667c9', []);
+        samples.forEach((sample, index) => { chart.fillStyle = '#1667c9'; chart.beginPath(); chart.arc(x(index), y(tracked[index]), 3.5, 0, Math.PI * 2); chart.fill(); chart.fillStyle = '#40516a'; chart.fillText(sample.meshSize.toFixed(3), x(index) - 12, height - bottom + 15); });
+        chart.fillStyle = '#1667c9'; chart.fillText('● 固定热点 Kt', width - 135, 16); chart.fillStyle = '#64748b'; chart.fillText('— 峰值 Kt', width - 135, 29);
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      // 圆管以闭合平滑外观显示，应力由实际 Hex8 的边界节点反距离恢复；
+      // 这只改变显示曲面，不改变实体求解所用的 Hex8 几何与应力结果。
+      const previousDrawLocal = drawLocal;
+      drawLocal = function () {
+        previousDrawLocal();
+        if (localResult?.tubeArms?.length) document.querySelector('#legendText').textContent = '闭合圆管显示：由真实 Hex8 边界节点恢复 von Mises 应力';
+      };
+      const previousWriteLocal = writeLocalResults;
+      writeLocalResults = function () {
+        previousWriteLocal();
+        document.querySelector('#results').textContent += '\n云图以闭合圆管显示；色值由真实 Hex8 边界节点反距离恢复，实体求解仍采用实际 Hex8 网格。';
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const previousWriteConvergence = writeConvergenceResults;
+      writeConvergenceResults = function () {
+        if (convergenceResult?.convergenceMetric !== 'trackedHotspotKt') {
+          previousWriteConvergence();
+          return;
+        }
+        const samples = convergenceResult.samples || [];
+        const changes = convergenceResult.relativeChanges || [];
+        const finalChanges = changes.slice(-2);
+        const passed = convergenceResult.converged === true;
+        const lines = [
+          '', '通用圆管节点局部 Hex8 收敛性分析（外围网格固定，由粗到细）：',
+          '相贯区 hmin (m)  节点数    Hex8 单元    自由度     峰值 Kt      固定热点 Kt',
+          ...samples.map(sample => `${sample.meshSize.toFixed(4)}   ${String(sample.nodeCount).padStart(5)}   ${String(sample.elementCount).padStart(7)}   ${String(sample.freeDofCount).padStart(6)}   ${sample.smoothedStressConcentrationFactor.toExponential(5)}   ${(sample.trackedHotspotStressConcentrationFactor ?? sample.smoothedStressConcentrationFactor).toExponential(5)}`),
+          ...finalChanges.map((change, index) => `最后第 ${finalChanges.length - index} 次细化的固定热点 Kt 相对变化：${(change * 100).toFixed(2)}%`),
+          passed
+            ? '判定：固定物理热点 Kt 最后连续两次细化均小于 5%，本节点局部应力集中结果通过收敛检验。'
+            : '判定：固定物理热点 Kt 尚未满足最后连续两次细化均小于 5% 的收敛条件。',
+          `热点 Kt 的参照应力取该热点相连杆件 ${((samples[0]?.trackedNominalStress ?? samples[0]?.nominalStress ?? 0) / 1e6).toExponential(5)} MPa；峰值 Kt 用于监控是否出现新的危险区域，不参与本次固定热点的收敛判定。`,
+          `本次外围固定网格 h=${(convergenceResult.outerMeshSize ?? samples[0]?.outerMeshSize ?? 0).toExponential(5)} m；仅相贯区 hmin 随档位减小。`,
+        ];
+        document.querySelector('#results').textContent += lines.join('\n');
+      };
+      const button = document.querySelector('#runGenericConvergence');
+      const previousClick = button.onclick;
+      button.onclick = async function (event) {
+        await previousClick.call(button, event);
+        if (convergenceResult?.convergenceMetric === 'trackedHotspotKt') {
+          document.querySelector('#status').textContent = convergenceResult.converged
+            ? '通用节点固定热点网格收敛验证通过。'
+            : '通用节点固定热点网格尚未收敛。';
+        }
+      };
+    })();
+  </script>
+
+
+
+
+
+
+
+<!-- Full-stress panel: included in the base page so existing local servers load it after refresh. -->
+<script>
+(() => {
+  const editor = document.querySelector('#editor');
+  const anchor = document.querySelector('#genericLocalSettings');
+  if (!editor || !anchor || document.querySelector('#fullStressSettings')) return;
+
+  const panel = document.createElement('section');
+  panel.id = 'fullStressSettings';
+  panel.innerHTML = `
+    <h2>三维刚架满应力尺寸试算</h2>
+    <p class="help">每轮按几何相似关系同步更新 A、Iy、Iz、J、D，重新求解三维刚架。按轴力、双向弯矩、扭矩和剪力估算名义强度，并检查受压杆的 Euler 稳定。计算后右侧可按截面面积显示杆件粗细，并预览隐藏细杆的形态。</p>
+    <div class="full-stress-controls">
+      <label>允许轴向应力 (MPa)<input id="fsAllowable" type="number" min="0.001" value="235"></label>
+      <label>最多迭代次数<input id="fsIterations" type="number" min="1" max="100" value="30"></label>
+      <label>最小面积 / 初始面积<input id="fsMinimum" type="number" min="0.000001" max="0.999" step="0.01" value="0.01"></label>
+      <label>单轮面积变化上限<input id="fsMove" type="number" min="0.001" max="0.999" step="0.05" value="0.5"></label>
+      <label>收敛容差<input id="fsTolerance" type="number" min="0.000001" step="0.001" value="0.001"></label>
+      <label>稳定计算长度系数 μ<input id="fsEffectiveLength" type="number" min="0.01" step="0.1" value="1"></label>
+    </div>
+    <div class="full-stress-actions"><button id="fsOneStep" class="secondary">满应力迭代一步</button><button id="fsRun" class="secondary">自动迭代</button><button id="fsExport" class="secondary" disabled>导出迭代结果</button><button id="fsExportModel" class="secondary" disabled>导出优化模型</button></div>
+    <p id="fsMessage" class="help" role="status">先在 01 确认并计算模型，再运行刚架尺寸迭代。</p>
+    <div id="fsOutput" hidden>
+      <div id="fsSummary"></div>
+      <label class="fs-history-label">查看迭代轮次 <select id="fsHistory"></select></label>
+      <div class="fs-table-wrap"><table><thead><tr><th>控制利用率排名</th><th>杆件</th><th>最大轴力 (N)</th><th>最大弯矩 (N·m)</th><th>面积 (m²)</th><th>面积/初始</th><th>强度利用率</th><th>稳定利用率</th><th>控制项</th></tr></thead><tbody id="fsRows"></tbody></table></div>
+      <p id="fsCandidates" class="help"></p>
+      <p class="help">强度按名义梁截面估算，稳定按指定 μ 的 Euler 压杆模型初步校核；不包含焊缝和节点局部应力。极小面积构件未实际删除，位移限值和删杆后的结构稳定性仍需独立检查。</p>
+    </div>`;
+  anchor.insertAdjacentElement('beforebegin', panel);
+  const css = document.createElement('style');
+  css.textContent = `#fullStressSettings h2{font-size:19px;margin:3px 0 10px}#fullStressSettings>.help{line-height:1.7}.full-stress-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.full-stress-controls label{font-size:12px}.full-stress-controls input{display:block;width:100%;margin-top:4px;padding:6px;border:1px solid #d9e1ee;border-radius:5px;background:white}.full-stress-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.fs-history-label{display:flex;align-items:center;gap:10px;margin:12px 0}.fs-history-label select{padding:5px;border:1px solid #d9e1ee;border-radius:5px;background:white}.fs-table-wrap{max-height:340px;overflow:auto}.fs-table-wrap table{width:100%;font-size:12px}.fs-table-wrap th,.fs-table-wrap td{padding:6px;white-space:nowrap}.fs-view-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;border-left:1px solid #d8e0ec;padding-left:9px}.fs-view-controls select{min-width:92px}.fs-view-controls input[type=range]{width:86px;min-width:86px;accent-color:#16828d}.fs-view-controls output{min-width:30px;text-align:right}.fs-view-controls small{color:#617489}@media(max-width:650px){.full-stress-controls{grid-template-columns:1fr}}`;
+  document.head.append(css);
+
+  const $ = selector => panel.querySelector(selector);
+  let latest = null;
+  let demonstratedSteps = 0;
+  let demonstrationModel = '';
+  const number = (value, digits=4) => Number(value).toPrecision(digits);
+  const viewControls = document.createElement('span');
+  viewControls.className = 'fs-view-controls';
+  viewControls.innerHTML = '<label>截面预览 <select id="fsViewMode" aria-label="满应力杆件视图"><option value="original">原始结果</option><option value="sized">优化后粗细</option><option value="retained">隐藏细杆</option></select></label><label id="fsCutoffLabel">隐藏面积比低于 <input id="fsCutoff" type="range" min="1" max="100" value="5" aria-label="隐藏面积比例阈值"><output id="fsCutoffValue">5%</output></label><small id="fsViewCount"></small>';
+  document.querySelector('#viewer .toolbar').append(viewControls);
+  const viewMode = viewControls.querySelector('#fsViewMode');
+  const cutoff = viewControls.querySelector('#fsCutoff');
+  const defaultLegend = Array.from(document.querySelector('.legend').children).map(item => item.style.display);
+  const previewLegend = document.createElement('span');
+  previewLegend.id = 'fsPreviewLegend';
+  previewLegend.textContent = '线宽 ∝ 截面直径；灰虚线为原始杆件。';
+  previewLegend.hidden = true;
+  document.querySelector('.legend').append(previewLegend);
+  let latestModelSignature = '';
+  const previewActive = () => window.frameCAEActiveModule === 'fullStress' && viewMode.value !== 'original' && latest && result && displayMode === 'global';
+  const syncViewControls = () => {
+    viewControls.style.display = window.frameCAEActiveModule === 'fullStress' ? 'flex' : 'none';
+    viewMode.querySelectorAll('option:not(:first-child)').forEach(option => option.disabled = !latest);
+    viewControls.querySelector('#fsCutoffLabel').style.display = viewMode.value === 'retained' ? 'flex' : 'none';
+    viewControls.querySelector('#fsCutoffValue').textContent = `${cutoff.value}%`;
+    const active = Boolean(previewActive());
+    Array.from(document.querySelector('.legend').children).slice(0, defaultLegend.length).forEach((item, index) => {
+      item.style.display = active ? 'none' : defaultLegend[index];
+    });
+    previewLegend.hidden = !active;
+    previewLegend.textContent = viewMode.value === 'retained'
+      ? `按初始面积的 ${cutoff.value}% 隐藏细杆，仅作形态预览；删杆后尚未重分析。`
+      : '线宽随截面直径变化；灰虚线是原始杆件，橙色是缩小的杆件。';
+  };
+  const baseDraw = draw;
+  draw = function () {
+    syncViewControls();
+    if (!previewActive()) { baseDraw(); return; }
+    if (JSON.stringify(payload()) !== latestModelSignature) {
+      viewMode.value = 'original';
+      $('#fsMessage').textContent = '模型已修改，旧的优化预览已关闭。请重新运行满应力计算。';
+      syncViewControls();
+      baseDraw();
+      return;
+    }
+    const selected = Number($('#fsHistory').value);
+    const step = latest.history[selected] || latest.history.at(-1);
+    const rows = new Map(step.members.map(row => [Number(row.id), row]));
+    const nodes = new Map(result.nodes.map(node => [Number(node.id), node]));
+    const threshold = Number(cutoff.value) / 100;
+    const visible = result.elements.filter(element => {
+      const row = rows.get(Number(element.id));
+      return row && (viewMode.value !== 'retained' || row.areaRatio >= threshold);
+    });
+    const width = canvas.clientWidth, height = canvas.clientHeight;
+    setup();
+    ctx.clearRect(0, 0, width, height);
+    const factor = Math.max(0, Number(document.querySelector('#scale').value) || 0);
+    const points = result.nodes.flatMap(node => [node.coordinate, node.coordinate.map((value, index) => value + factor * node.displacement[index])]);
+    const low = [Infinity, Infinity, Infinity], high = [-Infinity, -Infinity, -Infinity];
+    points.forEach(point => point.forEach((value, index) => { low[index] = Math.min(low[index], value); high[index] = Math.max(high[index], value); }));
+    const center = low.map((value, index) => (value + high[index]) / 2);
+    const span = Math.max(...high.map((value, index) => value - low[index]), 1);
+    const pixels = Math.min(width, height) * .56 / span * view.zoom;
+    const project = point => {
+      const x = point[0] - center[0], y = point[1] - center[1], z = point[2] - center[2];
+      const cy = Math.cos(view.yaw), sy = Math.sin(view.yaw), cp = Math.cos(view.pitch), sp = Math.sin(view.pitch);
+      const xr = cy * x - sy * y, yr = sy * x + cy * y, zr = cp * z - sp * yr;
+      return {x: width / 2 + xr * pixels, y: height / 2 - zr * pixels, depth: sp * z + cp * yr};
+    };
+    const ends = element => [project(nodes.get(Number(element.start)).coordinate), project(nodes.get(Number(element.end)).coordinate)];
+    const ordered = [...visible].sort((a, b) => {
+      const pa = ends(a), pb = ends(b);
+      return pa[0].depth + pa[1].depth - pb[0].depth - pb[1].depth;
+    });
+    if (viewMode.value === 'sized') {
+      ctx.setLineDash([5, 5]); ctx.lineWidth = 1.1; ctx.strokeStyle = '#a5b1bd';
+      result.elements.forEach(element => {
+        const [a, b] = ends(element);
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      });
+      ctx.setLineDash([]);
+    }
+    ctx.setLineDash([]);
+    const maxArea = Math.max(...step.members.map(row => row.area), 1e-18);
+    const connected = new Set();
+    ordered.forEach(element => {
+      const row = rows.get(Number(element.id)), [a, b] = ends(element);
+      connected.add(Number(element.start)); connected.add(Number(element.end));
+      ctx.strokeStyle = row.areaRatio < .95 ? '#db8738' : '#16828d';
+      ctx.lineWidth = Math.max(1.5, 19 * Math.sqrt(row.area / maxArea));
+      ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      if (document.querySelector('#elementLabels').checked) {
+        ctx.fillStyle = '#243c50'; ctx.font = 'bold 12px sans-serif';
+        ctx.fillText(`E${element.id}`, (a.x + b.x) / 2 + 4, (a.y + b.y) / 2 - 5);
+      }
+    });
+    ctx.lineCap = 'butt';
+    connected.forEach(id => {
+      const point = project(nodes.get(id).coordinate);
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = '#37566c'; ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.arc(point.x, point.y, 3.8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      if (document.querySelector('#nodeLabels').checked) {
+        ctx.fillStyle = '#37566c'; ctx.font = '11px sans-serif'; ctx.fillText(`N${id}`, point.x + 6, point.y - 5);
+      }
+    });
+    const hidden = result.elements.length - visible.length;
+    const count = `第 ${step.iteration} 轮 · 显示 ${visible.length}/${result.elements.length} 根${hidden ? ` · 隐藏 ${hidden} 根` : ''}`;
+    viewControls.querySelector('#fsViewCount').textContent = count;
+    ctx.fillStyle = '#324b5e'; ctx.font = '12px sans-serif'; ctx.fillText(count, 12, 20);
+    if (viewMode.value === 'retained') {
+      ctx.fillStyle = '#8b562a'; ctx.fillText('隐藏仅供预览，结构未执行删杆重分析', 12, 39);
+    }
+  };
+  viewMode.onchange = () => { syncViewControls(); draw(); };
+  cutoff.oninput = () => { syncViewControls(); draw(); };
+  window.addEventListener('framecae-module-change', () => requestAnimationFrame(() => { syncViewControls(); draw(); }));
+  syncViewControls();
+  const options = iterations => ({
+    allowableStress: Number($('#fsAllowable').value) * 1e6,
+    maxIterations: iterations,
+    minAreaFraction: Number($('#fsMinimum').value),
+    moveLimit: Number($('#fsMove').value),
+    tolerance: Number($('#fsTolerance').value),
+    effectiveLengthFactor: Number($('#fsEffectiveLength').value),
+  });
+  const showIteration = index => {
+    const item = latest.history[index];
+    $('#fsSummary').textContent = `第 ${item.iteration} 轮 · 体积 ${number(item.volume, 7)} m³ · 强度最大 ${(item.maxStrengthUtilization * 100).toFixed(1)}% · 稳定最大 ${(item.maxStabilityUtilization * 100).toFixed(1)}% · 最大位移 ${number(item.maxDisplacement, 5)} m`;
+    $('#fsRows').replaceChildren(...item.members.map(row => {
+      const tr = document.createElement('tr');
+      [row.rank, row.id, number(row.maxAxialForce, 6), number(row.maxBendingMoment, 6), number(row.area, 6),
+        `${(row.areaRatio * 100).toFixed(2)}%`, `${(row.strengthUtilization * 100).toFixed(1)}%`,
+        `${(row.stabilityUtilization * 100).toFixed(1)}%`, row.governing]
+        .forEach(value => { const td = document.createElement('td'); td.textContent = value; tr.append(td); });
+      return tr;
+    }));
+  };
+  $('#fsHistory').onchange = () => { showIteration(Number($('#fsHistory').value)); draw(); };
+  const run = async (iterations, overrides={}) => {
+    if (!window.frameCAEHasConfirmedModel?.()) {
+      $('#fsMessage').textContent = '请先在 01 确认模型并完成整体计算。';
+      return false;
+    }
+    const model = payload();
+    const request = {model, settings: {...options(iterations), ...overrides}};
+    const signature = JSON.stringify(request);
+    $('#fsRun').disabled = $('#fsOneStep').disabled = true;
+    $('#fsMessage').textContent = '正在逐轮组装三维刚架刚度矩阵并重分析…';
+    try {
+      const response = await fetch('/api/full-stress', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: signature,
+      });
+      if (response.status === 404)
+        throw Error('当前本地服务仍是旧版本。请先导出模型，再关闭服务窗口并重新双击“启动FrameCAE.cmd”。');
+      const answer = await response.json();
+      if (!response.ok) throw Error(answer.error || '满应力计算失败。');
+      if (!String(answer.method || '').startsWith('space_frame_fixed_volume_'))
+        throw Error('当前标签页连接的仍是桁架版服务。请重新打开新版 FrameCAE 页面。');
+      if (signature !== JSON.stringify({model: payload(), settings: {...options(iterations), ...overrides}}))
+        throw Error('计算期间模型或参数已修改，请重新运行。');
+      latest = answer;
+      latestModelSignature = JSON.stringify(model);
+      $('#fsHistory').replaceChildren(...answer.history.map(item => {
+        const option = document.createElement('option');
+        option.value = item.iteration;
+        option.textContent = `第 ${item.iteration} 轮`;
+        return option;
+      }));
+      $('#fsHistory').value = String(answer.history.length - 1);
+      showIteration(answer.history.length - 1);
+      viewMode.value = 'sized';
+      syncViewControls();
+      draw();
+      $('#fsCandidates').textContent = answer.candidateRemovalIds.length
+        ? `极小面积构件：${answer.candidateRemovalIds.map(id => `E${id}`).join('、')}。未实际删除。`
+        : '当前没有面积小于初始面积 5% 的构件。';
+      $('#fsOutput').hidden = false;
+      $('#fsExport').disabled = false;
+      $('#fsExportModel').disabled = !answer.optimizedModel;
+      $('#fsMessage').textContent = `完成 ${answer.iterations} 轮重分析${answer.converged ? '，面积变化已收敛' : '，达到本次迭代上限'}。体积相对误差 ${Math.abs(answer.finalVolume / answer.initialVolume - 1).toExponential(2)}。`;
+      return true;
+    } catch (error) {
+      $('#fsMessage').textContent = error.message;
+      return false;
+    } finally {
+      $('#fsRun').disabled = $('#fsOneStep').disabled = false;
+    }
+  };
+  $('#fsOneStep').onclick = async () => {
+    const modelSignature = JSON.stringify(payload());
+    if (modelSignature !== demonstrationModel) {
+      demonstrationModel = modelSignature;
+      demonstratedSteps = 0;
+    }
+    const next = Math.min(demonstratedSteps + 1, 100);
+    if (await run(next)) demonstratedSteps = next;
+  };
+  $('#fsRun').onclick = async () => {
+    const iterations = Number($('#fsIterations').value);
+    if (await run(iterations)) {
+      demonstrationModel = JSON.stringify(payload());
+      demonstratedSteps = latest.iterations;
+    }
+  };
+  $('#fsExport').onclick = () => {
+    if (!latest) return;
+    const url = URL.createObjectURL(new Blob([JSON.stringify(latest, null, 2)], {type: 'application/json'}));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'framecae_full_stress.json';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  };
+  $('#fsExportModel').onclick = () => {
+    if (!latest?.optimizedModel) return;
+    const url = URL.createObjectURL(new Blob([JSON.stringify(latest.optimizedModel, null, 2)], {type: 'application/json'}));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'framecae_optimized_frame_model.json';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  };
+})();
+
+</script>
+</body>
+</html>

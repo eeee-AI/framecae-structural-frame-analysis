@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "label": "圆管理想固支 N2",
+  "modelFingerprint": "d30b38003f1338364928af54ce624cdd2c2102176811f56ffdc6966e5ddae31f",
+  "settings": {
+    "node": 2,
+    "analysisType": "idealClamp",
+    "connectionType": "integralHubRingButtWeld",
+    "couplingMode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "cutLength": 0.4,
+    "meshSize": 0.008,
+    "focusSize": 0.003,
+    "toeSize": 0.00175,
+    "patchWidth": 0.02,
+    "patchAngleDegrees": 60.0,
+    "solverMethod": "standalone",
+    "kind": "idealClamp",
+    "hubRadius": 0.0,
+    "blendWidth": 0.0,
+    "weldDistance": 0.0,
+    "weldWidth": 0.0,
+    "reinforcement": 0.0,
+    "toeRadius": 0.0,
+    "axis": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "patchNormal": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "loadRadius": 0.02,
+    "loadDirection": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "jobId": "fca905d30b404650b0e7919163f3b231"
+}

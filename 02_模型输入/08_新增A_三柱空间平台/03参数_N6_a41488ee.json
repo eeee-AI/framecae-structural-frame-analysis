@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "modelFingerprint": "ea2cbf7e11a9ecff397828c35a967b3c339f54a63df3c242258c86ee15c9f05a",
+  "settings": {
+    "node": 6,
+    "connectionType": "integralHubRingButtWeld",
+    "couplingMode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "solverMethod": "standalone",
+    "hubRadius": 0.2248283771639466,
+    "blendWidth": 0.020540625,
+    "weldDistance": 0.34533337716394663,
+    "weldWidth": 0.02464875,
+    "reinforcement": 0.00273875,
+    "toeRadius": 0.0054775,
+    "cutLength": 0.6583680000000001,
+    "meshSize": 0.023,
+    "focusSize": 0.0075,
+    "toeSize": 0.00225,
+    "loadRadius": 0.075315625,
+    "loadDirection": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "shoulderRadius": 0.020540625,
+    "boreStart": 0.16862128287295997,
+    "shoulderConstruction": "analytic tangent circle revolution",
+    "boreFull": 0.27017128287296,
+    "boreShape": "hemisphericalBlindEnd"
+  },
+  "jobId": "a41488eebf074058a28f1ea9028cc9fe"
+}

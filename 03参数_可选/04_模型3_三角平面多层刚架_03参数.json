@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "modelFingerprint": "0320c7e988ac33b487717a444355487ff808d6b190bc15989863c08e474f1563",
+  "settings": {
+    "hubRadius": 0.4686834705767287,
+    "blendWidth": 0.020540625,
+    "shoulderRadius": 0.020540625,
+    "boreStart": 0.35151260293254655,
+    "boreFull": 0.4530626029325465,
+    "boreShape": "hemisphericalBlindEnd",
+    "weldDistance": 0.5891884705767287,
+    "weldWidth": 0.02464875,
+    "reinforcement": 0.00273875,
+    "toeRadius": 0.0054775,
+    "node": 7,
+    "couplingMode": "forceSubmodel",
+    "cutLength": 0.8,
+    "meshSize": 0.04,
+    "focusSize": 0.012,
+    "toeSize": 0.004,
+    "solverMethod": "standalone",
+    "loadRadius": 0.075315625,
+    "loadDirection": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "shearDistribution": "saintVenantAnnulus"
+  },
+  "jobId": "32c2f571d80d4c8391da7d88ee935897"
+}

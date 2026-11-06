@@ -1,0 +1,819 @@
+{
+  "passed": true,
+  "globalWrench": [
+    -3.042863795165687e-15,
+    -8.762508405500782e-15,
+    -4479.999999999988,
+    -12544.000000000007,
+    4.019229393747992e-12,
+    1.0870531620806607e-13
+  ],
+  "expectedGlobalWrench": [
+    0.0,
+    0.0,
+    -4480.0,
+    -12544.0,
+    1.8189894035458565e-12,
+    0.0
+  ],
+  "relativeError": 1.055295251360873e-15,
+  "sumAbsoluteForcesN": 4480.0,
+  "members": {
+    "1": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "2": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "3": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "4": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "5": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "6": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "7": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "8": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "9": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "10": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "11": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "12": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "13": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        -800.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        -800.0
+      ],
+      "unit": "N/m"
+    },
+    "14": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "15": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "16": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "17": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "18": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "19": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "20": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "21": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "22": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "23": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "24": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "25": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "26": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "27": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "28": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "29": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "30": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "31": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    },
+    "32": {
+      "uniformGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selfWeightGlobalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "globalQ": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unit": "N/m"
+    }
+  },
+  "pieces": [
+    {
+      "kind": "joint",
+      "node": 13,
+      "offset": 1224648,
+      "audit": {
+        "loads": [
+          {
+            "element": 13,
+            "uniformGlobalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "selfWeightGlobalQ": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "globalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "unit": "N/m",
+            "outwardIntervalM": [
+              0.0,
+              0.8
+            ],
+            "node": 13
+          }
+        ],
+        "arms": [
+          {
+            "element": 13,
+            "uniformGlobalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "selfWeightGlobalQ": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "globalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "unit": "N/m",
+            "outwardIntervalM": [
+              0.0,
+              0.8
+            ],
+            "node": 13,
+            "assignedVolumeM3": 0.013919390556717601,
+            "gramCondition": 1299.573160056213,
+            "expectedWrenchAtNode": [
+              0.0,
+              0.0,
+              -640.0,
+              -0.0,
+              -256.00000000000006,
+              -0.0
+            ],
+            "actualWrenchAtNode": [
+              3.4602962856178365e-14,
+              4.349656485685971e-15,
+              -639.9999999999972,
+              -9.468933883510777e-15,
+              -255.9999999999995,
+              -1.6480144072322789e-15
+            ],
+            "beamVirtualWorkRelativeError": 7.315046898960229e-16,
+            "discreteVirtualWorkRelativeError": 0.0,
+            "forceRelativeError": 4.441226415668016e-15,
+            "momentRelativeError": 2.2207634303559463e-15,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "resultantAtNode": [
+          3.4602962856178365e-14,
+          4.349656485685971e-15,
+          -639.9999999999972,
+          -9.468933883510777e-15,
+          -255.9999999999995,
+          -1.6480144072322789e-15
+        ],
+        "assumption": "整杆恒定q在局部0..cut上的最小L2等效体积加载；12个离散梁虚功约束。非实际表面压力。"
+      }
+    },
+    {
+      "kind": "joint",
+      "node": 14,
+      "offset": 1314730,
+      "audit": {
+        "loads": [
+          {
+            "element": 13,
+            "uniformGlobalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "selfWeightGlobalQ": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "globalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "unit": "N/m",
+            "outwardIntervalM": [
+              0.0,
+              0.8
+            ],
+            "node": 14
+          }
+        ],
+        "arms": [
+          {
+            "element": 13,
+            "uniformGlobalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "selfWeightGlobalQ": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "globalQ": [
+              0.0,
+              0.0,
+              -800.0
+            ],
+            "unit": "N/m",
+            "outwardIntervalM": [
+              0.0,
+              0.8
+            ],
+            "node": 14,
+            "assignedVolumeM3": 0.013919390556717601,
+            "gramCondition": 1299.5731600562135,
+            "expectedWrenchAtNode": [
+              0.0,
+              0.0,
+              -640.0,
+              -0.0,
+              256.00000000000006,
+              0.0
+            ],
+            "actualWrenchAtNode": [
+              -3.7692071686024065e-14,
+              -1.3203400504001317e-14,
+              -639.9999999999977,
+              2.9644797901184905e-15,
+              255.99999999999932,
+              -9.473216482092095e-18
+            ],
+            "beamVirtualWorkRelativeError": 5.447075744187078e-15,
+            "discreteVirtualWorkRelativeError": 2.4047173736379446e-16,
+            "forceRelativeError": 3.553261681940258e-15,
+            "momentRelativeError": 2.8866030917234353e-15,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "resultantAtNode": [
+          -3.7692071686024065e-14,
+          -1.3203400504001317e-14,
+          -639.9999999999977,
+          2.9644797901184905e-15,
+          255.99999999999932,
+          -9.473216482092095e-18
+        ],
+        "assumption": "整杆恒定q在局部0..cut上的最小L2等效体积加载；12个离散梁虚功约束。非实际表面压力。"
+      }
+    },
+    {
+      "kind": "tube",
+      "element": 13,
+      "intervalM": [
+        0.8,
+        4.8
+      ],
+      "offset": 1675984,
+      "audit": {
+        "workRelativeError": 3.8790283698095474e-15,
+        "wrenchRelativeError": 3.951595679167418e-15,
+        "expectedGlobalWrench": [
+          0.0,
+          0.0,
+          -3199.9999999999995,
+          -8959.999999999998,
+          0.0,
+          0.0
+        ],
+        "actualGlobalWrench": [
+          1.0249522553507751e-17,
+          -1.1876054409069451e-28,
+          -3199.9999999999814,
+          -8959.999999999965,
+          -3.256728220435434e-12,
+          -3.148807485008112e-17
+        ],
+        "gramCondition": 4422.522817249326,
+        "volumeM3": 0.021221879424010232
+      }
+    }
+  ],
+  "massConvention": "rho*A ideal beam line mass over original full member lengths; no extra hub mass",
+  "assumption": "Equivalent volume nodal loads from 12-DOF discrete beam virtual work on nonoverlapping axial member intervals; not surface pressure",
+  "intervalOwnership": "0..0.8 joint at start, 0.8..L-0.8 tube, L-0.8..L joint at end; unique arm ownership inside each hub"
+}

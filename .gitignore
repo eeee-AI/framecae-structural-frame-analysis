@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+runtime/
+vendor/
+.framecae-data/
+.runtime-state.json
+startup-error.log
+.idea/
+03_Abaqus结果/
+04_网页计算结果/
+*.odb
+*.npz
+*.msh
+*.vtu
+*.zip
+

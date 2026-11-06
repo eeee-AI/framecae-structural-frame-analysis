@@ -1,0 +1,68 @@
+[
+  {
+    "name": "原N5三管正交",
+    "modelFile": "六个算例/01_原N5三管正交_模型.json",
+    "optionalTaskFile": "03参数_可选/01_原N5三管正交_03参数.json",
+    "node": 5,
+    "jobId": "c7fac60b23fb446ea3dc3cf9becbaae0",
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": true,
+    "verification": "existing force/Saint-Venant result, no new convergence claim"
+  },
+  {
+    "name": "模型1",
+    "modelFile": "六个算例/02_模型1_两层规则空间刚架_模型.json",
+    "optionalTaskFile": "03参数_可选/02_模型1_两层规则空间刚架_03参数.json",
+    "node": 5,
+    "jobId": "bf410884ecd043438d2bcb782109170a",
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": true,
+    "verification": "existing force/Saint-Venant result, no new convergence claim"
+  },
+  {
+    "name": "模型2",
+    "modelFile": "六个算例/03_模型2_含斜柱两层空间刚架_模型.json",
+    "optionalTaskFile": "03参数_可选/03_模型2_含斜柱两层空间刚架_03参数.json",
+    "node": 5,
+    "jobId": "589cdd230eb54c28915a44f3a3fad9a9",
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": true,
+    "verification": "existing force/Saint-Venant result, no new convergence claim"
+  },
+  {
+    "name": "模型3",
+    "modelFile": "六个算例/04_模型3_三角平面多层刚架_模型.json",
+    "optionalTaskFile": "03参数_可选/04_模型3_三角平面多层刚架_03参数.json",
+    "node": 7,
+    "jobId": "32c2f571d80d4c8391da7d88ee935897",
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": true,
+    "verification": "existing force/Saint-Venant result, no new convergence claim"
+  },
+  {
+    "name": "模型4",
+    "modelFile": "六个算例/05_模型4_三角截面长跨框架_模型.json",
+    "optionalTaskFile": "03参数_可选/05_模型4_三角截面长跨框架_03参数.json",
+    "node": 4,
+    "jobId": null,
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": false,
+    "verification": "input and force-mode settings only; no saved current-method 03 result"
+  },
+  {
+    "name": "模型3均布载荷副本",
+    "modelFile": "六个算例/06_模型3_均布载荷_N7_模型.json",
+    "optionalTaskFile": "03参数_可选/06_模型3_均布载荷_N7_03参数.json",
+    "node": 7,
+    "jobId": "238f16ccab0b43499f985ea7a21f8eb4",
+    "mode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "savedResult": true,
+    "verification": "Fresh force/Saint-Venant 01-to-03 solve passed in clean relocated package"
+  }
+]

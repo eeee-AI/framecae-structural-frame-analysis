@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "label": "B接头 N5",
+  "modelFingerprint": "d30b38003f1338364928af54ce624cdd2c2102176811f56ffdc6966e5ddae31f",
+  "settings": {
+    "hubRadius": 0.1026145034979218,
+    "blendWidth": 0.009375000000000001,
+    "shoulderRadius": 0.009375000000000001,
+    "boreStart": 0.07696087762344135,
+    "shoulderConstruction": "analytic tangent circle revolution",
+    "boreFull": 0.12196087762344135,
+    "boreShape": "hemisphericalBlindEnd",
+    "weldDistance": 0.1576145034979218,
+    "weldWidth": 0.011250000000000001,
+    "reinforcement": 0.0012500000000000002,
+    "toeRadius": 0.0025000000000000005,
+    "node": 5,
+    "connectionType": "integralHubRingButtWeld",
+    "couplingMode": "forceSubmodel",
+    "shearDistribution": "saintVenantAnnulus",
+    "cutLength": 0.4,
+    "loadRadius": 0.034375,
+    "loadDirection": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "toeSize": 0.00085,
+    "focusSize": 0.00225,
+    "meshSize": 0.006,
+    "solverMethod": "standalone"
+  },
+  "jobId": "65402fe57e234287ae7addade5aac0a1"
+}

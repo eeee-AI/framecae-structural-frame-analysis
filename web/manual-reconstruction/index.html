@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FrameCAE · 标定多视图图像建模</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> LOCAL WORKSPACE · 2–4 VIEWS</div>
+      <h1>从对应点，重建节点与杆件。</h1>
+      <p>上传同一台已标定相机移动拍摄的照片，给同一物理位置标相同编号。系统先联合重建三维节点，再跨视图分析杆件；确认尺度和连接后才能发送到 FrameCAE 画布。</p>
+      <div class="hero-meta">
+        <span id="calibrationStatus">正在读取相机标定…</span>
+        <span>照片仅在本机浏览器与本机计算服务之间处理</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="notice" class="notice hidden" role="status"></div>
+
+      <section class="panel upload-panel">
+        <div class="panel-heading">
+          <div><div class="step">01 / 照片</div><h2>上传 2–4 张照片</h2></div>
+          <span class="muted">先选视差足够的两张作为前两视图</span>
+        </div>
+        <div class="upload-row">
+          <label class="upload-zone" for="imageInput">
+            <span class="upload-icon">＋</span>
+            <span><strong>选择照片</strong><small>BMP、JPG、PNG；支持同时选择多张</small></span>
+          </label>
+          <input id="imageInput" type="file" accept="image/*,.bmp" multiple hidden>
+          <div class="upload-side">
+            <div id="imageCount" class="count-value">0 / 4</div>
+            <div class="muted">前两张请标出全部 7 个节点；其余照片尽量也标出这 7 个节点。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel annotation-panel">
+        <div class="panel-heading">
+          <div><div class="step">02 / 对应点</div><h2>逐张点击同一位置</h2></div>
+          <div class="toolbar">
+            <button id="newTrackBtn" class="button button-primary" type="button">＋ 新建点组</button>
+            <button id="clearTrackBtn" class="button button-subtle" type="button">清除当前点组</button>
+            <button id="deleteTrackBtn" class="button button-subtle" type="button">删除点组</button>
+          </div>
+        </div>
+        <div class="annotation-tip">
+          <div><span class="tip-label">当前编号</span><strong id="activeTrack">P1</strong></div>
+          <p id="nextStep">上传照片后，点击第 1 张图上的目标位置。</p>
+          <span class="muted">Ctrl + 滚轮或滑块放大；同一编号对应同一个物理点。按 N 新建点组。</span>
+        </div>
+        <div id="imageGrid" class="image-grid empty-grid">
+          <div class="empty-state">照片会显示在这里。每张图都可以独立放大，点击可重新设置当前点位。</div>
+        </div>
+        <div class="track-heading">
+          <h3>点组 <span id="trackCount">0</span></h3>
+          <div class="toolbar">
+            <button id="exportMarksBtn" class="button button-subtle" type="button">导出标注</button>
+            <label class="button button-subtle import-button">导入标注<input id="importMarksInput" type="file" accept=".json,application/json" hidden></label>
+          </div>
+        </div>
+        <div id="trackList" class="track-list"></div>
+      </section>
+
+      <section class="panel reconstruction-panel">
+        <div class="panel-heading">
+          <div><div class="step">03 / 三维</div><h2>确定尺度并重建</h2></div>
+          <span class="muted">不填已知距离时，结果为相对坐标</span>
+        </div>
+        <div class="scale-grid">
+          <label>点 A<select id="scaleA"><option value="">不指定</option></select></label>
+          <label>点 B<select id="scaleB"><option value="">不指定</option></select></label>
+          <label>两点实际距离 / mm<input id="scaleDistance" type="number" min="0.001" step="any" placeholder="例如 50"></label>
+        </div>
+        <p class="field-help">若选择棋盘上相邻两个内角点，可填写 50 mm；若点位并非相邻角点，请填写它们的实际距离。</p>
+        <div class="action-row">
+          <button id="reconstructBtn" class="button button-primary action-button" type="button">开始三维重建 <span>↗</span></button>
+          <div id="runStatus" class="muted">等待照片与对应点</div>
+        </div>
+        <div id="resultSection" class="result-section hidden">
+          <div class="result-metrics">
+            <div><span>重建点数</span><strong id="pointMetric">—</strong></div>
+            <div><span>重投影 RMS</span><strong id="errorMetric">—</strong></div>
+            <div><span>坐标单位</span><strong id="unitMetric">—</strong></div>
+            <div><span>前两视图有效匹配</span><strong id="inlierMetric">—</strong></div>
+          </div>
+          <div id="resultWarnings" class="result-warnings"></div>
+          <div class="viewer-header"><h3>三维点云预览</h3><span class="muted">拖动旋转 · 滚轮缩放</span></div>
+          <canvas id="pointViewer" class="point-viewer"></canvas>
+          <div id="viewErrors" class="view-errors"></div>
+          <div class="download-row">
+            <button id="downloadPlyBtn" class="button button-subtle" type="button">下载 PLY 点云</button>
+            <button id="downloadCsvBtn" class="button button-subtle" type="button">下载 CSV 坐标</button>
+            <button id="downloadResultBtn" class="button button-subtle" type="button">下载完整 JSON</button>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>点</th><th>X</th><th>Y</th><th>Z</th><th>误差 / px</th></tr></thead><tbody id="pointTable"></tbody></table></div>
+          <section id="rodSection" class="rod-panel">
+            <div class="panel-heading">
+              <div><div class="step">04 / 杆件</div><h2>多视图自动识别连接</h2></div>
+              <button id="inferRodsBtn" class="button button-primary" type="button">重新识别杆件</button>
+            </div>
+            <p class="field-help">系统把候选杆件投回每张照片，综合可见线段证据。自动建议也需要人工核对；勾选项才会进入 FrameCAE 草案。</p>
+            <div id="rodStatus" class="rod-status">完成节点重建后会自动识别杆件。</div>
+            <div id="rodSummary" class="rod-summary hidden"></div>
+            <div id="rodPreviews" class="rod-previews"></div>
+            <div id="candidateList" class="candidate-list"></div>
+            <div class="rod-actions">
+              <label>OBJ 展示杆径（仅用于下载可视化，不是 FrameCAE 截面）<input id="rodDiameter" type="number" min="0.000001" step="any" placeholder="留空则仅使用显示尺寸"></label>
+              <div class="download-row">
+                <button id="sendToFrameCAEBtn" class="button button-primary" type="button" disabled>预览到图形建模画布</button>
+                <button id="downloadRodsCsvBtn" class="button button-subtle" type="button">下载杆件表 CSV</button>
+                <button id="downloadRodsObjBtn" class="button button-subtle" type="button">下载三维杆件 OBJ</button>
+                <button id="downloadRodsJsonBtn" class="button button-subtle" type="button">下载完整工程 JSON</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer>相机内参来自 5320 × 3032 棋盘格标定 · 坐标轴沿首张照片的相机方向 · 没有已知长度时只能查看相对尺度，不能应用到工程画布</footer>
+  </div>
+</body>
+</html>
+

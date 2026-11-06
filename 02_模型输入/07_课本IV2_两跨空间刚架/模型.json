@@ -1,0 +1,184 @@
+{
+  "materials": [
+    {
+      "id": 1,
+      "e": 210.0,
+      "nu": 0.3,
+      "alpha": 0.0,
+      "density": 7850.0
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "a": 0.0014922565104551536,
+      "iy": 1.6881151774523917e-06,
+      "iz": 1.6881151774523917e-06,
+      "j": 3.3762303549047834e-06,
+      "d": 0.1
+    }
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "x": 2,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": 2,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "id": 3,
+      "x": 0,
+      "y": 2,
+      "z": 0
+    },
+    {
+      "id": 4,
+      "x": 2,
+      "y": 0,
+      "z": 2
+    },
+    {
+      "id": 5,
+      "x": 0,
+      "y": 0,
+      "z": 2
+    },
+    {
+      "id": 6,
+      "x": 0,
+      "y": 2,
+      "z": 2
+    }
+  ],
+  "elements": [
+    {
+      "id": 1,
+      "start": 1,
+      "end": 4,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 2,
+      "start": 4,
+      "end": 5,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 3,
+      "start": 2,
+      "end": 5,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 4,
+      "start": 5,
+      "end": 6,
+      "material": 1,
+      "section": 1
+    },
+    {
+      "id": 5,
+      "start": 3,
+      "end": 6,
+      "material": 1,
+      "section": 1
+    }
+  ],
+  "loads": [
+    {
+      "node": 4,
+      "fx": 0,
+      "fy": 0,
+      "fz": 0,
+      "mx": 5000,
+      "my": 0,
+      "mz": 0
+    },
+    {
+      "node": 6,
+      "fx": 0,
+      "fy": 0,
+      "fz": 0,
+      "mx": 0,
+      "my": 5000,
+      "mz": 0
+    }
+  ],
+  "constraints": [
+    {
+      "node": 1,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 2,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 3,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    }
+  ],
+  "memberLoads": [
+    {
+      "element": 2,
+      "type": "point",
+      "qx": 0,
+      "qy": 10000,
+      "qz": 0,
+      "coordinateSystem": "global",
+      "unit": "N",
+      "position": 1.0
+    },
+    {
+      "element": 3,
+      "type": "uniform",
+      "qx": -4000,
+      "qy": -4000,
+      "qz": 0,
+      "coordinateSystem": "global",
+      "unit": "N/m"
+    },
+    {
+      "element": 4,
+      "type": "point",
+      "qx": 10000,
+      "qy": 0,
+      "qz": 0,
+      "coordinateSystem": "global",
+      "unit": "N",
+      "position": 1.0
+    }
+  ],
+  "temperatures": [],
+  "assemblyDeviations": [],
+  "selfWeight": {
+    "enabled": false,
+    "gx": 0.0,
+    "gy": 0.0,
+    "gz": -9.81
+  }
+}

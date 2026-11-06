@@ -1,0 +1,268 @@
+{
+  "candidate": "A",
+  "name": "三柱空间平台",
+  "job": "A_platform",
+  "attentionNode": 6,
+  "solidNodes": 739540,
+  "solidElements": 366578,
+  "supportRPs": {
+    "9": 739541,
+    "10": 739542,
+    "11": 739543
+  },
+  "joints": [
+    {
+      "node": 1,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.4822787685577598,
+        -0.577931147820078,
+        0.6583333333333333
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 2,
+      "nodes": 70062,
+      "elements": 36184,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 3,
+      "nodes": 65056,
+      "elements": 33093,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        0.5119285682787713,
+        -0.5094373005604022,
+        0.6916666666666667
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 4,
+      "nodes": 70062,
+      "elements": 36184,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 5,
+      "nodes": 50894,
+      "elements": 26714,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.717195479395217,
+        0.6699959203039625,
+        -0.19166666666666665
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 6,
+      "nodes": 89890,
+      "elements": 46015,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 7,
+      "nodes": 50894,
+      "elements": 26714,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        -0.769587390482664,
+        0.6358714261800934,
+        0.05833333333333335
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 8,
+      "nodes": 70062,
+      "elements": 36184,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "capRadius": 0.07868993200738131
+    },
+    {
+      "node": 9,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 10,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 11,
+      "nodes": 25354,
+      "elements": 13120,
+      "hubRadius": 0.164325,
+      "capDirection": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "capRadius": 0.057513749999999995
+    },
+    {
+      "node": 12,
+      "nodes": 89814,
+      "elements": 45981,
+      "hubRadius": 0.2248283771639466,
+      "capDirection": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "capRadius": 0.07868993200738131
+    }
+  ],
+  "ties": 30,
+  "assumptions": [
+    "All original vertices use integral B hubs, bores and ring welds, including support vertices.",
+    "Support DOFs from the reviewed model are unchanged. B has RX/RY free, not full fixity.",
+    "Support RPs at graph nodes distribute to assumed unobstructed physical hub caps.",
+    "Joint and tube subdivisions use tied surfaces. No beam cut displacements/forces are imported.",
+    "Equivalent whole-member line loads conserve force, moment and 12-DOF beam virtual work; not physical pressure.",
+    "Linear elasticity, ideal supports, no welding residual stress/contact/defects.",
+    "This single 4 mm toe level is a resource probe, not a mesh convergence or stress result."
+  ],
+  "material": [
+    {
+      "id": 1,
+      "e": 210.0,
+      "nu": 0.3,
+      "density": 7850.0,
+      "alpha": 12.0
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "a": 0.00530552167338244,
+      "iy": 2.959632873469869e-05,
+      "iz": 2.959632873469869e-05,
+      "j": 5.919265746939738e-05,
+      "d": 0.2191
+    }
+  ],
+  "units": "m, N, Pa, N*m; digital_model.json E is GPa per FrameCAE schema",
+  "selfWeight": {
+    "enabled": false,
+    "gx": 0.0,
+    "gy": 0.0,
+    "gz": -9.81
+  },
+  "supports": [
+    {
+      "node": 9,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 10,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    },
+    {
+      "node": 11,
+      "ux": 0.0,
+      "uy": 0.0,
+      "uz": 0.0,
+      "rx": 0.0,
+      "ry": 0.0,
+      "rz": 0.0
+    }
+  ],
+  "loads": [
+    {
+      "node": 12,
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": -8000.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 0.0
+    },
+    {
+      "node": 5,
+      "fx": 2000.0,
+      "fy": 0.0,
+      "fz": 0.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 0.0
+    }
+  ],
+  "memberLoads": [
+    {
+      "element": 3,
+      "type": "uniform",
+      "position": null,
+      "qx": 0.0,
+      "qy": 0.0,
+      "qz": -1000.0,
+      "coordinateSystem": "global",
+      "unit": "N/m"
+    }
+  ],
+  "stressOutput": "S: ALL_SOLID ELEMENT_NODAL (POSITION=NODES), no cross-element averaging imposed in the input. TARGET_ELEMENTS remains the selected joint set.",
+  "otherOutput": "U/RF on the frame; UR/RM on support RPs; ALLSE/ALLWK history",
+  "modificationFromOptimizedSource": "Only stress output element set changed from TARGET_ELEMENTS to ALL_SOLID; mesh, physics and all other lines byte-identical.",
+  "datacheckOfThisInputDone": false,
+  "formalAnalysisDone": false,
+  "stressImpactOfDistortionQuantified": false,
+  "previousGridMemoryEstimate": {
+    "minimumMB": 1562,
+    "memoryToMinimizeIOMB": 7357,
+    "onlyPreviousMesh": true,
+    "notGuaranteedForThisInput": true
+  }
+}

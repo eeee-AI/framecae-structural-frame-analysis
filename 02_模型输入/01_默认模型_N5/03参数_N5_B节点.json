@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "kind": "FrameCAE03Task",
+  "label": "N5 B节点",
+  "modelFingerprint": "fc62a9a25fcf902b4e3d24f65f98039087d1a575c33e27e671e2e6e06b949923",
+  "settings": {
+    "node": 5,
+    "cutLength": 0.8,
+    "meshSize": 0.025,
+    "focusSize": 0.01,
+    "toeSize": 0.004,
+    "solverMethod": "standalone",
+    "couplingMode": "forceSubmodel",
+    "hubRadius": 0.12,
+    "blendWidth": 0.015,
+    "shoulderRadius": 0.015,
+    "boreStart": 0.09,
+    "boreFull": 0.153345685359159,
+    "boreShape": "hemisphericalBlindEnd",
+    "weldDistance": 0.22,
+    "weldWidth": 0.018000000000000002,
+    "reinforcement": 0.002,
+    "toeRadius": 0.004,
+    "loadRadius": 0.055,
+    "loadDirection": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "shearDistribution": "saintVenantAnnulus"
+  },
+  "jobId": "c7fac60b23fb446ea3dc3cf9becbaae0"
+}
